@@ -5,3 +5,6 @@ echo "Dương";
 echo "thái";
 echo "tuấn";
 echo "thuan an tuan k ? ";
+
+
+echo"task demo cuar tuan";
