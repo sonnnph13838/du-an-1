@@ -8,3 +8,5 @@ echo "thuan an tuan k ? ";
 
 
 echo"task demo cuar tuan";
+
+echo "Đây là task Demo của Thuận";
