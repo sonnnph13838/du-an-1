@@ -135,12 +135,6 @@
                 </p>
               </div>
             </div>
-            <p>
-              <label>
-                <input type="checkbox" class="filled-in" />
-                <span> Nhận chương trình khuyến mãi qua email</span>
-              </label>
-            </p>
 
             <div class="form-group mb-40">
               <div class="col-md-6">(*) Thông tin bắt buộc</div>
