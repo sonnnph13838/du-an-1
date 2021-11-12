@@ -100,7 +100,7 @@ function pdo_query_value($sql)
 function exeQuery($getQuery, $getAll = true)
 {
 
-	global $conn;
+	$conn = pdo_get_connection();
 	$stmt =  $conn->prepare($getQuery);
 	$stmt->execute();
 
