@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['dangki']) && ($_POST['dangki'])) {
-	$hoten = $_POST['name'];
+	$hoten = $_POST['hoten'];
 	$taikhoan = $_POST['taikhoan'];
 	$matkhau = $_POST['matkhau'];
 	$email = $_POST['email'];
