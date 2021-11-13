@@ -6,7 +6,7 @@ switch ($url) {
         require_once './client/business/homepage.php';
         break;
     case 'dang-ky':
-            require_once './client/business/dangky.php';
+        require_once './client/business/dangky.php';
     break;
 
     default:
