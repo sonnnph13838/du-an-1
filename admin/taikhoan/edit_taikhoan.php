@@ -1,36 +1,59 @@
 <?php
 include '../../model/nguoi-dung.php';
 include '../../model/pdo.php';
+
 $nguoi_dung = ds_nguoi_dung();
 ?>
-<form action="index.php?act=edit_taikhoan.php" method="POST" enctype="multipart/form-data">
-    <div>
-        id : <input type="hidden"name="id" value="<?php echo($nguoi_dung['id'])?>">
+<form action="index.php?act=edit_taikhoan.php" method="POST" enctype="multipart/form-data"> 
+
+    <div class="form-group">
+        <label for="name" class="col-md-4 control-label">Họ Và Tên <span class="red">(*)</span>
+        </label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" name="hoten" value="<?php echo($nguoi_dung['ho_ten'])?>" autofocus />
+        </div>
     </div>
-    <div>
-        Họ Tên: <input type="text" name="name" value="<?php echo($nguoi_dung['ho_ten'])?>">
+    <div class="form-group">
+        <label for="name" class="col-md-4 control-label">Tên đăng nhập <span class="red">(*)</span>
+        </label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" name="taikhoan"  value="<?php echo($nguoi_dung['tai_khoan'])?>" autofocus />
+        </div>
     </div>
-    <br>
-    <div>
-        Tài khoản: <input type="text" name="taikhoan" value="<?php echo($nguoi_dung['tai_khoan'])?>">
+    <div class="form-group">
+        <label for="name" class="col-md-4 control-label">SĐT <span class="red">(*)</span></label>
+        <div class="col-md-8">
+            <input id="phone" type="text" class="form-control" name="sdt" value="<?php echo($nguoi_dung['sdt '])?>" autofocus />
+        </div>
     </div>
-    <br>
-    <div>
-        Mật Khẩu: <input type="password" name="matkhau" value="<?php echo($nguoi_dung['mat_khau'])?>">
+    <div class="form-group">
+        <label for="email" class="col-md-4 control-label">Email <span class="red">(*)</span></label>
+        <div class="col-md-8">
+            <input id="email" type="email" class="form-control" name="email" value="<?php echo($nguoi_dung['email'])?>" />
+        </div>
     </div>
-    <br>
-    <div>
-        Email: <input type="text" name="email" value="<?php echo($nguoi_dung['email'])?>">
+    <div class="form-group">
+        <label for="password" class="col-md-4 control-label">Mật khẩu <span class="red">(*)</span></label>
+        <div class="col-md-8">
+            <input id="password" type="password" class="form-control" name="matkhau" value="<?php echo($nguoi_dung['mat_khau'])?>" />
+        </div>
     </div>
-    <br>
-    <div>
-        Địa chỉ: <input type="text" name="diachi" value="<?php echo($nguoi_dung['dia_chi'])?>">
+    <div class="form-group">
+        <label for="name" class="col-md-4 control-label">Địa chỉ <span class="red">(*)</span>
+        </label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" name="diachi" value="<?php echo($nguoi_dung['dia_chi'])?>" autofocus />
+        </div>
     </div>
-    <br>
-    <div>
-        Số điện thoại: <input type="text" name="sdt" value="<?php echo($nguoi_dung['sdt '])?>">
+    <div class="form-group mb-40">
+
+        <div class="col-md-6 text-right">
+            <input type="submit" value="Sửa" name="dangki">
+        </div>
     </div>
-    <button class="btn" type="submit" name="btn_update_kh">Thêm</button>
+    
     <button class="btn"><a href="">Quay lại</a></button>
+
+    
 
 </form>
