@@ -25,7 +25,6 @@
         <a href="#home">Trang chủ</a>
         <a href="#speciality">Giới thiệu</a>
         <a href="#popular">Thực Đơn</a>
-        <a href="#review">Đăng nhập</a>
         <a href="#order">Giỏ hàng</a>
       </nav>
       </div>
