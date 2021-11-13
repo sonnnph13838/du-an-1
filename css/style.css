@@ -92,14 +92,16 @@ header {
   align-items: center;
   justify-content: space-between;
   background: #fff;
-  padding: 2rem 9%;
+  padding: 0.5rem 2%;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   font-weight: bolder;
   color: #666;
+  display: block;
+  margin-right: 20px;
 }
 
 header .logo i {
@@ -572,8 +574,8 @@ header .navbar a:hover {
 .c input[type="text"] {
   border: 3px solid var(--red);
   height: 40px;
-  width: 700px;
+  width: 400px;
   padding-left: 10px;
   border-radius: 5px;
-  margin-right: 70px;
+  margin-right: 20px;
 }
