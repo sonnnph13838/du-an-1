@@ -22,7 +22,7 @@
       <a href="#" class="logo"><i class="fas fa-utensils"></i>food</a>
       <nav class="navbar">
         
-        <a href="#home">Trang chủ</a>
+        <a href="/">Trang chủ</a>
         <a href="#speciality">Giới thiệu</a>
         <a href="#popular">Thực Đơn</a>
         <a href="#order">Giỏ hàng</a>
@@ -36,7 +36,7 @@
           <input type="text" placeholder="Nhập vào đây để tìm kiếm">
         </form>
         <nav class="navbar">
-        <a href="#review">Đăng nhập</a>
+        <a href="dang-nhap">Đăng nhập</a>
         <a href="#review" style="margin-left: 5px; border-left: 1px solid #666; padding-left: 5px;">Đăng kí</a>
         <a href="#order"><i class="fas fa-shopping-cart"></i></a>
       </nav>

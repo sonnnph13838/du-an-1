@@ -5,8 +5,8 @@ switch ($url) {
     case '/':
         require_once './client/business/homepage.php';
         break;
-    case 'dang-ky':
-        require_once './client/business/dangky.php';
+    case 'dang-nhap':
+        require_once './client/business/dang-nhap.php';
     break;
 
     default:
