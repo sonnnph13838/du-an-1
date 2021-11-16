@@ -1,6 +1,6 @@
 <?php
 
-const BASE_URL = "http://localhost/du-an-1/";
+const BASE_URL = "http://localhost/du-an-1/"; 
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
 
 
