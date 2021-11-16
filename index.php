@@ -7,13 +7,15 @@ switch ($url) {
         require_once './client/business/homepage.php';
         home();
         break;
-    case 'gioi-thieu':
-        require_once './client/business/homepage.php';
-        about();
-    case 'danh-muc':
-        require_once './client/business/category.php';
-        list_product();
-        break;
+    case 'client-dangnhap':
+        require_once './client/business/tai-khoan/dang-nhap.php';
+        formdn();
+
+
+
+
+
+
     case 'cp-admin':
         require_once './admin/business/dashboard.php';
         dashboard_index();
