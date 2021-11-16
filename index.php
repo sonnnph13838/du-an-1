@@ -1,5 +1,4 @@
 <?php
-<<<<<<< Updated upstream
 session_start();
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 require_once './commons/utils.php';
@@ -26,11 +25,3 @@ switch ($url) {
 }
 
 ?>
-=======
-echo "Chào";
-echo "Thuận";
-echo "Dương";
-echo "thái";
-echo "tuấn";
-echo "thuan an tuan k ?";
->>>>>>> Stashed changes
