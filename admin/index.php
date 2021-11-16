@@ -1,2 +1,2 @@
 <?php
-include "./model/pdo.php";
+echo "abc";
