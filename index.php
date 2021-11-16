@@ -18,10 +18,15 @@ switch ($url) {
         require_once './admin/business/dashboard.php';
         dashboard_index();
         break;
-
+    case 'dang-ki':
+        require_once './client/business/dangky.php';
+        formdk();
+        break;
+    case 'postdk':
+        require_once './client/business/dangky.php';
+        postdk();
+        break;
     default:
         # code...
         break;
 }
-
-?>
