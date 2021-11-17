@@ -10,6 +10,7 @@ switch ($url) {
     case 'client-dangnhap':
         require_once './client/business/tai-khoan/dang-nhap.php';
         formdn();
+    break;
 
 
 

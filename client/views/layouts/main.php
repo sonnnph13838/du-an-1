@@ -65,14 +65,14 @@
     </section>
 
     <!-- scroll top button  -->
-    <a href="<?= CLIENT_ASSET ?>dist/#home" class="fas fa-angle-up" id="scroll-top"></a>
+    <a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
 
     <!-- loader  -->
     <div class="loader-container">
-      <img src="images/loader.gif" alt="" />
+      <img src="<?= CLIENT_ASSET ?>dist/images/loader.gif" alt="" />
     </div>
 
     <!-- custom js file link  -->
-    <script src="js/script.js"></script>
+    <script src="<?= CLIENT_ASSET ?>dist/js/script.js"></script>
   </body>
 </html>
