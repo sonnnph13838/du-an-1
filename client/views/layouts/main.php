@@ -19,10 +19,10 @@
 
     <header>
       <div class="c">
-      <a href="<?= CLIENT_ASSET ?>dist/#" class="logo"><i class="fas fa-utensils"></i>food</a>
+      <a href="./" class="logo"><i class="fas fa-utensils"></i>food</a>
       <nav class="navbar">
         
-        <a href="<?= CLIENT_ASSET ?>dist//">Trang chủ</a>
+        <a href="./">Trang chủ</a>
         <a href="<?= CLIENT_ASSET ?>dist/#speciality">Giới thiệu</a>
         <a href="<?= CLIENT_ASSET ?>dist/#popular">Thực Đơn</a>
         <a href="<?= CLIENT_ASSET ?>dist/#order">Giỏ hàng</a>
@@ -64,8 +64,6 @@
       </h1>
     </section>
 
-    <!-- scroll top button  -->
-    <a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
 
     <!-- loader  -->
     <div class="loader-container">
