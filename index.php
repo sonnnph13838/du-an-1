@@ -3,10 +3,7 @@ session_start();
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 require_once './commons/utils.php';
 switch ($url) {
-    case '/':
-        require_once './client/business/homepage.php';
-        home();
-        break;
+    
     case 'gioi-thieu':
         require_once './client/business/homepage.php';
         about();
@@ -18,7 +15,18 @@ switch ($url) {
         require_once './admin/business/dashboard.php';
         dashboard_index();
         break;
-
+    case 'dang-nhap':
+        require_once './client/business/form/login.php';
+        login_form();
+        break;
+    case 'post-login':
+        require_once './client/business/form/login.php';
+        login_post();
+        break;
+    case 'logout':
+        require_once './client/business/form/login.php';
+        logout_form();
+        break;
     default:
         # code...
         break;
