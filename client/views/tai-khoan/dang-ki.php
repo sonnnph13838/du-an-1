@@ -3,13 +3,6 @@
     <h3>Đăng kí</h3>
     <form action="#">
 
-    <div class="field email">
-        <div class="input-area">
-          <input type="text" placeholder="Tên tài khoản">
-          <i class="icon fas fa-user"></i>
-        </div>
-      </div>
-
       <div class="field email">
         <div class="input-area">
           <input type="text" placeholder="Email">
@@ -28,6 +21,13 @@
         <div class="input-area">
           <input type="text" placeholder="Địa chỉ">
           <i class="icon fas fa-map-marker-alt"></i>
+        </div>
+      </div>
+
+      <div class="field password">
+        <div class="input-area">
+          <input type="text" placeholder="SĐT">
+          <i class="icon fas fa-phone-alt"></i>
         </div>
       </div>
 
