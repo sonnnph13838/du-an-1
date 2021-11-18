@@ -13,8 +13,13 @@ function formqmk(){
 
 function sendmail(){
     $email = $_POST['email'];
-    $ps = md5(rand(0,9999));
-    $newpss = substr($ps,0,6);
+    $checkEmail = checkEmail($email);
+    $email = $checkEmail['email'];
+    if(is_array($checkEmail)){                
+        $ps = md5(rand(0,9999));
+        $newpss = substr($ps,0,6);
+        quenmk($email,$newpss);
+    }
     //Load Composer's autoloader
 // require 'vendor/autoload.php';
 
@@ -50,7 +55,7 @@ try {
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Message has been sent';
+    header('location: ./client-quenmk&msg=da thanh cong');
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
