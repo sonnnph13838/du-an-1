@@ -30,9 +30,19 @@
                 <td><?= $ds['email'] ?></td>
                 <td><?= $ds['dia_chi'] ?></td>
                 <td><?= $ds['sdt'] ?></td>
-                <td><?= $ds['vai_tro'] ?></td>
+                <?php
+                $role = $ds['vai_tro'];
+                if($role == 0){
+                    $role = "Khách hàng";
+                }else{
+                    $role = "Nhân viên";
+                }
+                ?>
+                <td><?= $role ?> <br>
+                
+                <a href="update_role?id=<?= $ds['id']?>">Sửa vai trò</a></td>
                 <td>
-                <a onclick="if (!confirm('Bạn chắc chắn ?')) { return false }" href="del_user?id=<?= $ds['id'] ?>">Xoá</a>
+                <a onclick="if (!confirm('Bạn chắc chắn ?')) { return false }" href="del_user?id=<?= $ds['id']?>">Xoá</a>
                 </td>
             </tr>
         <?php endforeach ?>
