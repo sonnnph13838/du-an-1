@@ -37,12 +37,12 @@ switch ($url) {
         require_once './admin/business/dashboard.php';
         list_user();
         break;
-    case 'del_user':
+    case 'del-user':
         require_once './admin/business/dashboard.php';
         del_user();
         header('Location: admin-user');
         break;
-    case 'update_role':
+    case 'update-role':
         require_once './admin/business/dashboard.php';
         update_roles();
         break;
