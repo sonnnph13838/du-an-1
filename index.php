@@ -17,6 +17,16 @@ switch ($url) {
         formdk();
     break;
 
+    case 'client-quenmk':
+        require_once './client/business/tai-khoan/quen-mk.php';
+        formqmk();
+    break;
+
+    case 'send-email':
+        require_once './client/business/tai-khoan/quen-mk.php';
+        sendmail();
+    break;
+
 
 
 

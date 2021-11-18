@@ -22,7 +22,7 @@
       <div class="remember">
           <input type="checkbox" name="" id="" class="check-remember"> Ghi nhớ tài khoản
       </div>
-      <div class="pass-txt"><a href="#">Forgot password?</a></div>
+      <div class="pass-txt"><a href="client-quenmk">Forgot password?</a></div>
       <input type="submit" value="Login">
     </form>
     <div class="sign-txt">Bạn chưa có tài khoản? <a href="client-dangki">Đăng kí ngay</a></div>
