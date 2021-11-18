@@ -15,10 +15,10 @@ switch ($url) {
         formdn();
     break;
 
-    case 'client-dangki':
-        require_once './client/business/tai-khoan/dang-ki.php';
-        formdk();
-    break;
+    // case 'client-dangki':
+    //     require_once './client/business/tai-khoan/dang-ki.php';
+    //     formdk();
+    // break;
 
     case 'client-quenmk':
         require_once './client/business/tai-khoan/quen-mk.php';
@@ -33,6 +33,13 @@ switch ($url) {
         require_once './admin/business/dashboard.php';
         dashboard_index();
         break;
+    case 'dang-ki':
+        require_once './client/business/tai-khoan/dangky.php';
+        formdk();
+        break;
+    case 'postdk':
+        require_once './client/business/tai-khoan/dangky.php';
+        postdk();
     case 'admin-user':
         require_once './admin/business/dashboard.php';
         list_user();
@@ -46,7 +53,7 @@ switch ($url) {
         require_once './admin/business/dashboard.php';
         update_roles();
         break;
-    case 'update_role/update':
+    case 'update_role/update': 
         require_once './admin/business/dashboard.php';
         $id = $_POST['id'];
         $role = $_POST['role'];
