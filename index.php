@@ -46,18 +46,8 @@ switch ($url) {
         require_once './admin/business/dashboard.php';
         update_roles();
         break;
-    case 'update_role/update':
-        require_once './admin/business/dashboard.php';
-        $id = $_POST['id'];
-        $role = $_POST['role'];
-        if($role == 0){
-            $sql = "UPDATE nguoi_dung SET vai_tro = 0 where  id = '$id'";
-            pdo_execute($sql);   
-        }elseif($role == 1){
-            $sql = "UPDATE nguoi_dung SET vai_tro = 1 where  id =  '$id'";
-            pdo_execute($sql);   
-        }
-        header('Location: ../admin-user');
+    case 'post_update_role':
+        require_once './admin/views/dashboard/user/post_update_role.php';
         break;
     default:
         # code...
