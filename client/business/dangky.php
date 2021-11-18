@@ -15,7 +15,7 @@ function postdk()
 		$diachi = $_POST['diachi'];
 		$sdt = $_POST['sdt'];
 		insert_nguoidung($matkhau, $email, $diachi, $sdt);
-		$thongbao = "Đăng kí thành công. Vui lòng đăng nhập để  thực hiện các chức năng!!";
-		echo "$thongbao";
+		header('location: ./dang-ki&msg= Đăng kí thành công. Vui lòng đăng nhập để  thực hiện các chức năng!!
+		');
 	}
 }

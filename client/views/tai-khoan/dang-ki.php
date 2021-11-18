@@ -28,7 +28,7 @@
 <div class="mgt-dn cnter">
 	<div class="wrapper">
 		<h3>Đăng kí</h3>
-		<form action="#">
+		<form action="postdk" method="post">
 			<div class="field email">
 				<div class="input-area">
 					<input type="text" placeholder="Email" name="email">
@@ -49,12 +49,17 @@
 			</div>
 			<div class="field password">
 				<div class="input-area">
-					<input type="text" placeholder="SĐT" name="sdt	">
+					<input type="text" placeholder="SĐT" name="sdt">
 					<i class="icon fas fa-phone-alt"></i>
 				</div>
 			</div>
-			<input type="submit" value="Đăng Kí">
+			<input type="submit" value="Đăng Kí" name="dangki">
 		</form>
 		<div class="sign-txt">Bạn đã có tài khoản? <a href="client-dangnhap">Đăng nhập ngay</a></div>
+		<?php
+		if (isset($_GET['msg']) && ($_GET['msg']) != "")
+			echo "<h3>" . $_GET['msg'] . "</h3>"
+		?>
+
 	</div>
 </div>
