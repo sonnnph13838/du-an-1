@@ -33,7 +33,7 @@ switch ($url) {
         require_once './admin/business/dashboard.php';
         update_roles();
         break;
-    case 'update_role/update':
+    case 'update_role/update': 
         require_once './admin/business/dashboard.php';
         $id = $_POST['id'];
         $role = $_POST['role'];
