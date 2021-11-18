@@ -30,5 +30,5 @@ function clien_dk($view, $data = [])
 {
     extract($data);
     $view = './client/views/' . $view;
-    include_once "./client/views/layouts/form/formdk.php";
+    include_once "./client/views/tai-khoan/dang-ki.php";
 }
