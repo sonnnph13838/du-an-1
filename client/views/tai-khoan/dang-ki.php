@@ -1,4 +1,4 @@
-<form method="post" action="postdk">
+<!-- <form method="post" action="postdk">
 	<div>
 		Họ Tên: <input type="text" name="name">
 	</div>
@@ -23,7 +23,7 @@
 		Số điện thoại: <input type="text" name="sdt">
 	</div>
 	<input type="submit" value="Đăng kí" name="dangki">
-</form>
+</form> -->
 <!-- From có css -->
 <div class="mgt-dn cnter">
 	<div class="wrapper">
@@ -49,7 +49,7 @@
 			</div>
 			<div class="field password">
 				<div class="input-area">
-					<input type="text" placeholder="SĐT" name="sdt">
+					<input type="text" placeholder="SĐT" name="sdt	">
 					<i class="icon fas fa-phone-alt"></i>
 				</div>
 			</div>
