@@ -11,3 +11,5 @@
     <?php endforeach ?>
     <input type="submit" name="update" value="Sửa">
 </form>
+<p>Nhân viên : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, debitis, odio dolorum voluptatem quia suscipit incidunt iusto ex libero ut quas aliquam deleniti molestias esse excepturi ullam adipisci, voluptatum distinctio!</p>
+<p>Khách hàng : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, debitis, odio dolorum voluptatem quia suscipit incidunt iusto ex libero ut quas aliquam deleniti molestias esse excepturi ullam adipisci, voluptatum distinctio!</p>
