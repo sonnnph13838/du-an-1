@@ -2,7 +2,7 @@
 require_once '././dao/user.php';
 function formdk()
 {
-	clien_dk('tai-khoan/dang-ki.php');
+	client_render('tai-khoan/dang-ki.php');
 }
 
 function postdk()
