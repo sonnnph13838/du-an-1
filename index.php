@@ -12,6 +12,11 @@ switch ($url) {
         formdn();
     break;
 
+    case 'client-dangki':
+        require_once './client/business/tai-khoan/dang-ki.php';
+        formdk();
+    break;
+
 
 
 
