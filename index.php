@@ -29,6 +29,23 @@ switch ($url) {
         del_user();
         header('Location: admin-user');
         break;
+    case 'update_role':
+        require_once './admin/business/dashboard.php';
+        update_roles();
+        break;
+    case 'update_role/update':
+        require_once './admin/business/dashboard.php';
+        $id = $_POST['id'];
+        $role = $_POST['role'];
+        if($role == 0){
+            $sql = "UPDATE nguoi_dung SET vai_tro = 0 where  id = '$id'";
+            pdo_execute($sql);   
+        }elseif($role == 1){
+            $sql = "UPDATE nguoi_dung SET vai_tro = 1 where  id =  '$id'";
+            pdo_execute($sql);   
+        }
+        header('Location: ../admin-user');
+        break;
     default:
         # code...
         break;
