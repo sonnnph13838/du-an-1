@@ -28,6 +28,10 @@
 <div class="mgt-dn cnter">
 	<div class="wrapper">
 		<h3>Đăng kí</h3>
+		<?php
+		if (isset($_GET['msg']) && ($_GET['msg']) != "")
+			echo "<h3>" . $_GET['msg'] . "</h3>"
+		?>
 		<form action="postdk" method="post">
 			<div class="field email">
 				<div class="input-area">
@@ -56,10 +60,7 @@
 			<input type="submit" value="Đăng Kí" name="dangki">
 		</form>
 		<div class="sign-txt">Bạn đã có tài khoản? <a href="client-dangnhap">Đăng nhập ngay</a></div>
-		<?php
-		if (isset($_GET['msg']) && ($_GET['msg']) != "")
-			echo "<h3>" . $_GET['msg'] . "</h3>"
-		?>
+		
 
 	</div>
 </div>

@@ -2,6 +2,7 @@
 
 const BASE_URL = "http://localhost:81/da1/";
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
+const CLIENT_ASSET = BASE_URL . 'public/client-assets/';
 
 
 function dd()
