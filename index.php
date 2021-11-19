@@ -21,11 +21,11 @@ switch ($url) {
         dashboard_index();
         break;
     case 'edit-user':
-        require_once './admin/business/user.php';
+        require_once './client/business/user.php';
         edit_user();
         break;
     case 'post-update':
-        require_once './admin/business/user.php';
+        require_once './client/business/user.php';
         post_update();
         break;
     default:
