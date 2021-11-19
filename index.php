@@ -15,10 +15,10 @@ switch ($url) {
         formdn();
     break;
 
-    case 'client-dangki':
-        require_once './client/business/tai-khoan/dang-ki.php';
-        formdk();
-    break;
+    // case 'client-dangki':
+    //     require_once './client/business/tai-khoan/dang-ki.php';
+    //     formdk();
+    // break;
 
     case 'client-quenmk':
         require_once './client/business/tai-khoan/quen-mk.php';
@@ -33,6 +33,13 @@ switch ($url) {
         require_once './admin/business/dashboard.php';
         dashboard_index();
         break;
+    case 'dang-ki':
+        require_once './client/business/tai-khoan/dangky.php';
+        formdk();
+        break;
+    case 'postdk':
+        require_once './client/business/tai-khoan/dangky.php';
+        postdk();
     case 'admin-user':
         require_once './admin/business/dashboard.php';
         list_user();
@@ -46,8 +53,18 @@ switch ($url) {
         require_once './admin/business/dashboard.php';
         update_roles();
         break;
-    case 'post_update_role':
-        require_once './admin/views/dashboard/user/post_update_role.php';
+    case 'update_role/update': 
+        require_once './admin/business/dashboard.php';
+        $id = $_POST['id'];
+        $role = $_POST['role'];
+        if($role == 0){
+            $sql = "UPDATE nguoi_dung SET vai_tro = 0 where  id = '$id'";
+            pdo_execute($sql);   
+        }elseif($role == 1){
+            $sql = "UPDATE nguoi_dung SET vai_tro = 1 where  id =  '$id'";
+            pdo_execute($sql);   
+        }
+        header('Location: ../admin-user');
         break;
     default:
         # code...

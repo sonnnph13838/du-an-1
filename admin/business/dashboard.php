@@ -13,10 +13,12 @@ function dashboard_index()
 }
 function list_user()
 {
-    $list_user = list_users();
+    $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
+    $sql = "SELECT * from nguoi_dung where email like '%$keyword%'";
+    $list_user =  pdo_query($sql);
     admin_render(
         'dashboard/user/list_user.php',
-        compact('list_user')
+        compact('list_user','keyword')
     );
 }
 function update_roles()
