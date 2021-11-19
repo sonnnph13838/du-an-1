@@ -5,16 +5,18 @@ function edit_user(){
 function post_update(){
     if (isset($_POST['capnhat']) && $_POST['capnhat']) {
         $id=$_POST['id'];
-        $email=$_POST['email'];
+        $taikhoan=$_POST['taikhoan'];
         $matkhau=$_POST['matkhau'];
+        $email=$_POST['email'];       
         $diachi=$_POST['diachi'];
         $sdt=$_POST['sdt'];
-        update_taikhoan($id,$email,$matkhau,$diachi,$sdt); 
+        update_taikhoan($id,$taikhoan,$matkhau,$email,$diachi,$sdt); 
         echo 'Ok';
-        dd($id);
+        // dd($id);
+        
         
     }
-    
+
 }
 
 ?>

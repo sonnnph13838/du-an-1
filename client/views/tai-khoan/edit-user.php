@@ -12,7 +12,7 @@
             <input type="hidden" name="id" value = "1">
 			<div class="field email">
 				<div class="input-area">
-					<input type="text" placeholder="Email" name="email" value = "<?=$email ?>">
+					<input type="text" placeholder="Tài khoản" name="taikhoan" value = "<?=$tai_khoan ?>">
 					<i class="icon fas fa-envelope"></i>
 				</div>
 			</div>
@@ -20,6 +20,12 @@
 				<div class="input-area">
 					<input type="password" placeholder="Mật khẩu" name="matkhau" value = "<?=$mat_khau ?>">
 					<i class="icon fas fa-lock"></i>
+				</div>
+			</div>
+			<div class="field email">
+				<div class="input-area">
+					<input type="text" placeholder="Email" name="email" value = "<?=$email ?>">
+					<i class="icon fas fa-envelope"></i>
 				</div>
 			</div>
 			<div class="field password">
@@ -34,7 +40,7 @@
 					<i class="icon fas fa-phone-alt"></i>
 				</div>
 			</div>
-			<input type="submit" value="Cập nhật" name="capnhat">
+			<input  type="submit"  value="Cập nhật" name="capnhat" >
 		</form>
 		
 		<?php
