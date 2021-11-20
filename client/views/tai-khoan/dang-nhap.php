@@ -1,5 +1,5 @@
 <div class="mgt-dn cnter">
-<div class="wrapper">
+<div class="wrapper form-dk">
     <h3>Đăng nhập</h3>
     <form action="#">
       <div class="field email">
@@ -22,8 +22,8 @@
       <div class="remember">
           <input type="checkbox" name="" id="" class="check-remember"> Ghi nhớ tài khoản
       </div>
-      <div class="pass-txt"><a href="client-quenmk">Forgot password?</a></div>
-      <input type="submit" value="Login">
+      <div class="pass-txt"><a href="<?= BASE_URL .'quen-mk'?>">Quên mật khẩu</a></div>
+      <input type="submit" value="Đăng nhập">
     </form>
     <div class="sign-txt">Bạn chưa có tài khoản? <a href="client-dangki">Đăng kí ngay</a></div>
 </div>

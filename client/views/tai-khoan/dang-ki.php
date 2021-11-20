@@ -1,5 +1,5 @@
 <div class="mgt-dn cnter">
-<div class="wrapper">
+<div class="wrapper form-dn">
     <h3>Đăng kí</h3>
     <form action="#">
 
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <input type="submit" value="Login">
+      <input type="submit" value="Đăng kí">
     </form>
     <div class="sign-txt">Bạn đã có tài khoản? <a href="client-dangnhap">Đăng nhập ngay</a></div>
 </div>
