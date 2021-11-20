@@ -26,10 +26,8 @@ function sendmail(){
     $checkEmail = executeQuery($sql);
     $email = $checkEmail['email'];
     if(is_array($checkEmail)){                
-        $ps = md5(rand(0,9999));
-        $newpss = substr($ps,0,6);
-        $updatePass = "update nguoi_dung set mat_khau = '$newpss' where email = '$email'";
-        executeQuery($updatePass);
+        $pass = $checkEmail['mat_khau'];
+        
 }
     //Load Composer's autoloader
 // require 'vendor/autoload.php';
@@ -62,7 +60,7 @@ try {
     
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Thông báo mật khẩu mới';
-    $mail->Body    = 'Mật khẩu mới: '.$newpss;
+    $mail->Body    = 'Mật khẩu mới: '.$pass;
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
