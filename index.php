@@ -39,20 +39,19 @@ switch ($url) {
     case 'postdk':
         require_once './client/business/tai-khoan/dangky.php';
         postdk();
-    case 'admin-user':
+    case 'cp-admin/user':
         require_once './admin/business/user.php';
         list_users();
         break;
-    case 'del_user':
+    case 'cp-admin/user/del_user':
         require_once './admin/business/user.php';
         del_user();
-        header('Location: admin-user');
         break;
-    case 'update_role':
+    case 'cp-admin/user/check_role':
         require_once './admin/business/user.php';
-        edit_user();
+        edit_role();
         break;
-    case 'update_role/update': 
+    case 'cp-admin/user/update_role/update': 
         require_once './admin/business/user.php';
         update_roles();
         break;

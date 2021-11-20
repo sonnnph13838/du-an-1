@@ -98,7 +98,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="admin-user" class="nav-link">
+                <a href="<?= ADMIN_URL . 'user'?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách</p>
                 </a>

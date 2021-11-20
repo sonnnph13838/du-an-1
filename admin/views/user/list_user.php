@@ -55,10 +55,10 @@
                                 ?>
                                 <td><?= $role ?> <br>
 
-                                    <a href="update_role?id=<?= $ds['id'] ?>">Sửa vai trò</a>
+                                    <a href="<?= ADMIN_URL . 'user/check_role?id='. $ds['id'] ?>">Sửa vai trò</a>
                                 </td>
                                 <td>
-                                <a href="javascript:;" onclick="confirm_remove('<?= 'del_user?id='. $ds['id'] ?>', '<?= $ds['email']?>')" class="btn btn-sm btn-danger">
+                                <a href="javascript:;" onclick="confirm_remove('<?= ADMIN_URL . 'user/del_user?id='. $ds['id'] ?>', '<?= $ds['email']?>')" class="btn btn-sm btn-danger">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>
