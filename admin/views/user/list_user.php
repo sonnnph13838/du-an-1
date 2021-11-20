@@ -58,7 +58,9 @@
                                     <a href="update_role?id=<?= $ds['id'] ?>">Sửa vai trò</a>
                                 </td>
                                 <td>
-                                    <a onclick="if (!confirm('Bạn chắc chắn ?')) { return false }" href="del_user?id=<?= $ds['id'] ?>"> <i class="fas fa-trash"></i></a>
+                                <a href="javascript:;" onclick="confirm_remove('<?= 'del_user?id='. $ds['id'] ?>', '<?= $ds['email']?>')" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
