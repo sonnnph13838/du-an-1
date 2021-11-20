@@ -28,8 +28,9 @@ function sendmail(){
     if(is_array($checkEmail)){                
         $ps = md5(rand(0,9999));
         $newpss = substr($ps,0,6);
-        quenmk($email,$newpss);
-    }
+        $updatePass = "update nguoi_dung set mat_khau = '$newpss' where email = '$email'";
+        executeQuery($updatePass);
+}
     //Load Composer's autoloader
 // require 'vendor/autoload.php';
 
