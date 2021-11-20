@@ -596,11 +596,46 @@ header .navbar a:hover {
 }
 .wrapper {
   width: 380px;
-  padding: 40px 30px 50px 30px;
   background: #fff;
   border-radius: 5px;
   text-align: center;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-dn,
+.form-dk {
+  padding: 40px 30px 50px 30px;
+}
+
+.forgot-pass {
+  padding: 40px 30px 50px 30px;
+}
+
+.msg-quenmk {
+  background-color: rgb(132, 228, 132);
+  padding: 10px 20px;
+  /* border-left: 3px solid var(--red);
+  border-right: 3px solid var(--red); */
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.sendmail-err {
+  background-color: rgb(235, 51, 19);
+  padding: 10px 20px;
+  /* border-left: 3px solid var(--red);
+  border-right: 3px solid var(--red); */
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.sendmail-err {
+  font-size: 14px;
+  color: #fff;
+}
+
+.msg-quenmk h4 {
+  font-size: 14px;
 }
 .wrapper h3 {
   font-size: 35px;

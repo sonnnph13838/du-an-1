@@ -7,19 +7,30 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+function formdk(){
+    client_render('tai-khoan/dang-ki.php');
+}
+
+function formdn(){
+    client_render('tai-khoan/dang-nhap.php');
+}
+
 function formqmk(){
     client_render('tai-khoan/quen-mk.php');
 }
 
 function sendmail(){
     $email = $_POST['email'];
-    $checkEmail = checkEmail($email);
+
+    $sql = "select * from nguoi_dung where email = '$email'";
+    $checkEmail = executeQuery($sql);
     $email = $checkEmail['email'];
     if(is_array($checkEmail)){                
         $ps = md5(rand(0,9999));
         $newpss = substr($ps,0,6);
-        quenmk($email,$newpss);
-    }
+        $updatePass = "update nguoi_dung set mat_khau = '$newpss' where email = '$email'";
+        executeQuery($updatePass);
+}
     //Load Composer's autoloader
 // require 'vendor/autoload.php';
 
@@ -55,9 +66,9 @@ try {
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    header('location: ./client-quenmk&msg=da thanh cong');
+    header('location:'.BASE_URL.'quen-mk&msg= Đã có 1 email được gửi cho bạn, vui lòng kiểm tra email của bạn!!');
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    header('location:'.BASE_URL.'quen-mk&msgerr= Đã gặp lỗi trong quá trình gửi email cho bạn, vui lòng thử lại sau!!');
 }
 }
 
