@@ -22,7 +22,7 @@ function client_render($view, $data = [])
     include_once "./client/views/layouts/main.php";
 }
 
-function admin_render($view, $data = [])
+function admin_render($view, $data = [], $jsFile = [])
 {
     extract($data);
     $view = './admin/views/' . $view;
