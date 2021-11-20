@@ -1,6 +1,7 @@
 <?php
 
 const BASE_URL = "http://localhost/du-an-1/";
+const ADMIN_URL = BASE_URL . 'cp-admin/';
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
 const CLIENT_ASSET = BASE_URL . 'public/client-assets/';
 
@@ -21,7 +22,7 @@ function client_render($view, $data = [])
     include_once "./client/views/layouts/main.php";
 }
 
-function admin_render($view, $data = [])
+function admin_render($view, $data = [], $jsFile = [])
 {
     extract($data);
     $view = './admin/views/' . $view;
