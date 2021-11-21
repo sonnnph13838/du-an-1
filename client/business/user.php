@@ -40,9 +40,9 @@ function post_login()
         if(is_array($checkuser)){
         //$thongbao="Bạn Đã Đăng Nhập Thành Công";
         $_SESSION['email']=$checkuser;
-        header('location: '. BASE_URL .'');
+        header('location: ' . BASE_URL . '');
         }else{
-            $thongbao="Tài Khoản không tồn tại";
+            header('location: ' . BASE_URL . 'dang-nhap&msg=Sai thông tin');
         }
     }
 }

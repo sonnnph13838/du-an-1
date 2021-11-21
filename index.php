@@ -15,7 +15,7 @@ switch ($url) {
         formdn();
         break;
     case 'post-login':
-        require_once  './client/business/user.php';
+        require_once './client/business/user.php';
         post_login();
         break;
     case 'dang-xuat':
