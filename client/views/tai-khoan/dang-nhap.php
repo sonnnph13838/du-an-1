@@ -1,6 +1,10 @@
 <div class="mgt-dn cnter">
 <div class="wrapper form-dk">
     <h3>Đăng nhập</h3>
+    <?php
+		if (isset($_GET['msg']) && ($_GET['msg']) != "")
+			echo "<h3>" . $_GET['msg'] . "</h3>"
+		?>
     <form action="post-login" method="POST">
       <div class="field email">
         <div class="input-area">
