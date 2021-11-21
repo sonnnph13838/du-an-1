@@ -1,10 +1,13 @@
 <?php
 
-const BASE_URL = "http://localhost:81/DA1/"; 
+const BASE_URL = "http://localhost:81/da1/";
+const ADMIN_URL = BASE_URL . 'cp-admin/';
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
+const CLIENT_ASSET = BASE_URL . 'public/client-assets/';
 
 
-function dd(){
+function dd()
+{
     $data = func_get_args();
     echo "<pre>";
     var_dump($data);
@@ -12,26 +15,22 @@ function dd(){
     die;
 }
 
-function client_render($view, $data = []){
+function client_render($view, $data = [])
+{
     extract($data);
     $view = './client/views/' . $view;
     include_once "./client/views/layouts/main.php";
 }
 
-function admin_render($view, $data = []){
+function admin_render($view, $data = [], $jsFile = [])
+{
     extract($data);
     $view = './admin/views/' . $view;
     include_once "./admin/views/layouts/main.php";
 }
-function login_render($view, $data = []){
-    extract($data);
-    $view = './client/views/' . $view;
-    include_once "./client/views/layouts/form-login/login.php";
-}
-function post_login($view, $data = []){
-    extract($data);
-    $view = './client/views/' . $view;
-    include_once "./client/business/post-login.php";
-}
-
-?>
+// function clien_dk($view, $data = [])
+// {
+//     extract($data);
+//     $view = './client/views/' . $view;
+//     include_once "./client/views/tai-khoan/dang-ki.php";
+// }
