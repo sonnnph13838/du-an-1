@@ -47,6 +47,11 @@ function post_login()
         }
     }
 }
+function logout()
+{
+    session_unset();
+    header('location: '. BASE_URL .'');
+}
 
 function formqmk()
 {

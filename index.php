@@ -18,6 +18,10 @@ switch ($url) {
         require_once './client/business/user.php';
         post_login();
         break;
+    case 'dang-xuat':
+        require_once './client/business/user.php';
+        logout();
+        break;
     case 'dang-ki':
         require_once './client/business/user.php';
         formdk();
