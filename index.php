@@ -2,7 +2,6 @@
 session_start();
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 require_once './commons/utils.php';
-require_once './dao/user.php';
 require_once './dao/system_dao.php';
 switch ($url) {
     case '/':
