@@ -1,35 +1,62 @@
 <?php
 session_start();
-$url = isset($_GET['url']) ? $_GET['url'] : "/";
+$url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : "/";
 require_once './commons/utils.php';
 require_once './dao/system_dao.php';
+
 switch ($url) {
+    // welcome to clinet...
     case '/':
         require_once './client/business/homepage.php';
         home();
         break;
-    case 'gioi-thieu':
-        require_once './client/business/homepage.php';
-        about();
-    case 'danh-muc':
-        require_once './client/business/category.php';
-        list_product();
+    case 'dang-nhap':
+        require_once './client/business/user.php';
+        formdn();
         break;
+    case 'post-login':
+        require_once './client/business/user.php';
+        post_login();
+        break;
+    case 'dang-ki':
+        require_once './client/business/user.php';
+        formdk();
+        break;
+    case 'postdk':
+        require_once './client/business/user.php';
+        postdk();
+    case 'quen-mk':
+        require_once './client/business/user.php';
+        formqmk();
+        break;
+    case 'send-email':
+        require_once './client/business/user.php';
+        sendmail();
+        break;
+
+        //welcome to admin...
+
     case 'cp-admin':
         require_once './admin/business/dashboard.php';
         dashboard_index();
         break;
-    case 'edit-user':
-        require_once './client/business/user.php';
-        edit_user();
+    case 'cp-admin/user':
+        require_once './admin/business/user.php';
+        list_users();
         break;
-    case 'post-update':
-        require_once './client/business/user.php';
-        post_update();
+    case 'cp-admin/user/del_user':
+        require_once './admin/business/user.php';
+        del_user();
+        break;
+    case 'cp-admin/user/check_role':
+        require_once './admin/business/user.php';
+        edit_role();
+        break;
+    case 'cp-admin/user/update_role/update': 
+        require_once './admin/business/user.php';
+        update_roles();
         break;
     default:
         # code...
         break;
 }
-
-?>
