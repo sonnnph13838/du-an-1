@@ -42,7 +42,7 @@
           <select name="" id="" onchange="location = this.value;">
             <option value="" ><?=$tai_khoan?></option>
             <!-- <option value="index.php?act=mybill">Đơn hàng của tôi</option> -->
-            <option value="index.php?act=cntk">Cập nhật tài khoản</option>
+            <option value="client/user/edit-user">Cập nhật tài khoản</option>
             <!-- <option value="index.php?act=dmk">Đổi mật khẩu</option> -->
             <option value="index.php?act=thoat">Thoát</option>
           </select>

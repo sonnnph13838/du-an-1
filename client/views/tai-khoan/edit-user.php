@@ -1,21 +1,16 @@
 <?php
-// 	if (isarray($_SESSION['tai-khoan'])&&($_SESSION['tai-khoan']) !="") {
-// 		$sesion = $_SESSION['tai-khoan'];
-// 		extract($sesion);
-// }
 
+ if(isset($_session['email'])&&(is_array($_session['email']))){
+	 extract($_session['email']);
+	 
+}
 ?>
 <div class="mgt-dn cnter">
 	<div class="wrapper">
 		<h3>Sửa tài khoản</h3>
-		<form action="post-update" method="post">
-            <input type="hidden" name="id" value = "1">
-			<!-- <div class="field email">
-				<div class="input-area">
-					<input type="text" placeholder="Tài khoản" name="taikhoan" value = "<?=$tai_khoan ?>">
-					<i class="icon fas fa-envelope"></i>
-				</div>
-			</div> -->
+		<form action="update-user" method="post">
+            <input type="hidden" name="id" value = "<?=$id?>" >
+			
 			<div class="field email">
 				<div class="input-area">
 					<input type="text" placeholder="Email" name="email" value = "<?=$email ?>">
