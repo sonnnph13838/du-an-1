@@ -27,11 +27,13 @@
 <!-- From có css -->
 <div class="mgt-dn cnter">
 	<div class="wrapper">
+	<?php if(isset($_GET['msg']) && ($_GET['msg'] != "")):?>
+      <div class="msg-quenmk">
+      <h4><?= $_GET['msg']?></h4>
+      </div>
+    <?php endif?>
+	<div class="forgot-pass">
 		<h3>Đăng kí</h3>
-		<?php
-		if (isset($_GET['msg']) && ($_GET['msg']) != "")
-			echo "<h3>" . $_GET['msg'] . "</h3>"
-		?>
 		<form action="postdk" method="post">
 			<div class="field email">
 				<div class="input-area">
@@ -61,6 +63,6 @@
 		</form>
 		<div class="sign-txt">Bạn đã có tài khoản? <a href="client-dangnhap">Đăng nhập ngay</a></div>
 		
-
+		</div>
 	</div>
 </div>

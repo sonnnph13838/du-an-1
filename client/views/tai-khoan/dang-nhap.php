@@ -1,5 +1,5 @@
 <div class="mgt-dn cnter">
-<div class="wrapper form-dk">
+<div class="wrapper form-dn">
     <h3>Đăng nhập</h3>
     <?php
 		if (isset($_GET['msg']) && ($_GET['msg']) != "")
