@@ -14,6 +14,10 @@ switch ($url) {
         require_once './client/business/user.php';
         formdn();
         break;
+    case 'post-login':
+        require_once  './client/business/user.php';
+        post_login();
+        break;
     case 'dang-ki':
         require_once './client/business/user.php';
         formdk();

@@ -30,6 +30,22 @@ function formdn()
 {
     client_render('tai-khoan/dang-nhap.php');
 }
+function post_login()
+{
+    if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
+        $email=$_POST['email'];
+        $mat_khau=$_POST['mat_khau'];
+        $sql="select * from nguoi_dung where email='".$email."' AND mat_khau='".$mat_khau."'";
+        $checkuser=pdo_query_one($sql);
+        if(is_array($checkuser)){
+        //$thongbao="Bạn Đã Đăng Nhập Thành Công";
+        $_SESSION['email']=$checkuser;
+        header('location: '. BASE_URL .'');
+        }else{
+            $thongbao="Tài Khoản không tồn tại";
+        }
+    }
+}
 
 function formqmk()
 {
