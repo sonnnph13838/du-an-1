@@ -59,8 +59,8 @@
 			</div>
 			<input type="submit" value="Đăng Kí" name="dangki">
 		</form>
-		<div class="sign-txt">Bạn đã có tài khoản? <a href="client-dangnhap">Đăng nhập ngay</a></div>
-		
+		<div class="sign-txt">Bạn đã có tài khoản? <a href="dang-nhap">Đăng nhập ngay</a></div>
+
 
 	</div>
 </div>
