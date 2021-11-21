@@ -49,7 +49,7 @@
           <a href="<?= CLIENT_ASSET ?>dist/#order"><i class="fas fa-shopping-cart"></i></a>
         <?php }else{ ?>
         <nav class="navbar">
-        <a href="<?= BASE_URL . 'dang-xuat'?>">Đăng Nhập</a>
+        <a href="<?= BASE_URL . 'dang-nhap'?>">Đăng Nhập</a>
         <a href="<?= BASE_URL . 'dang-ki'?>" style="margin-left: 5px; border-left: 1px solid #666; padding-left: 5px;">Đăng kí</a>
         <a href="<?= CLIENT_ASSET ?>dist/#order"><i class="fas fa-shopping-cart"></i></a>
       </nav>
