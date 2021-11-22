@@ -1,5 +1,6 @@
 <?php
 
+
 require './lib/PHPMailer/src/Exception.php';
 require './lib/PHPMailer/src/PHPMailer.php';
 require './lib/PHPMailer/src/SMTP.php';
@@ -45,6 +46,11 @@ function post_login()
             header('location: ' . BASE_URL . 'dang-nhap&msg=Sai thông tin');
         }
     }
+}
+function logout()
+{
+    session_unset();
+    header('location: '. BASE_URL .'');
 }
 
 function formqmk()
@@ -101,4 +107,32 @@ function sendmail()
     } catch (Exception $e) {
         header('location:' . BASE_URL . 'quen-mk&msgerr= Đã gặp lỗi trong quá trình gửi email cho bạn, vui lòng thử lại sau!!');
     }
+}
+
+function edit_mk(){
+    client_render('tai-khoan/edit-user.php');
+}
+
+function post_update(){
+    if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+        $id=$_POST['id'];
+        
+        // $taikhoan=$_POST['taikhoan'];
+        $matkhau=$_POST['matkhau'];
+        $email=$_POST['email'];       
+        $diachi=$_POST['diachi'];
+        $sdt=$_POST['sdt'];
+        $sql = "update  nguoi_dung set   mat_khau ='" . $matkhau . "' ,email ='" . $email . "', sdt ='" . $sdt . "', dia_chi ='" . $diachi . "' 
+       
+        where id =  $id";
+        executeQuery($sql); 
+        $sql = "select *from nguoi_dung  where id = $id";
+        $cntk = executeQuery($sql); 
+        $_SESSION['email'] = $cntk; 
+        //unset($_SESSION['email']);
+        header('location: '. BASE_URL .'');
+        
+        
+
+}
 }

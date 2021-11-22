@@ -43,9 +43,4 @@
             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    
 </div>
-<li><a href="logout">Đăng Xuất</a></li>
-<?php if($_SESSION['tai_khoan']['vai_tro']==1):?>
-    <li><a class="link" href="">Đăng nhập Admin</a><br></li>
-<?php endif ?>

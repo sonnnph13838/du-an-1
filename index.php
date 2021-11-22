@@ -18,6 +18,10 @@ switch ($url) {
         require_once './client/business/user.php';
         post_login();
         break;
+    case 'dang-xuat':
+        require_once './client/business/user.php';
+        logout();
+        break;
     case 'dang-ki':
         require_once './client/business/user.php';
         formdk();
@@ -56,6 +60,14 @@ switch ($url) {
         require_once './admin/business/user.php';
         update_roles();
         break;
+    case 'client/user/edit-user':
+        // unset($_SESSION['email']);
+        require_once './client/business/user.php';
+        edit_mk();
+        
+    case 'client/user/update-user':
+        require_once './client/business/user.php';
+        post_update();
     default:
         # code...
         break;
