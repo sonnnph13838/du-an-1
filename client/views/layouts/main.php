@@ -42,9 +42,9 @@
           <select name="" id="" onchange="location = this.value;">
             <option value="" ><?=$tai_khoan?></option>
             <!-- <option value="index.php?act=mybill">Đơn hàng của tôi</option> -->
-            <option value="client/user/edit-user">Cập nhật tài khoản</option>
+            <option value="<?= BASE_URL . 'client/user/edit-user'?>">Cập nhật tài khoản</option>
             <!-- <option value="index.php?act=dmk">Đổi mật khẩu</option> -->
-            <option value="dang-xuat">Thoát</option>
+            <option value="<?= BASE_URL . 'dang-xuat'?>">Thoát</option>
           </select>
           <a href="<?= CLIENT_ASSET ?>dist/#order"><i class="fas fa-shopping-cart"></i></a>
         <?php }else{ ?>

@@ -37,13 +37,19 @@
 		<form action="postdk" method="post">
 			<div class="field email">
 				<div class="input-area">
-					<input type="text" placeholder="Email" name="email">
+					<input type="email" placeholder="Email" name="email">
 					<i class="icon fas fa-envelope"></i>
 				</div>
 			</div>
 			<div class="field password">
 				<div class="input-area">
 					<input type="password" placeholder="Mật khẩu" name="matkhau">
+					<i class="icon fas fa-lock"></i>
+				</div>
+			</div>
+			<div class="field password">
+				<div class="input-area">
+					<input type="password" placeholder="Nhập Lại Mật khẩu" name="matkhau2">
 					<i class="icon fas fa-lock"></i>
 				</div>
 			</div>
@@ -61,7 +67,7 @@
 			</div>
 			<input type="submit" value="Đăng Kí" name="dangki">
 		</form>
-		<div class="sign-txt">Bạn đã có tài khoản? <a href="client-dangnhap">Đăng nhập ngay</a></div>
+		<div class="sign-txt">Bạn đã có tài khoản? <a href="dang-nhap">Đăng nhập ngay</a></div>
 		
 		</div>
 	</div>

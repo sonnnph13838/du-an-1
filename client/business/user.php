@@ -118,11 +118,12 @@ function post_update(){
         $id=$_POST['id'];
         
         // $taikhoan=$_POST['taikhoan'];
+        $taikhoan=$_POST['taikhoan'];
         $matkhau=$_POST['matkhau'];
         $email=$_POST['email'];       
         $diachi=$_POST['diachi'];
         $sdt=$_POST['sdt'];
-        $sql = "update  nguoi_dung set   mat_khau ='" . $matkhau . "' ,email ='" . $email . "', sdt ='" . $sdt . "', dia_chi ='" . $diachi . "' 
+        $sql = "update  nguoi_dung set  tai_khoan ='" . $taikhoan . "'   ,mat_khau ='" . $matkhau . "' ,email ='" . $email . "', sdt ='" . $sdt . "', dia_chi ='" . $diachi . "' 
        
         where id =  $id";
         executeQuery($sql); 
@@ -130,7 +131,7 @@ function post_update(){
         $cntk = executeQuery($sql); 
         $_SESSION['email'] = $cntk; 
         //unset($_SESSION['email']);
-        header('location: '. BASE_URL .'');
+        header('location: '. BASE_URL .'client/user/edit-user');
         
         
 

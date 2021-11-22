@@ -10,10 +10,15 @@
 		<h3>Sửa tài khoản</h3>
 		<form action="update-user" method="post">
             <input type="hidden" name="id" value = "<?=$id?>" >
-			
 			<div class="field email">
 				<div class="input-area">
-					<input type="text" placeholder="Email" name="email" value = "<?=$email ?>">
+					<input type="text" placeholder="Tài khoản" name="taikhoan" value = "<?=$tai_khoan ?>">
+					<i class="icon fas fa-envelope"></i>
+				</div>
+			</div>
+			<div class="field email">
+				<div class="input-area">
+					<input type="email" placeholder="Email" name="email" value = "<?=$email ?>">
 					<i class="icon fas fa-envelope"></i>
 				</div>
 			</div>

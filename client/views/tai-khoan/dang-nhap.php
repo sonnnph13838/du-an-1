@@ -8,7 +8,7 @@
     <form action="post-login" method="POST">
       <div class="field email">
         <div class="input-area">
-          <input type="text" name="email" placeholder="Email Address">
+          <input type="email" name="email" placeholder="Email Address">
           <i class="icon fas fa-envelope"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
