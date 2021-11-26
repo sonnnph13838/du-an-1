@@ -39,7 +39,7 @@ switch ($url) {
         break;
     case 'cart':
         require_once './client/business/cart.php';
-        form_cart();
+        layout_cart();
         break;
 
         //welcome to admin...
