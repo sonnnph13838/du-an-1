@@ -30,14 +30,14 @@
 				<td>Đây là đồ ăn thêm</td>
 				<td><?= number_format($c['price'], 0, ',', '.') ?> VNĐ</td>
 				<td>
-					<?= $c['quantity'] ?>
+					<i class="fas fa-plus"><?= $c['quantity'] ?><i class="fas fa-minus">
 				</td>
 				<td>
 					<?= number_format($c['price'] * $c['quantity'], 0, ',', '.') ?>
 					VNĐ
 				</td>
 				<td>
-					<a class="btn" href="<?= BASE_URL . 'delete-cart' ?>">Xóa</a>
+					<a class="btn" href="<?= BASE_URL . 'delete-cart' ?>"><i class="fas fa-trash"></i></a>
 				</td>
 				<?php $tong += $c['price'] * $c['quantity']; ?>
 
