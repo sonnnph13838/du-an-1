@@ -26,13 +26,24 @@
       <a href="<?= BASE_URL?>" class="logo"><i class="fas fa-utensils"></i>food</a>
       <nav class="navbarr">
         
-        <a href="./">Trang chủ</a>
-        <a href="<?= CLIENT_ASSET ?>dist/#speciality">Giới thiệu</a>
-        <a href="<?= CLIENT_ASSET ?>dist/#popular">Thực Đơn</a>
-        <a href="<?= CLIENT_ASSET ?>dist/#order">Giỏ hàng</a>
+        <ul class="menu">
+          <li><a href="">Trang chủ</a></li>
+          <li class="thucdon">
+            <a href="">Thực đơn</a>
+            <ul class="dropdowm">
+              <?php require_once './client/business/category.php';
+              $categorys = list_category();
+              ?>
+              <?php foreach($categorys as $item):?>
+                <li><a href=""><?= $item['name_category']?></a></li>
+              <?php endforeach?>
+            </ul>
+          </li>
+          <li><a href="">Giới thiệu</a>
+        </li>
+        </ul>
       </nav>
       </div>
-
       <div id="menu-bar" class="fas fa-bars"></div>
       
       <div class="c">
