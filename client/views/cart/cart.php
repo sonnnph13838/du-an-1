@@ -1,53 +1,71 @@
 <div class="mgt-dn cnter">
-	<div class="forgot-pass">
-		<table class="table">
-			<thead>
-				<th>STT</th>
-				<th>Tên sản phẩm</th>
-				<th>Hình</th>
-				<th>Đồ ăn thêm</th>
-				<th>Giá</th>
-				<th>Số lượng trong giỏ hàng</th>
-				<th>Tổng giá</th>
-				<th></th>
-			</thead>
-			<tbody>
-				<?php foreach ($listCart as $c) :  ?>
 
-				<tr>
-					<td><?= $c['id_food'] ?></td>
-					<td><?= $c['name'] ?></td>
-					<td>
-						<img src="<?= $c['hinh'] ?>" alt="" width="100">
-					</td>
+	<table class="table" style=" 
+	width: 90%;
+    line-height: 1.5;
+    font-size: 15px;">
+		<thead>
+			<th>STT</th>
+			<th>Tên sản phẩm</th>
+			<th>Hình</th>
+			<th>Đồ ăn thêm</th>
+			<th>Giá</th>
+			<th>Số lượng trong giỏ hàng</th>
+			<th>Tổng giá</th>
+			<th>Thao Tác</th>
+		</thead>
+		<tbody>
+			<?php
+			$tong = 0;
+			?>
+			<?php foreach ($listCart as $c) :  ?>
 
-					<td>Đây là đồ ăn thêm</td>
-					<td><?= number_format($c['price'], 0, ',', '.') ?> VNĐ</td>
-					<td>
-						<?= $c['quantity'] ?>
-					</td>
-					<td>
-						<?= number_format($c['price'] * $c['quantity'], 0, ',', '.') ?>
-						VNĐ
-					</td>
-					<td>
+			<tr>
+				<td><?= $c['id_food'] ?></td>
+				<td><?= $c['name'] ?></td>
+				<td>
+					<img src="<?= $c['hinh'] ?>" alt="" width="100">
+				</td>
 
-				</tr>
-				<?php endforeach ?>
-				<tr>
-					<td colspan="4" class="total">Tổng giá trị đơn hàng:</td>
-					<td><?= "đây là tổng tiền" ?></td>
-					<td> <button>Tiến hành thanh toán</button> </td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+				<td>Đây là đồ ăn thêm</td>
+				<td><?= number_format($c['price'], 0, ',', '.') ?> VNĐ</td>
+				<td>
+					<?= $c['quantity'] ?>
+				</td>
+				<td>
+					<?= number_format($c['price'] * $c['quantity'], 0, ',', '.') ?>
+					VNĐ
+				</td>
+				<td>
+					<a class="btn" href="<?= BASE_URL . 'delete-cart' ?>">Xóa</a>
+				</td>
+				<?php $tong += $c['price'] * $c['quantity']; ?>
+
+			</tr>
+			<?php endforeach ?>
+			<tr>
+				<td colspan="4" class="total"> <b>Tổng giá trị đơn hàng:<b> </td>
+
+				<td></td>
+				<td></td>
+				<td><?= number_format($tong, 0, ',', '.') ?>VND</td>
+				<td><a href="<?= BASE_URL ?>" class="btn">Thanh Toán</a></td>
+
+			</tr>
+
+
+
+		</tbody>
+	</table>
+
 </div>
 
 <style>
-td,
+table,
 th,
-tr {
+td {
 	border: 1px solid #ccc;
+	border-collapse: collapse;
+	text-align: center;
 }
 </style>
