@@ -111,13 +111,13 @@ header .logo i {
   color: var(--red);
 }
 
-header .navbar a {
+header .navbarr a {
   font-size: 2rem;
   margin-left: 2rem;
   color: #666;
 }
 
-header .navbar a:hover {
+header .navbarr a:hover {
   color: var(--red);
 }
 
@@ -131,30 +131,8 @@ header .navbar a:hover {
   display: none;
 }
 
-.home {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  min-height: 100vh;
-  align-items: center;
-  background: url(../images/home-bg.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.home .content {
-  flex: 1 1 40rem;
-  padding-top: 6.5rem;
-}
-
-.home .image {
-  flex: 1 1 40rem;
-}
-
-.home .image img {
-  width: 100%;
-  padding: 1rem;
-  animation: float 3s linear infinite;
+.carousel {
+  margin-top: 74.28px;
 }
 
 @keyframes float {
@@ -536,7 +514,7 @@ header .navbar a:hover {
     display: initial;
   }
 
-  header .navbar {
+  header .navbarr {
     position: absolute;
     top: 100%;
     left: 0;
@@ -546,11 +524,11 @@ header .navbar a:hover {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
 
-  header .navbar.active {
+  header .navbarr.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 
-  header .navbar a {
+  header .navbarr a {
     margin: 1.5rem;
     padding: 1.5rem;
     display: block;
