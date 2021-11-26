@@ -5,7 +5,7 @@ require_once './commons/utils.php';
 require_once './dao/system_dao.php';
 
 switch ($url) {
-    // welcome to clinet...
+        // welcome to clinet...
     case '/':
         require_once './client/business/homepage.php';
         home();
@@ -37,6 +37,10 @@ switch ($url) {
         require_once './client/business/user.php';
         sendmail();
         break;
+    case 'cart':
+        require_once './client/business/cart.php';
+        form_cart();
+        break;
 
         //welcome to admin...
 
@@ -56,7 +60,7 @@ switch ($url) {
         require_once './admin/business/user.php';
         edit_role();
         break;
-    case 'cp-admin/user/update_role/update': 
+    case 'cp-admin/user/update_role/update':
         require_once './admin/business/user.php';
         update_roles();
         break;
@@ -64,7 +68,7 @@ switch ($url) {
         // unset($_SESSION['email']);
         require_once './client/business/user.php';
         edit_mk();
-        
+
     case 'client/user/update-user':
         require_once './client/business/user.php';
         post_update();
