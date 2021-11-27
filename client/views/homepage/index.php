@@ -1,7 +1,7 @@
 <!-- home section starts  -->
 
       
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide mg" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -51,17 +51,17 @@
 
     <!-- home section ends -->
 
-    <!-- speciality section starts  -->
 
+   <!-- sản phẩm nổi bật  -->
 <section class="menuu">
 
-<h1 class="heading-product"> Top Món ă  n được ưa thích </h1>
+ <h1 class="heading-product"> Top Món ă  n được ưa thích </h1>
 
-<div class="box-container">
+ <div class="box-container">
     <?php
     
     require_once './client/business/product.php';
-    $list4like = list_products();
+    $list4like = list_products_top();
     
     ?>
 
@@ -72,16 +72,59 @@
         </div>
         <div class="content">
             <h3><a href="" class="name-pro"><?= $itemLike['name_food']?></a></h3>
+            <div class="gia">
             <?php if($itemLike['discount_food'] > 0):?>
-              <span class="price"><?= number_format($itemLike['discount_food'],0,',','.')?></span>
+              <span class="price"><?= number_format($itemLike['discount_food'],0,',','.')?> vnđ</span>
+              <span class="price-km"><?= number_format($itemLike['price_food'],0,',','.')?> vnđ</span>
             <?php else:?>
-              <span class="price"><?= number_format($itemLike['price_food'],0,',','.')?></span>
+              <span class="price"><?= number_format($itemLike['price_food'],0,',','.')?> vnđ</span>
             <?php endif?>
+            </div>
             <a href="#" class="btn">Xem chi tiết</a>
             <a href="#" class="btn">Thêm vào giỏ hàng</a>
         </div>
     </div>
     <?php endforeach?>
 
-</div>
+ </div>
 </section>
+   <!-- sản phẩm nổi bật  -->
+
+
+<!-- sản phẩm khuyến mại  -->
+<section class="menuu mg-fter">
+
+ <h1 class="heading-product"> Món ăn được khuyến mại </h1>
+
+ <div class="box-container">
+    <?php
+    $spkhuyenmai = list_products_sell();
+    
+    ?>
+
+    <?php foreach($spkhuyenmai as $itemKm):?>
+    <div class="boxx">
+        <div class="image">
+            <img src="<?= CLIENT_ASSET ?>dist/images/menu-8.jpg" alt="">
+        </div>
+        <div class="content">
+            <h3><a href="" class="name-pro"><?= $itemKm['name_food']?></a></h3>
+            <div class="gia">
+            <?php if($itemKm['discount_food'] > 0):?>
+              <span class="price"><?= number_format($itemKm['discount_food'],0,',','.')?> vnđ</span>
+              <span class="price-km"><?= number_format($itemKm['price_food'],0,',','.')?> vnđ</span>
+            <?php else:?>
+              <span class="price"><?= number_format($itemKm['price_food'],0,',','.')?> vnđ</span>
+            <?php endif?>
+            </div>
+            <div class="btn-control">
+            <a href="#" class="mg-right">Xem chi tiết</a>
+            <a href="#" class="btnn">Thêm vào giỏ hàng</a>
+            </div>
+        </div>
+    </div>
+    <?php endforeach?>
+
+ </div>
+</section>
+<!-- sản phẩm khuyến mại  -->

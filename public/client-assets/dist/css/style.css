@@ -185,7 +185,7 @@ header .navbarr a:hover {
   color: #fff;
   text-decoration: none;
 }
-.carousel {
+.mg {
   margin-top: 65.28px;
 }
 
@@ -529,7 +529,6 @@ form input[type="submit"]:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1.5rem;
-  margin-bottom: 200px;
 }
 
 .menuu .box-container .boxx {
@@ -597,9 +596,19 @@ form input[type="submit"]:hover {
   color: var(--green);
 }
 
+.menuu .box-container .boxx .content h3 {
+  margin-bottom: 20px;
+}
+
 .name-pro {
-  color: #000;
+  color: var(--red);
   font-size: 2.8rem;
+}
+
+.name-pro:hover {
+  color: var(--red);
+  text-decoration: none;
+  font-size: 3rem;
 }
 
 .menuu .box-container .boxx .content p {
@@ -613,4 +622,59 @@ form input[type="submit"]:hover {
   color: var(--green);
   margin-left: 1rem;
   font-size: 2.5rem;
+}
+
+.menuu .box-container .boxx .content .price-km {
+  color: rgb(134, 129, 129);
+  margin-left: 1rem;
+  font-size: 2rem;
+  text-decoration: line-through;
+}
+.gia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mg-fter {
+  margin-bottom: 200px;
+}
+
+/* sản phẩm khuyến mại */
+.btn-control {
+  justify-content: center;
+  display: flex;
+}
+
+.btn-control a {
+  display: block;
+  padding: 0.8rem 2rem;
+  border: 0.2rem solid var(--red);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 0.5rem;
+  z-index: 0;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.mg-right {
+  margin-right: 20px;
+  background: var(--red);
+  color: #fff;
+}
+
+.mg-right:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btnn {
+  color: var(--red);
+}
+
+.btnn:hover {
+  color: var(--red);
+  text-decoration: none;
 }
