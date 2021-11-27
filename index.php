@@ -41,17 +41,21 @@ switch ($url) {
         require_once './client/business/cart.php';
         layout_cart();
         break;
-        // case 'delete-cart':
-        //     require_once './client/business/cart.php';
-        //     delete_cart();
-        //     break;
+    case 'add-to-cart':
+        require_once './client/business/cart.php';
+        add_cart();
+        break;
+    case 'delete-cart':
+        require_once './client/business/cart.php';
+        delete_cart();
+        break;
     case 'plus':
         require_once './client/business/cart.php';
         plus();
         break;
     case 'minus':
         require_once './client/business/cart.php';
-        plus();
+        minus();
         break;
         //welcome to admin...
 
