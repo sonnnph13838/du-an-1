@@ -51,6 +51,28 @@
 
     <!-- home section ends -->
 
+    <!-- step -->
+    <div class="step-container">
+      <section class="steps">
+        <div class="box">
+          <img src="<?= CLIENT_ASSET ?>dist/images/step-1.jpg" alt="" />
+          <h3>chọn món ăn cần mua</h3>
+        </div>
+        <div class="box">
+          <img src="<?= CLIENT_ASSET ?>dist/images/step-2.jpg" alt="" />
+          <h3>đợi nhân viên ship tới</h3>
+        </div>
+        <div class="box">
+          <img src="<?= CLIENT_ASSET ?>dist/images/step-3.jpg" alt="" />
+          <h3>trả tiền khi nhận được hàng</h3>
+        </div>
+        <div class="box">
+          <img src="<?= CLIENT_ASSET ?>dist/images/step-4.jpg" alt="" />
+          <h3>cuối cùng, thưởng thức thôi </h3>
+        </div>
+      </section>
+    </div>
+    <!-- step -->
 
    <!-- sản phẩm nổi bật  -->
 <section class="menuu">
