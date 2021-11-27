@@ -64,7 +64,7 @@
 
     <!-- footer section  -->
 
-    <section class="footer">
+    <!-- <section class="footer">
       <div class="share">
         <a href="<?= CLIENT_ASSET ?>dist/#" class="btn">facebook</a>
         <a href="<?= CLIENT_ASSET ?>dist/#" class="btn">twitter</a>
@@ -76,7 +76,7 @@
       <h1 class="credit">
         created by <span> N6 </span> | all rights reserved!
       </h1>
-    </section>
+    </section> -->
 
 
     <!-- loader  -->
