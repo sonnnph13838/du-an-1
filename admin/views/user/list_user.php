@@ -40,13 +40,13 @@
                     <tbody>
                         <?php foreach ($list_user as $ds) : ?>
                             <tr>
-                                <td><?= $ds['id'] ?></td>
-                                <td><?= $ds['ho_ten'] ?></td>
+                                <td><?= $ds['id_user'] ?></td>
+                                <td><?= $ds['name_user'] ?></td>
                                 <td><?= $ds['email'] ?></td>
-                                <td><?= $ds['dia_chi'] ?></td>
-                                <td><?= $ds['sdt'] ?></td>
+                                <td><?= $ds['address'] ?></td>
+                                <td><?= $ds['tel'] ?></td>
                                 <?php
-                                $role = $ds['vai_tro'];
+                                $role = $ds['role'];
                                 if ($role == 0) {
                                     $role = "Khách hàng";
                                 } else {
@@ -55,10 +55,10 @@
                                 ?>
                                 <td><?= $role ?> <br>
 
-                                    <a href="<?= ADMIN_URL . 'user/check_role?id='. $ds['id'] ?>">Sửa vai trò</a>
+                                    <a href="<?= ADMIN_URL . 'user/check_role?id='. $ds['id_user'] ?>">Sửa vai trò</a>
                                 </td>
                                 <td>
-                                <a href="javascript:;" onclick="confirm_remove('<?= ADMIN_URL . 'user/del_user?id='. $ds['id'] ?>', '<?= $ds['email']?>')" class="btn btn-sm btn-danger">
+                                <a href="javascript:;" onclick="confirm_remove('<?= ADMIN_URL . 'user/del_user?id='. $ds['id_user'] ?>', '<?= $ds['email']?>')" class="btn btn-sm btn-danger">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>
