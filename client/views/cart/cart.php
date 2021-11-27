@@ -12,6 +12,7 @@ session_start();
     font-size: 15px;">
 		<thead>
 			<th>STT</th>
+			<th>Mã sản phẩm</th>
 			<th>Tên sản phẩm</th>
 			<th>Hình</th>
 			<th>Đồ ăn thêm</th>
@@ -28,7 +29,8 @@ session_start();
 
 			<tr>
 
-				<td><?= $index + 1 ?></td>
+				<td><?= $index + 1 ?> </td>
+				<td><?= $_SESSION['cart']['id_food'] ?></td>
 				<td><?= $c['name'] ?></td>
 				<td>
 					<img src="<?= $c['image'] ?>" alt="" width="100">
@@ -37,10 +39,10 @@ session_start();
 				<td>Đây là đồ ăn thêm</td>
 				<td><?= number_format($c['price'], 0, ',', '.') ?> VNĐ</td>
 				<td>
-					<a class="plus" href=" <?= BASE_URL . 'plus/' ?>&index=<?= $index ?>&id=<?= $c['id_food'] ?>"><i
+					<a class="plus" href=" <?= BASE_URL . 'plus' ?>&index=<?= $index ?>&id=<?= $c['id_food'] ?>"><i
 							class="fas fa-plus"></i></a>
 					<span class="sl"><?= $c['quantity'] ?></span>
-					<a class="minus" href="<?= BASE_URL . 'minus/' ?>&index=<?= $index ?>&id=<?= $c['id_food'] ?>"><i
+					<a class="minus" href="<?= BASE_URL . 'minus' ?>&index=<?= $index ?>&id=<?= $c['id_food'] ?>"><i
 							class="fas fa-minus"></i></a>
 				</td>
 				<td>

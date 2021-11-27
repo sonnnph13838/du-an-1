@@ -1,5 +1,4 @@
 <?php
-
 require_once './dao/system_dao.php';
 function layout_cart()
 {
@@ -7,8 +6,6 @@ function layout_cart()
 	$listCart = executeQuery($sql, true);
 	client_render('cart/cart.php', compact('listCart'));
 }
-
-
 $listCart = $_SESSION['cart'];
 if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
 	$cartData = [];
@@ -50,3 +47,10 @@ function minus()
 		header('location: ' . BASE_URL . 'cart');
 	}
 }
+// function delete_cart()
+// {
+// 	$id = $$sql = "delete from cart where id_food= ";
+// 	executeQuery($sql, false);
+// 	dd($_SESSION['cart']);
+// 	header('location: ' . BASE_URL . '');
+// }
