@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <div class="mgt-dn cnter">
 
 	<table class="table" style=" 
@@ -18,19 +24,24 @@
 			<?php
 			$tong = 0;
 			?>
-			<?php foreach ($listCart as $c) :  ?>
+			<?php foreach ($listCart as $index => $c) :  ?>
 
 			<tr>
-				<td><?= $c['id_food'] ?></td>
+
+				<td><?= $index + 1 ?></td>
 				<td><?= $c['name'] ?></td>
 				<td>
-					<img src="<?= $c['hinh'] ?>" alt="" width="100">
+					<img src="<?= $c['image'] ?>" alt="" width="100">
 				</td>
 
 				<td>Đây là đồ ăn thêm</td>
 				<td><?= number_format($c['price'], 0, ',', '.') ?> VNĐ</td>
 				<td>
-					<i class="fas fa-plus"><?= $c['quantity'] ?><i class="fas fa-minus">
+					<a class="plus" href=" <?= BASE_URL . 'plus/' ?>&index=<?= $index ?>&id=<?= $c['id_food'] ?>"><i
+							class="fas fa-plus"></i></a>
+					<span class="sl"><?= $c['quantity'] ?></span>
+					<a class="minus" href="<?= BASE_URL . 'minus/' ?>&index=<?= $index ?>&id=<?= $c['id_food'] ?>"><i
+							class="fas fa-minus"></i></a>
 				</td>
 				<td>
 					<?= number_format($c['price'] * $c['quantity'], 0, ',', '.') ?>
@@ -48,7 +59,7 @@
 
 				<td></td>
 				<td></td>
-				<td><?= number_format($tong, 0, ',', '.') ?>VND</td>
+				<td style="color: red;"> <b> <?= number_format($tong, 0, ',', '.') ?> VND </b></td>
 				<td><a href="<?= BASE_URL ?>" class="btn">Thanh Toán</a></td>
 
 			</tr>

@@ -41,7 +41,14 @@ switch ($url) {
         require_once './client/business/cart.php';
         layout_cart();
         break;
-
+    case 'plus':
+        require_once './client/business/cart.php';
+        plus();
+        break;
+    case 'minus':
+        require_once './client/business/cart.php';
+        plus();
+        break;
         //welcome to admin...
 
     case 'cp-admin':
