@@ -91,12 +91,6 @@ function add_cart()
 		// sản phẩm đã tồn tại trong giỏ hàng rồi và ở vị trí $flag
 		$cartData[$flag]['cart_amount']++;
 	}
-
-
-
-
 	$_SESSION['cart'] = $cartData;
-
-	echo "thêm thành công";
-	header('location: index.php?msg=them thanh cong');
+	header('location: ' . BASE_URL . '');
 }
