@@ -62,7 +62,7 @@
 
 				<td></td>
 				<td style="color: red;"> <b> <?= number_format($tong, 0, ',', '.') ?> VND </b></td>
-				<td><a href="<?= BASE_URL ?>" class="btn">Thanh Toán</a></td>
+				<td><a href="<?= BASE_URL . 'order' ?>" class="btn">Thanh Toán</a></td>
 
 			</tr>
 

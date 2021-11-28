@@ -54,7 +54,7 @@
 				extract($_SESSION['email']);
 			?>
 			<select name="" id="" onchange="location = this.value;">
-				<option value=""><?= $tai_khoan ?></option>
+				<option value=""><?= $name_user ?></option>
 				<!-- <option value="index.php?act=mybill">Đơn hàng của tôi</option> -->
 				<option value="<?= BASE_URL . 'client/user/edit-user' ?>">Cập nhật tài khoản</option>
 				<!-- <option value="index.php?act=dmk">Đổi mật khẩu</option> -->
