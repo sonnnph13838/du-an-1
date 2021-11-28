@@ -1,5 +1,5 @@
 <style>
-    .row {
+    .rows{
         display: grid;
         grid-template-columns: 1.2fr 1fr;
         grid-gap: 50px;
@@ -137,13 +137,13 @@
 <?php foreach ($bill as $bills) : ?>
 
 
-    <div class="mgt-dn lefa">
+    <div class="mgt-dn lefa mg-fter">
         <form action="comfirmbill" method="post">
             <div class="radiogroups">
                 <div class="title" align="center">
                     <h1>PHƯƠNG THỨC THANH TOÁN</h1>
                 </div>
-                <div class="row">
+                <div class="rows">
                     <div class="col">
                         <div class="time_order">
                             <h2>Thời gian đặt hàng : <?= $bills['date'] ?></h2>
