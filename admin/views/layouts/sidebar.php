@@ -46,7 +46,7 @@
             <a href="#" class="nav-link">
               <i class="fa fa-list-ol" aria-hidden="true"></i>
               <p>
-                Danh mục
+                Category
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -63,20 +63,13 @@
                   <p>Tạo mới</p>
                 </a>
               </li>
-
-              <li class="nav-item">
-                <a href="<?= ADMIN_URL . 'bill'?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Quản lí đơn hàng</p>
-                </a>
-              </li>
             </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fa fa-truck" aria-hidden="true"></i>
+              <i class="fas fa-hamburger"></i>
               <p>
-                Sản phẩm
+                Food
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -99,7 +92,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fa fa-truck" aria-hidden="true"></i>
+            <i class="fas fa-users"></i>
               <p>
                 User
                 <i class="fas fa-angle-left right"></i>
@@ -108,6 +101,23 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?= ADMIN_URL . 'user'?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="fas fa-money-bill"></i>
+              <p>
+                Bill
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= ADMIN_URL . 'bill'?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách</p>
                 </a>

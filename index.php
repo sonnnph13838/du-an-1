@@ -69,8 +69,6 @@ switch ($url) {
         require_once './client/business/user.php';
         post_update();
         break;
-
-
     case 'cp-admin/bill';
         require_once './admin/business/bill.php';
         list_bill();
