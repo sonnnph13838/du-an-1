@@ -63,6 +63,13 @@
                   <p>Tạo mới</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="<?= ADMIN_URL . 'bill'?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Quản lí đơn hàng</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -86,6 +93,8 @@
                   <p>Tạo mới</p>
                 </a>
               </li>
+              
+
             </ul>
           </li>
           <li class="nav-item">

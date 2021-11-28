@@ -64,10 +64,21 @@ switch ($url) {
         // unset($_SESSION['email']);
         require_once './client/business/user.php';
         edit_mk();
-        
+        break;
     case 'client/user/update-user':
         require_once './client/business/user.php';
         post_update();
+        break;
+
+
+    case 'cp-admin/bill';
+        require_once './admin/business/bill.php';
+        list_bill();
+        break;
+    case 'cp-admin/bill/del-bill';
+        require_once './admin/business/bill.php';
+        del_bill();
+        break;
     default:
         # code...
         break;
