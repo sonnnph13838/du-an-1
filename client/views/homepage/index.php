@@ -85,10 +85,10 @@
 	<div class="box-container">
 		<?php
 
-    require_once './client/business/product.php';
-    $list4like = list_products_top();
+		require_once './client/business/product.php';
+		$list4like = list_products_top();
 
-    ?>
+		?>
 
 		<?php foreach ($list4like as $itemLike) : ?>
 		<div class="boxx">
@@ -106,8 +106,8 @@
 					<?php endif ?>
 				</div>
 				<a href="#" class="btn">Xem chi tiết</a>
-				<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $itemLike['id_food'] ?>   " class="btn">Thêm vào giỏ
-					hàng</a>
+				<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $itemLike['id_food'] ?>   " class="btn"
+					onclick="abc()">Thêm vào giỏ hàng</a>
 			</div>
 		</div>
 		<?php endforeach ?>
@@ -124,9 +124,9 @@
 
 	<div class="box-container">
 		<?php
-    $spkhuyenmai = list_products_sell();
+		$spkhuyenmai = list_products_sell();
 
-    ?>
+		?>
 
 		<?php foreach ($spkhuyenmai as $itemKm) : ?>
 		<div class="boxx">
@@ -145,7 +145,7 @@
 				</div>
 				<div class="btn-control">
 					<a href="#" class="mg-right">Xem chi tiết</a>
-					<a href="<?= BASE_URL . 'add-to-cart' ?>" class="btnn">Thêm vào giỏ hàng</a>
+					<a href="<?= BASE_URL . 'add-to-cart' ?>" class="btnn" onclick="abc()">Thêm vào giỏ hàng</a>
 				</div>
 			</div>
 		</div>
@@ -153,4 +153,9 @@
 
 	</div>
 </section>
+<script>
+function abc() {
+	confirm("Bạn đã thêm thành công");
+}
+</script>
 <!-- sản phẩm khuyến mại  -->

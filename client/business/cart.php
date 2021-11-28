@@ -92,5 +92,6 @@ function add_cart()
 		$cartData[$flag]['cart_amount']++;
 	}
 	$_SESSION['cart'] = $cartData;
+
 	header('location: ' . BASE_URL . '');
 }
