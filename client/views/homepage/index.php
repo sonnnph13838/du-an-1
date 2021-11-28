@@ -108,84 +108,33 @@
       <h1 class="heading">most <span>popular</span> foods</h1>
 
       <div class="box-container">
-        <div class="box">
-          <span class="price"> $5 - $20 </span>
-          <img src="<?= CLIENT_ASSET ?>dist/images/p-1.jpg" alt="" />
-          <h3>tasty burger</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">order now</a>
+      <?php
+    
+    require_once './client/business/product.php';
+    $list4like = list_products_top();
+    
+    ?>
+
+    <?php foreach($list4like as $itemLike):?>
+    <div class="boxx">
+        <div class="image">
+            <img src="<?= CLIENT_ASSET ?>dist/images/menu-8.jpg" alt="">
         </div>
-        <div class="box">
-          <span class="price"> $5 - $20 </span>
-          <img src="<?= CLIENT_ASSET ?>dist/images/p-2.jpg" alt="" />
-          <h3>tasty cakes</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">order now</a>
+        <div class="content">
+            <h3><a href="" class="name-pro"><?= $itemLike['name_food']?></a></h3>
+            <div class="gia">
+            <?php if($itemLike['discount_food'] > 0):?>
+              <span class="price"><?= number_format($itemLike['discount_food'],0,',','.')?> vnđ</span>
+              <span class="price-km"><?= number_format($itemLike['price_food'],0,',','.')?> vnđ</span>
+            <?php else:?>
+              <span class="price"><?= number_format($itemLike['price_food'],0,',','.')?> vnđ</span>
+            <?php endif?>
+            </div>
+            <a href="spct&id_food=<?=$itemLike['id_food']?>" class="btn">Xem chi tiết</a>
+            <a href="#" class="btn">Thêm vào giỏ hàng</a>
         </div>
-        <div class="box">
-          <span class="price"> $5 - $20 </span>
-          <img src="<?= CLIENT_ASSET ?>dist/images/p-3.jpg" alt="" />
-          <h3>tasty sweets</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
-          <span class="price"> $5 - $20 </span>
-          <img src="<?= CLIENT_ASSET ?>dist/images/p-4.jpg" alt="" />
-          <h3>tasty cupcakes</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
-          <span class="price"> $5 - $20 </span>
-          <img src="<?= CLIENT_ASSET ?>dist/images/p-5.jpg" alt="" />
-          <h3>cold drinks</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
-          <span class="price"> $5 - $20 </span>
-          <img src="<?= CLIENT_ASSET ?>dist/images/p-6.jpg" alt="" />
-          <h3>cold ice-cream</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">order now</a>
-        </div>
+    </div>
+    <?php endforeach?>
       </div>
     </section>
 
