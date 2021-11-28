@@ -37,6 +37,26 @@ switch ($url) {
         require_once './client/business/user.php';
         sendmail();
         break;
+    case 'cart':
+        require_once './client/business/cart.php';
+        layout_cart();
+        break;
+    case 'add-to-cart':
+        require_once './client/business/cart.php';
+        add_cart();
+        break;
+    case 'delete-cart':
+        require_once './client/business/cart.php';
+        delete_cart();
+        break;
+    case 'plus':
+        require_once './client/business/cart.php';
+        plus();
+        break;
+    case 'minus':
+        require_once './client/business/cart.php';
+        minus();
+        break;
     case 'order':
         require_once './client/business/cart.php';
         order();
