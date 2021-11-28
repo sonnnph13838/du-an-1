@@ -1,7 +1,7 @@
 <style>
-    .rows{
+    .rows {
         display: grid;
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: 1fr 1.2fr;
         grid-gap: 50px;
         margin: 0 15px;
     }
@@ -132,7 +132,19 @@
     .address_order {
         margin-bottom: 10px;
     }
-    
+
+    .next_pay {
+        text-align: right;
+    }
+
+    .form-ct {
+        margin-left: 50px;
+        margin-top: 148px;
+    }
+
+    .title {
+        text-align: center;
+    }
 </style>
 <?php foreach ($bill as $bills) : ?>
 
@@ -153,7 +165,7 @@
                                 <h2>Địa chỉ giao hàng</h2>
                             </div>
                             <div class="form_top">
-                            <input type="hidden" name="id" value=" <?=  $bills['id_bill']  ?>">
+                                <input type="hidden" name="id" value=" <?= $bills['id_bill']  ?>">
                                 <div class="form-label-group">
                                     <label for="inputFullname"><span>Họ và tên <i class="text-danger">:</i></span></label>
                                     <h4><?= $bills['name_bill'] ?></h4>
@@ -204,14 +216,75 @@
                         </div>
                     </div>
                     <div class="col">
-                        Chi tiết đơn hàng
+                        <div class="title">
+                            <h2>Chi tiết đơn hàng</h2>
+                        </div>
+                        <div class="form-ct">
+
+                            <table class="table" style=" width: 90%;line-height: 1.5;font-size: 15px;">
+                                <thead>
+                                    <th>STT</th>
+                                    <th>Tên</th>
+                                    <th>Hình</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng giá</th>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $tong = 0;
+                                    ?>
+                                    <?php foreach ($listCart as $index => $c) :  ?>
+
+                                        <tr>
+
+                                            <td><?= $index + 1 ?> </td>
+
+                                            <td><?= $c['name_food'] ?></td>
+                                            <td>
+                                                <?php $img = UPLOAD_IMAGE . $c['image_food']  ?>
+                                                <img src="<?= $img ?>" alt="" width="100">
+                                            </td>
+
+
+                                            <td><?= number_format($c['gia'], 0, ',', '.') ?> VNĐ</td>
+                                            <td>
+
+                                                <span class="sl"><?= $c['cart_amount'] ?></span>
+
+                                            </td>
+                                            <td>
+                                                <?= number_format($c['gia'] * $c['cart_amount'], 0, ',', '.') ?>
+                                                VNĐ
+                                            </td>
+
+                                            <?php $tong += $c['gia'] * $c['cart_amount']; ?>
+
+                                        </tr>
+                                    <?php endforeach ?>
+
+                                    <tr>
+                                        <td colspan="4" class="total"> <b>Tổng giá trị đơn hàng:<b> </td>
+
+
+                                        <td></td>
+                                        <td style="color: red;"> <b> <?= number_format($tong, 0, ',', '.') ?> VND </b></td>
+
+
+                                    </tr>
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="next_pay">
-                <button><input type="submit" name="huy" class="huy" value="Huỷ thanh toán" style="margin: 0px;background:red;"></button>
-                <button><input type="submit" name="pay" value="Thanh toán" style="margin: 0px;"></button>
-            
-            </div>
+                    <button><input type="submit" name="huy" class="huy" value="Huỷ thanh toán" style="margin: 0px;padding: 10px;background:red;"></button>
+                    <button><input type="submit" name="pay" value="Thanh toán" style="margin: 0px;padding: 10px;"></button>
+
+                </div>
             </div>
         </form>
     </div>

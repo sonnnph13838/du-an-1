@@ -102,6 +102,14 @@ switch ($url) {
         require_once './client/business/user.php';
         post_update();
         break;
+    case 'client/user/bill-user':
+        require_once './client/business/cart.php';
+        bill_user();
+        break;
+    case 'client/user/huy-don':
+        require_once './client/business/cart.php';
+        huy_don();
+        break;
     case 'cp-admin/bill';
         require_once './admin/business/bill.php';
         list_bill();
@@ -109,6 +117,14 @@ switch ($url) {
     case 'cp-admin/bill/del-bill';
         require_once './admin/business/bill.php';
         del_bill();
+        break;
+    case 'cp-admin/bill/edit-status';
+        require_once './admin/business/bill.php';
+        edit_status();
+        break;
+    case 'cp-admin/bill/edit_status/edit':
+        require_once './admin/business/bill.php';
+        update_status();
         break;
     default:
         # code...

@@ -57,6 +57,7 @@
 				<option value=""><?= $name_user ?></option>
 				<!-- <option value="index.php?act=mybill">Đơn hàng của tôi</option> -->
 				<option value="<?= BASE_URL . 'client/user/edit-user' ?>">Cập nhật tài khoản</option>
+				<option value="<?= BASE_URL . 'client/user/bill-user' ?>">Đơn hàng của tôi</option>
 				<!-- <option value="index.php?act=dmk">Đổi mật khẩu</option> -->
 				<option value="<?= BASE_URL . 'dang-xuat' ?>">Thoát</option>
 			</select>

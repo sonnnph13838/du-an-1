@@ -14,4 +14,28 @@ function del_bill(){
     executeQuery($sql);
     header("location: " . ADMIN_URL . 'bill');
 }
+function edit_status(){
+    admin_render(
+        'bill/edit_status.php',
+        []
+    );
+}
+function update_status(){
+    $id = $_POST['id'];
+    $status = $_POST['status'];
+    if ($status == 0) {
+        $sql = "UPDATE bill SET status = 0 where  id_bill = '$id'";
+        pdo_execute($sql);
+    } elseif ($status == 1) {
+        $sql = "UPDATE bill SET status = 1 where  id_bill =  '$id'";
+        pdo_execute($sql);
+    }elseif ($status == 2) {
+        $sql = "UPDATE bill SET status = 2 where  id_bill =  '$id'";
+        pdo_execute($sql);
+    }elseif ($status == 3) {
+        $sql = "UPDATE bill SET status = 3 where  id_bill =  '$id'";
+        pdo_execute($sql);
+    }
+    header('Location: '. ADMIN_URL . 'bill');
+}
 ?>
