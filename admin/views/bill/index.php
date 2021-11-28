@@ -36,6 +36,7 @@
                         <th>Phương thức</th>
                         <th>Tổng</th>
                         <th>Ngày</th>
+                        <th>Trạng thái</th>
                         <th>Mã Người dùng</th>
                     </thead>
                     <tbody>
@@ -48,6 +49,7 @@
                             <td><?= $item['payment'] ?></td>
                             <td><?= $item['total'] ?></td>
                             <td><?= $item['date'] ?></td>
+                            <td><?= $item['status'] ?></td>
                             <td><?= $item['id_user'] ?></td>
                             <td>
                                 <a href="javascript:;"
