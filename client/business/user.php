@@ -22,7 +22,7 @@ function postdk()
         $email = $_POST['email'];
         $diachi = $_POST['diachi'];
         $sdt = $_POST['sdt'];
-        $sql = "INSERT INTO `nguoi_dung`(`mat_khau`, `email`, `dia_chi`, `sdt`) VALUES ('$matkhau','$email','$diachi','$sdt')";
+        $sql = "INSERT INTO `user`(`password`, `email`, `address`, `tel`) VALUES ('$matkhau','$email','$diachi','$sdt')";
         executeQuery($sql);
         header('location: ' . BASE_URL . 'dang-ki&msg=Đăng kí thành công.. vui lòng đăng nhập!');
     }
@@ -36,7 +36,7 @@ function post_login()
     if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
         $email=$_POST['email'];
         $mat_khau=$_POST['mat_khau'];
-        $sql="select * from nguoi_dung where email='".$email."' AND mat_khau='".$mat_khau."'";
+        $sql="select * from user where email='".$email."' AND password='".$mat_khau."'";
         $checkuser=pdo_query_one($sql);
         if(is_array($checkuser)){
         //$thongbao="Bạn Đã Đăng Nhập Thành Công";
@@ -62,11 +62,11 @@ function sendmail()
 {
     $email = $_POST['email'];
 
-    $sql = "select * from nguoi_dung where email = '$email'";
+    $sql = "select * from user where email = '$email'";
     $checkEmail = executeQuery($sql);
     $email = $checkEmail['email'];
     if (is_array($checkEmail)) {
-        $pass = $checkEmail['mat_khau'];
+        $pass = $checkEmail['password'];
     }
     //Load Composer's autoloader
     // require 'vendor/autoload.php';
@@ -123,11 +123,11 @@ function post_update(){
         $email=$_POST['email'];       
         $diachi=$_POST['diachi'];
         $sdt=$_POST['sdt'];
-        $sql = "update  nguoi_dung set  tai_khoan ='" . $taikhoan . "'   ,mat_khau ='" . $matkhau . "' ,email ='" . $email . "', sdt ='" . $sdt . "', dia_chi ='" . $diachi . "' 
+        $sql = "update  user set  name_user ='" . $taikhoan . "'   ,password ='" . $matkhau . "' ,email ='" . $email . "', tel ='" . $sdt . "', address ='" . $diachi . "' 
        
-        where id =  $id";
+        where id_user =  $id";
         executeQuery($sql); 
-        $sql = "select *from nguoi_dung  where id = $id";
+        $sql = "select *from user  where id_user = $id";
         $cntk = executeQuery($sql); 
         $_SESSION['email'] = $cntk; 
         //unset($_SESSION['email']);
