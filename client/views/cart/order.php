@@ -93,7 +93,8 @@ if (isset($_session['email']) && (is_array($_session['email']))) {
                 </div>
             </div>
             <div class="next_pay">
-                <button><input type="submit" name="next_pay" value="Tiếp tục thanh toán"></button>
+                
+                <button><input type="submit" name="next_pay" value="Tiếp tục thanh toán" style="margin: 0px;"></button>
             
             </div>
         </div>

@@ -132,6 +132,7 @@
     .address_order {
         margin-bottom: 10px;
     }
+    
 </style>
 <?php foreach ($bill as $bills) : ?>
 
@@ -207,7 +208,8 @@
                     </div>
                 </div>
                 <div class="next_pay">
-                <button><input type="submit" name="pay" value="Thanh toán"></button>
+                <button><input type="submit" name="huy" class="huy" value="Huỷ thanh toán" style="margin: 0px;background:red;"></button>
+                <button><input type="submit" name="pay" value="Thanh toán" style="margin: 0px;"></button>
             
             </div>
             </div>

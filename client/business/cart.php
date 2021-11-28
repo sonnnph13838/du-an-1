@@ -35,6 +35,11 @@
             }
             
         }
+        if(isset($_POST['huy']) && ($_POST['huy'])) {
+            $id_bill=$_POST['id'];
+            $sql="DELETE from  bill  where id_bill=$id_bill";
+            pdo_execute($sql);
+        }
         header('Location: '. BASE_URL . '');
     }
 ?>
