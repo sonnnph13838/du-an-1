@@ -1,12 +1,8 @@
-<?php
-
-if(!isset($_SESSION['cart'])|| empty($_SESSION['cart'])){
-	echo "<h2> Bạn chưa thêm món đồ nào vào giỏ hàng!!<h2>";
-}
-
-?>
 
 <div class="mgt-dn cnter">
+<?php if(!isset($_SESSION['cart']) || $_SESSION['cart'] == []) : ?>
+	<h1>Bạn chưa có món ăn nào trong giỏ hàng !!!</h1>
+	<?php else : ?>
 
 	<table class="table" style=" 
 	width: 90%;
@@ -59,6 +55,7 @@ if(!isset($_SESSION['cart'])|| empty($_SESSION['cart'])){
 
 			</tr>
 			<?php endforeach ?>
+			
 			<tr>
 				<td colspan="4" class="total"> <b>Tổng giá trị đơn hàng:<b> </td>
 
@@ -75,7 +72,7 @@ if(!isset($_SESSION['cart'])|| empty($_SESSION['cart'])){
 	</table>
 
 </div>
-
+<?php endif ?>
 <style>
 table,
 th,

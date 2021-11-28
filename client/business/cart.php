@@ -2,7 +2,7 @@
 require_once './dao/system_dao.php';
 function layout_cart()
 {
-
+    
 	$listCart = $_SESSION['cart'];
 	client_render('cart/cart.php', compact('listCart'));
 }
