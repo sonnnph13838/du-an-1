@@ -40,7 +40,7 @@
           extract($_SESSION['email']);
           ?>
           <select name="" id="" onchange="location = this.value;">
-            <option value="" ><?=$tai_khoan?></option>
+            <option value="" ><?=$name_user?></option>
             <!-- <option value="index.php?act=mybill">Đơn hàng của tôi</option> -->
             <option value="<?= BASE_URL . 'client/user/edit-user'?>">Cập nhật tài khoản</option>
             <!-- <option value="index.php?act=dmk">Đổi mật khẩu</option> -->
@@ -64,7 +64,7 @@
 
     <!-- footer section  -->
 
-    <section class="footer">
+    <!-- <section class="footer">
       <div class="share">
         <a href="<?= CLIENT_ASSET ?>dist/#" class="btn">facebook</a>
         <a href="<?= CLIENT_ASSET ?>dist/#" class="btn">twitter</a>
@@ -76,7 +76,7 @@
       <h1 class="credit">
         created by <span> N6 </span> | all rights reserved!
       </h1>
-    </section>
+    </section> -->
 
 
     <!-- loader  -->
