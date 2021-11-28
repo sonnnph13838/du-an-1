@@ -1,8 +1,8 @@
 <?php
 
 if(!isset($_SESSION['cart'])|| empty($_SESSION['cart'])){
-	echo "<h2> Bạn chưa thêm món đồ nào vào giỏ hàng!!<h2>
-}"
+	echo "<h2> Bạn chưa thêm món đồ nào vào giỏ hàng!!<h2>";
+}
 
 ?>
 
