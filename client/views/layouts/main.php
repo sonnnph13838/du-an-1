@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>complete responsive food website design tutorial</title>
-
-    <!-- font awesome cdn link  -->
-    <link
+        <!-- bootrap-link -->
+        <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- font awesome cdn link  -->
+    
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/style.css" />
@@ -20,15 +24,26 @@
     <header>
       <div class="c">
       <a href="<?= BASE_URL?>" class="logo"><i class="fas fa-utensils"></i>food</a>
-      <nav class="navbar">
+      <nav class="navbarr">
         
-        <a href="./">Trang chủ</a>
-        <a href="<?= CLIENT_ASSET ?>dist/#speciality">Giới thiệu</a>
-        <a href="<?= CLIENT_ASSET ?>dist/#popular">Thực Đơn</a>
-        <a href="<?= CLIENT_ASSET ?>dist/#order">Giỏ hàng</a>
+        <ul class="menu">
+          <li><a href="">Trang chủ</a></li>
+          <li class="thucdon">
+            <a href="">Thực đơn</a>
+            <ul class="dropdowm">
+              <?php require_once './client/business/category.php';
+              $categorys = list_category();
+              ?>
+              <?php foreach($categorys as $item):?>
+                <li><a href=""><?= $item['name_category']?></a></li>
+              <?php endforeach?>
+            </ul>
+          </li>
+          <li><a href="">Giới thiệu</a>
+        </li>
+        </ul>
       </nav>
       </div>
-
       <div id="menu-bar" class="fas fa-bars"></div>
       
       <div class="c">
@@ -48,7 +63,7 @@
           </select>
           <a href="<?= CLIENT_ASSET ?>dist/#order"><i class="fas fa-shopping-cart"></i></a>
         <?php }else{ ?>
-        <nav class="navbar">
+        <nav class="navbarr">
         <a href="<?= BASE_URL . 'dang-nhap'?>">Đăng Nhập</a>
         <a href="<?= BASE_URL . 'dang-ki'?>" style="margin-left: 5px; border-left: 1px solid #666; padding-left: 5px;">Đăng kí</a>
         <a href="<?= CLIENT_ASSET ?>dist/#order"><i class="fas fa-shopping-cart"></i></a>

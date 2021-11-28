@@ -5,7 +5,7 @@ function get_connect(){
 }
 
 
-function executeQuery($sql, $getAll = false){
+function executeQuery($sql, $getAll = true){
 
     $connect = get_connect();
     $stmt = $connect->prepare($sql);
