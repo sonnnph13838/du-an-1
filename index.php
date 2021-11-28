@@ -45,6 +45,10 @@ switch ($url) {
         require_once './client/business/cart.php';
         bill();
         break;
+    case 'comfirmbill':
+        require_once './client/business/cart.php';
+        comfirmbill();
+        break;
 
 
         //welcome to admin...

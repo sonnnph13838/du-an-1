@@ -133,73 +133,84 @@
         margin-bottom: 10px;
     }
 </style>
-<div class="mgt-dn lefa">
-    <div class="radiogroups">
-        <div class="title" align="center">
-            <h1>PHƯƠNG THỨC THANH TOÁN</h1>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="time_order">
-                    <h2>Thời gian đặt hàng : Đặt cc nè</h2>
-                </div>
-                <div class="address_order">
-                    <div class="time_order">
-                        <h2>Địa chỉ giao hàng</h2>
-                    </div>
-                    <div class="form_top">
-                        <div class="form-label-group">
-                            <label for="inputFullname"><span>Họ và tên <i class="text-danger">:</i></span></label>
-                            <h4>Nguyễn ngọc sơn</h4>
+<?php foreach ($bill as $bills) : ?>
 
-                        </div>
-                        <div class="form-label-group">
-                            <label for="inputPhone"><span>Điện thoại <i class="text-danger">:</i></span></label>
-                            <h4>Nguyễn ngọc sơn</h4>
-                        </div>
-                        <div class="form-label-group">
-                            <label for="inputEmail"><span>Email <i class="text-danger">:</i></span></label>
-                            <h4>Nguyễn ngọc sơn</h4>
-                        </div>
-                        <div class="form-label-group">
-                            <label for="inputAddress"><span>Địa chỉ (Số nhà - Tên đường) <i class="text-danger">:</i></span></label>
-                            <h4>Nguyễn ngọc sơn</h4>
-                        </div>
 
+    <div class="mgt-dn lefa">
+        <form action="comfirmbill" method="post">
+            <div class="radiogroups">
+                <div class="title" align="center">
+                    <h1>PHƯƠNG THỨC THANH TOÁN</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="time_order">
+                            <h2>Thời gian đặt hàng : <?= $bills['date'] ?></h2>
+                        </div>
+                        <div class="address_order">
+                            <div class="time_order">
+                                <h2>Địa chỉ giao hàng</h2>
+                            </div>
+                            <div class="form_top">
+                            <input type="hidden" name="id" value=" <?=  $bills['id_bill']  ?>">
+                                <div class="form-label-group">
+                                    <label for="inputFullname"><span>Họ và tên <i class="text-danger">:</i></span></label>
+                                    <h4><?= $bills['name_bill'] ?></h4>
+
+                                </div>
+                                <div class="form-label-group">
+                                    <label for="inputPhone"><span>Điện thoại <i class="text-danger">:</i></span></label>
+                                    <h4><?= $bills['tel'] ?></h4>
+                                </div>
+                                <div class="form-label-group">
+                                    <label for="inputEmail"><span>Email <i class="text-danger">:</i></span></label>
+                                    <h4><?= $bills['email'] ?></h4>
+                                </div>
+                                <div class="form-label-group">
+                                    <label for="inputAddress"><span>Địa chỉ<i class="text-danger">:</i></span></label>
+                                    <h4><?= $bills['address'] ?></h4>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="method_pay">
+                            <div class="time_order">
+                                <h2>Chọn phương thức thanh toán</h2>
+                            </div>
+                            <div class="radiogroup">
+                                <div class="wrappers">
+                                    <input class="state" type="radio" name="pttt" id="a" value="0">
+                                    <label class="label" for="a">
+                                        <div class="indicator"></div>
+                                        <span class="text">Thanh toán khi nhận hàng</span>
+                                    </label>
+                                </div>
+                                <div class="wrappers">
+                                    <input class="state" type="radio" name="pttt" id="b" value="1">
+                                    <label class="label" for="b">
+                                        <div class="indicator"></div>
+                                        <span class="text">Thanh toán bằng thẻ tín dụng</span>
+                                    </label>
+                                </div>
+                                <div class="wrappers">
+                                    <input class="state" type="radio" name="pttt" id="c" value="2">
+                                    <label class="label" for="c">
+                                        <div class="indicator"></div>
+                                        <span class="text">Thanh toán bằng zaloPay</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        Chi tiết đơn hàng
                     </div>
                 </div>
-                <div class="method_pay">
-                    <div class="time_order">
-                        <h2>Chọn phương thức thanh toán</h2>
-                    </div>
-                    <div class="radiogroup">
-                        <div class="wrappers">
-                            <input class="state" type="radio" name="app" id="a" value="a">
-                            <label class="label" for="a">
-                                <div class="indicator"></div>
-                                <span class="text">Thanh toán khi nhận hàng</span>
-                            </label>
-                        </div>
-                        <div class="wrappers">
-                            <input class="state" type="radio" name="app" id="b" value="b">
-                            <label class="label" for="b">
-                                <div class="indicator"></div>
-                                <span class="text">Thanh toán bằng thẻ tín dụng</span>
-                            </label>
-                        </div>
-                        <div class="wrappers">
-                            <input class="state" type="radio" name="app" id="c" value="c">
-                            <label class="label" for="c">
-                                <div class="indicator"></div>
-                                <span class="text">Thanh toán bằng zaloPay</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                <div class="next_pay">
+                <button><input type="submit" name="pay" value="Thanh toán"></button>
+            
             </div>
-            <div class="col">
-                Chi tiết đơn hàng
             </div>
-        </div>
+        </form>
     </div>
-</div>
+<?php endforeach ?>
