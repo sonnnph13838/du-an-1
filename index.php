@@ -126,6 +126,14 @@ switch ($url) {
         require_once './admin/business/bill.php';
         update_status();
         break;
+    case 'cp-admin/danh-muc/xoa';
+        require_once './admin/business/category.php';
+        cate_remove();
+        break;
+    case 'cp-admin/danh-muc';
+        require_once './admin/business/category.php';
+        cate_index();
+        break;
     default:
         # code...
         break;
