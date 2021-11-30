@@ -18,7 +18,6 @@
 					<thead>
 						<th>STT</th>
 						<th>Loại đồ ăn</th>
-						<th>Hiển thị menu</th>
 						<th>
 							<a href="<?= ADMIN_URL . 'danh-muc/tao-moi' ?>" class="btn btn-sm btn-success">Tạo mới</a>
 						</th>
@@ -28,7 +27,6 @@
 						<tr>
 							<td><?= $index + 1 ?></td>
 							<td><?= $item['name_category'] ?></td>
-							<td><?= $item['show_menu'] == 1 ? "Có" : "Không" ?></td>
 							<td>
 								<a href="<?= ADMIN_URL . 'danh-muc/cap-nhat?id=' . $item['id_category'] ?>"
 									class="btn btn-sm btn-info">

@@ -130,6 +130,18 @@ switch ($url) {
         require_once './admin/business/category.php';
         cate_remove();
         break;
+    case 'cp-admin/danh-muc/tao-moi';
+        require_once './admin/business/category.php';
+        add_cate();
+        break;
+    case 'cp-admin/danh-muc/post-cate';
+        require_once './admin/business/category.php';
+        post_update();
+        break;
+    case 'cp-admin/danh-muc/cap-nhat';
+        require_once './admin/business/category.php';
+        update_cate();
+        break;
     case 'cp-admin/danh-muc';
         require_once './admin/business/category.php';
         cate_index();
