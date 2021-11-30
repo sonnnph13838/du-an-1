@@ -126,6 +126,17 @@ switch ($url) {
         require_once './admin/business/bill.php';
         update_status();
         break;
+    case 'cp-admin/food':
+        require_once './admin/business/food.php';
+        list_food();
+    case 'cp-admin/food/edit_food':
+        require_once './admin/business/food.php';
+        edit_food();
+        break;
+    case 'cp-admin/food/add_food':
+        require_once './admin/business/food.php';
+        add_food();
+        break;
     default:
         # code...
         break;
