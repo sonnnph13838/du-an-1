@@ -96,9 +96,6 @@
 
 
 	<!-- loader  -->
-	<div class="loader-container">
-		<img src="<?= CLIENT_ASSET ?>dist/images/loader.gif" alt="" />
-	</div>
 
 	<!-- custom js file link  -->
 	<script src="<?= CLIENT_ASSET ?>dist/js/script.js"></script>
