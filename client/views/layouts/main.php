@@ -14,7 +14,9 @@
 
 
 	<!-- custom css file link  -->
+	<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/page-product.css" />
 	<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/style.css" />
+	
 </head>
 
 <body>
@@ -28,7 +30,7 @@
 				<ul class="menu">
 					<li><a href="">Trang chủ</a></li>
 					<li class="thucdon">
-						<a href="">Thực đơn</a>
+						<a href="<?= BASE_URL . 'mon-an'?>">Thực đơn</a>
 						<ul class="dropdowm">
 							<?php require_once './client/business/category.php';
 							$categorys = list_category();

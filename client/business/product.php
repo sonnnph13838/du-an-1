@@ -12,4 +12,8 @@ function list_products_sell(){
     return $sanphamkm;
 }
 
+function page_product(){
+    admin_render('products/index.php');
+}
+
 ?>
