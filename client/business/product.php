@@ -11,5 +11,7 @@ function list_products_sell(){
     $sanphamkm = executeQuery($sql,true);
     return $sanphamkm;
 }
+function show_cmt(){
 
-?>
+    client_render('coment.php');
+}
