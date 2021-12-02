@@ -118,7 +118,8 @@
     <?php foreach($list4like as $itemLike):?>
     <div class="boxx">
         <div class="image">
-            <img src="<?= CLIENT_ASSET ?>dist/images/menu-8.jpg" alt="">
+        <?php $img = UPLOAD_IMAGE . $itemLike['image_food'] ?>
+					      <img src="<?= $img ?>" alt="">
         </div>
         <div class="content">
             <h3><a href="" class="name-pro"><?= $itemLike['name_food']?></a></h3>
