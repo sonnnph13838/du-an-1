@@ -31,17 +31,21 @@
                     <thead>
                         <th>ID</th>
                         <th>Họ tên</th>
+                        <th>Hình ảnh</th>
                         <th>email</th>
                         <th>Địa chỉ</th>
                         <th>SĐT</th>
                         <th>Vai trò</th>
-                        <th> <a href="<?= ADMIN_URL . '#'?>" class="btn btn-sm btn-success">Tạo mới</a></th>
+                        <th></th>
                     </thead>
                     <tbody>
                         <?php foreach ($list_user as $ds) : ?>
                             <tr>
                                 <td><?= $ds['id_user'] ?></td>
                                 <td><?= $ds['name_user'] ?></td>
+                                <td><?php $img = UPLOAD_IMAGE . $ds['image']  ?>
+                                    <img src="<?= $img ?>" width="150">
+                                </td>
                                 <td><?= $ds['email'] ?></td>
                                 <td><?= $ds['address'] ?></td>
                                 <td><?= $ds['tel'] ?></td>
@@ -55,9 +59,10 @@
                                 ?>
                                 <td><?= $role ?> <br>
 
-                                    <a href="<?= ADMIN_URL . 'user/check_role?id='. $ds['id_user'] ?>">Sửa vai trò</a>
+                            
                                 </td>
                                 <td>
+                                <a href="<?= ADMIN_URL . 'user/edit_user?id=' . $ds['id_user'] ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
                                 <a href="javascript:;" onclick="confirm_remove('<?= ADMIN_URL . 'user/del_user?id='. $ds['id_user'] ?>', '<?= $ds['email']?>')" class="btn btn-sm btn-danger">
                                         <i class="fas fa-trash"></i>
                                     </a>

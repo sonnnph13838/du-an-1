@@ -15,16 +15,13 @@ function list_food()
 }
 function edit_food()
 {
-    // $sql = "SELECT * from food where id_food= $id";
-    // $list_food =  pdo_query_one($sql);
-
-
-    // $sqls = "SELECT * from category ";
-    // $list_category =  pdo_query($sqls);
-    // admin_render(
-    //     'food/edit_food.php',
-    //     compact('list_food', 'list_category')
-    // );
+    $sql = "SELECT * from food where id_food =".$_GET['id'];
+    $list_food =  pdo_query($sql);
+    $sqls = "SELECT * from category ";
+    $list_category =  pdo_query($sqls);
+    admin_render(
+        'food/edit_food.php', compact('list_food','list_category')
+    );
 }
 function add_food()
 {
@@ -38,19 +35,45 @@ function add_food()
 function save_add_food()
 {
     $name = $_POST['name'];
-    $image = $_FILES['image'];
+    $image = $_FILES['image']['name'];
     $price = $_POST['price'];
     $discount = $_POST['discount'];
     $detail = $_POST['detail'];
     $category = $_POST['category'];
-    $filename = "";
-    if ($image['size'] > 0) {
-        $filename = uniqid() . '-' . $image['name'];
-        move_uploaded_file($image['tmp_name'], './uploads/' . $filename);
-        // cập nhật lại tên ảnh bỏ ký tự ./ đi để lưu vào csdl
-        $filename = 'upload/' . $filename;
+    $target_dir = 'public/client-assets/dist/images/';
+    $target_file = $target_dir . basename($_FILES['image']['name']);
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+        // echo "The file ". htmlspecialchars( basename( $_FILES['hinh']['name'])). " has been uploaded.";
+      }
+    $sql = "insert into food (name_food,image_food,price_food,discount_food,detail_food,id_type) values ('$name','$image','$price','$discount','$detail','$category')";
+    executeQuery($sql);
+    header('location: ' . ADMIN_URL . 'food');
+}
+function  save_update_food(){
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $image = $_FILES['image']['name'];
+    $price = $_POST['price'];
+    $discount = $_POST['discount'];
+    $detail = $_POST['detail'];
+    $category = $_POST['category'];
+    $target_dir = 'public/client-assets/dist/images/';
+    $target_file = $target_dir . basename($_FILES['image']['name']);
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+        // echo "The file ". htmlspecialchars( basename( $_FILES['hinh']['name'])). " has been uploaded.";
+      }
+    if($image!=""){
+        $sql = "UPDATE food set name_food ='" . $name . "'   ,image_food ='" . $image . "' ,price_food ='" . $price . "', discount_food ='" . $discount . "', detail_food ='" . $detail . "', id_type ='" . $category . "' where id_food = $id";
+        
+    }else{
+        $sql = "UPDATE food set name_food ='" . $name . "'   ,price_food ='" . $price . "', discount_food ='" . $discount . "', detail_food ='" . $detail . "', id_type ='" . $category . "' where id_food = $id";
     }
-    $sql = "insert into food (name_food,image_food,price_food,discount_food,detail_food,id_type) values ('$name','$filename','$price','$discount','$detail','$category')";
+    executeQuery($sql);
+    header('location: ' . ADMIN_URL . 'food');
+}
+function del_food()
+{
+    $sql = "DELETE from food where id_food = ".$_GET['id'];
     executeQuery($sql);
     header('location: ' . ADMIN_URL . 'food');
 }

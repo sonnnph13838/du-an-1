@@ -85,13 +85,13 @@ switch ($url) {
         require_once './admin/business/user.php';
         del_user();
         break;
-    case 'cp-admin/user/check_role':
+    case 'cp-admin/user/edit_user':
         require_once './admin/business/user.php';
-        edit_role();
+        edit_user();
         break;
-    case 'cp-admin/user/update_role/update':
+    case 'cp-admin/user/update_user/save':
         require_once './admin/business/user.php';
-        update_roles();
+        update_user();
         break;
     case 'client/user/edit-user':
         // unset($_SESSION['email']);
@@ -141,6 +141,13 @@ switch ($url) {
         require_once './admin/business/food.php';
         save_add_food();
         break;
+    case 'cp-admin/food/update_food/save':
+        require_once './admin/business/food.php';
+        save_update_food();
+        break;
+    case 'cp-admin/food/del_food':
+        require_once './admin/business/food.php';
+        del_food();
     default:
         # code...
         break;

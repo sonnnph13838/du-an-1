@@ -7,7 +7,8 @@
                     <h3 class="card-title">Tạo mới món ăn</h3>
                 </div>
                 <div class="card-body">
-                    <form action="<?= ADMIN_URL . 'food/update_food' ?>" method="post">
+                    <form action="<?= ADMIN_URL . 'food/update_food/save' ?>" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?= $lf['id_food'] ?>">
                         <div class="col-6 offset-3">
                             <div class="form-group">
                                 <label for="">Tên món ăn</label>
@@ -36,12 +37,19 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="">Tên danh mục</label>
-                                <input type="text" name="category" class="form-control" placeholder="" aria-describedby="helpId">
+                                <label for="">Tên danh mục</label><br>
+                                <select name="category" id="">
+                                    <?php
+                                    foreach ($list_category as  $u) {
+                                        extract($u);
+                                        echo  '<option value="' . $u['id_category'] . '">' . $u['name_category']  . '</option>';
+                                    }
+                                    ?>
+                                </select>
                             </div>
                             <br>
                             <div class="d-flex justify-content-center">
-                                <a href="<?= ADMIN_URL . 'danh-muc' ?>" class="btn btn-sm btn-danger">Hủy</a>
+                                <a href="<?= ADMIN_URL . 'food' ?>" class="btn btn-sm btn-danger">Hủy</a>
                                 &nbsp;
                                 <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
                             </div>
