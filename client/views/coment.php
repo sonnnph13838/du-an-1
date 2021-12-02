@@ -8,28 +8,36 @@
 				<th>Ngày</th>
 				<th>Người bình luận</th>
 			</thead>
+
 			<tbody>
+				<?php
+
+				foreach ($listcmt as $cmt) :
+
+				?>
+
 				<tr>
-					<td>abc</td>
-					<td>11/11</td>
-					<td>Tao</td>
+					<td><?= $cmt['content'] ?></td>
+					<td><?= $cmt['date'] ?></td>
+					<td><?= $cmt['id_user'] ?></td>
 				</tr>
+				<?php endforeach; ?>
 			</tbody>
 		</table>
 	</div>
 </div>
+
 <?php
 
 if (isset($_SESSION['email'])) : ?>
 
-
 <div class="mgt-dn cnter">
 
 	<div class="forgot-pass">
-		<form action="postdk" method="post">
+		<form action="post-comment" method="post">
 			<div class="field password">
 				<div class="input-area">
-					<input type="text" placeholder="Nhập bình luận " name=" cmt">
+					<input type="text" placeholder="Nhập bình luận " name="cmt">
 					<i class="icon fas fa-phone-alt"></i>
 				</div>
 			</div>
@@ -38,10 +46,8 @@ if (isset($_SESSION['email'])) : ?>
 	</div>
 </div>
 
-
-
-
 <?php else : ?>
-<h2>Vui lòng đăng nhập để bình luận</h2>
-
+<div class="mgt-dn cnter">
+	<h2>Vui lòng đăng nhập để bình luận</h2>
+</div>
 <?php endif ?>

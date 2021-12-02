@@ -70,10 +70,15 @@ switch ($url) {
         comfirmbill();
         break;
 
-    case 'coment':
+    case 'comment':
         require_once './client/business/product.php';
         show_cmt();
         break;
+    case 'post-comment':
+        require_once './client/business/product.php';
+        post_cmt();
+        break;
+
         //welcome to admin...
 
     case 'cp-admin':
