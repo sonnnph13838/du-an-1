@@ -126,6 +126,14 @@ switch ($url) {
         require_once './admin/business/bill.php';
         update_status();
         break;
+    case 'cp-admin/list-comment':
+        require_once './admin/business/comment.php';
+        list_cmt();
+        break;
+    case 'cp-admin/xoa-cmt':
+        require_once './admin/business/comment.php';
+        xoa();
+        break;
     default:
         # code...
         break;
