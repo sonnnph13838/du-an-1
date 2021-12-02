@@ -137,6 +137,10 @@ switch ($url) {
         require_once './admin/business/food.php';
         add_food();
         break;
+    case 'cp-admin/food/add_food/save':
+        require_once './admin/business/food.php';
+        save_add_food();
+        break;
     default:
         # code...
         break;

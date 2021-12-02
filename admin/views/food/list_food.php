@@ -45,7 +45,9 @@
                             <tr>
                                 <td><?= $ds['id_food'] ?></td>
                                 <td><?= $ds['name_food'] ?></td>
-                                <td><?= $ds['image_food'] ?></td>
+                                <td><?php $img = UPLOAD_IMAGE . $ds['image_food']  ?>
+                                    <img src="<?= $img ?>" width="150">
+                                </td>
                                 <td><?= $ds['price_food'] ?></td>
                                 <td><?= $ds['discount_food'] ?></td>
                                 <td><?= $ds['detail_food'] ?></td>

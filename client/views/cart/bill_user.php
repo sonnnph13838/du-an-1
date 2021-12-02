@@ -38,7 +38,7 @@
                                     }
                                     ?>
                                     <td><?= $payment ?></td>
-                                    <td><?= $item['total'] ?></td>
+                                    <td><?= $item['total'] ?> VNĐ</td>
                                     <td><?= $item['date'] ?></td>
                                     <?php
                                     $status = $item['status'];

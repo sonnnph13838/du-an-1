@@ -5,7 +5,7 @@
                 <h3 class="card-title">Tạo mới món ăn</h3>
             </div>
             <div class="card-body">
-                <form action="<?= ADMIN_URL . 'food/add_food' ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= ADMIN_URL . 'food/add_food/save' ?>" method="post" enctype="multipart/form-data">
                     <div class="col-6 offset-3">
                         <div class="form-group">
                             <label for="">Tên món ăn</label>
@@ -32,20 +32,21 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">Tên danh mục</label>
-                            <input type="text" name="category" class="form-control" placeholder="" aria-describedby="helpId">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Món ăn thêm</label><br>
-                            <input type="button" name="option_food" value="Thêm món ăn mới">
-                            <input type="button" name="option_food" value="Lựa chọn món ăn có sẵn">
-                            <div id="result"></div>
+                            <label for="">Tên danh mục</label><br>
+                            <select name="category" id="">
+                                <?php   
+                                foreach ($list_category as  $u) {
+                                    extract($u);
+                                    echo  '<option value="' . $u['id_category'] . '">' . $u['name_category']  . '</option>';
+                                }
+                                ?>
+                            </select>
                         </div>
                         <br>
                         <div class="d-flex justify-content-center">
-                            <a href="<?= ADMIN_URL . 'danh-muc' ?>" class="btn btn-sm btn-danger">Hủy</a>
+                            <a href="<?= ADMIN_URL . 'food' ?>" class="btn btn-sm btn-danger">Hủy</a>
                             &nbsp;
-                            <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
+                            <button type="submit" name ="luu" class="btn btn-sm btn-primary">Lưu</button>
                         </div>
                     </div>
                 </form>
