@@ -17,10 +17,7 @@
 				<tr>
 					<td><?= $cmt['content'] ?></td>
 					<td><?= $cmt['date'] ?></td>
-					<?php
-						$sql = "select * from user ";
-						$listuser = executeQuery($sql);
-						?>
+
 					<td><?= $cmt['name_user'] ?></td>
 				</tr>
 				<?php endforeach ?>
