@@ -15,18 +15,21 @@ function list_products_sell()
 }
 function show_cmt()
 {
-    $sql = "select * from comment";
+    $sql = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user; ";
     $listcmt = executeQuery($sql, true);
-    client_render('coment.php', compact('listcmt', '$listuser'));
+
+    // dd($listcmt);
+    client_render('comment/coment.php', compact('listcmt', '$istuser'));
 }
 function post_cmt()
 {
     date_default_timezone_set("Asia/Ho_Chi_Minh");
     if (isset($_POST['guibl']) && ($_POST['guibl'])) {
 
+        $id = ($_POST['id_user']);
         $date = date('m/d/Y', time());
         $cmt = $_POST['cmt'];
-        $sql = "INSERT INTO comment (content, date) values ('$cmt', '$date')";
+        $sql = "INSERT INTO comment (content, date,id_user) values ('$cmt', '$date','$id')";
         executeQuery($sql);
     }
     header('location: ' . BASE_URL . 'comment');

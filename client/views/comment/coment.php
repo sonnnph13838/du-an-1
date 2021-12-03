@@ -11,17 +11,19 @@
 
 			<tbody>
 				<?php
-
 				foreach ($listcmt as $cmt) :
-
 				?>
 
 				<tr>
 					<td><?= $cmt['content'] ?></td>
 					<td><?= $cmt['date'] ?></td>
-					<td><?= $cmt['id_user'] ?></td>
+					<?php
+						$sql = "select * from user ";
+						$listuser = executeQuery($sql);
+						?>
+					<td><?= $cmt['name_user'] ?></td>
 				</tr>
-				<?php endforeach; ?>
+				<?php endforeach ?>
 			</tbody>
 		</table>
 	</div>
@@ -30,9 +32,11 @@
 <?php
 
 if (isset($_SESSION['email'])) : ?>
+<?php
+	// dd($_SESSION['email']['id_user']);
 
+	?>
 <div class="mgt-dn cnter">
-
 	<div class="forgot-pass">
 		<form action="post-comment" method="post">
 			<div class="field password">
@@ -40,6 +44,8 @@ if (isset($_SESSION['email'])) : ?>
 					<input type="text" placeholder="Nhập bình luận " name="cmt">
 					<i class="icon fas fa-phone-alt"></i>
 				</div>
+				<input type="hidden" name="id_user" value="<?= $_SESSION['email']['id_user'] ?>">
+
 			</div>
 			<input type="submit" value="Gửi bình luận" name="guibl">
 		</form>

@@ -72,7 +72,7 @@ switch ($url) {
 
     case 'comment':
         require_once './client/business/product.php';
-        show_cmt();
+        show_cmt(0);
         break;
     case 'post-comment':
         require_once './client/business/product.php';
