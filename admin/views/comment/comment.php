@@ -40,7 +40,7 @@ th {
 						<?php foreach ($listcmt as $index => $ds) : ?>
 						<tr>
 							<td><?= $index + 1 ?></td>
-							<td><?= $ds['id_food'] ?></td>
+							<td><?= $ds['name_food'] ?></td>
 							<td><?= $ds['name_user'] ?></td>
 							<td><?= $ds['content'] ?></td>
 							<td><?= $ds['date'] ?></td>

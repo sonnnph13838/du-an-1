@@ -2,7 +2,7 @@
 
 function list_cmt()
 {
-	$sql = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user";
+	$sql = "SELECT comment.*,food.name_food,user.name_user FROM comment JOIN food ON comment.id_food=food.id_food JOIN user ON comment.id_user=user.id_user";
 	$listcmt = executeQuery($sql, true);
 	admin_render('comment/comment.php', compact('listcmt'));
 }
