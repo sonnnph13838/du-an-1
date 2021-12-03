@@ -136,7 +136,7 @@ switch ($url) {
         break;
     case 'cp-admin/danh-muc/post-cate';
         require_once './admin/business/category.php';
-        post_update();
+        post_cate();
         break;
     case 'cp-admin/danh-muc/cap-nhat';
         require_once './admin/business/category.php';
