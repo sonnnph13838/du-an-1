@@ -30,7 +30,7 @@ th {
 			<div class="card-body">
 				<table class="table tabl-stripped">
 					<thead>
-						<th>ID</th>
+						<th>STT</th>
 						<th>Món ăn được bình luận</th>
 						<th>Người bình luận</th>
 						<th>Nội Dung</th>
