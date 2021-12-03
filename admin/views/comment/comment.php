@@ -41,7 +41,7 @@ th {
 						<tr>
 							<td><?= $index + 1 ?></td>
 							<td><?= $ds['id_food'] ?></td>
-							<td><?= $ds['id_user'] ?></td>
+							<td><?= $ds['name_user'] ?></td>
 							<td><?= $ds['content'] ?></td>
 							<td><?= $ds['date'] ?></td>
 							<td> <a href="<?= ADMIN_URL . 'xoa-cmt&id=' . $ds['id_cm'] ?>"> Xóa</a> </td>
