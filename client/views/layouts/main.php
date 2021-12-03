@@ -14,8 +14,9 @@
 
 
 	<!-- custom css file link  -->
-	<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/page-product.css" />
+
 	<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/style.css" />
+	<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/page-product.css" />
 	
 </head>
 

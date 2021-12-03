@@ -13,7 +13,7 @@ function list_products_sell(){
 }
 
 function page_product(){
-    admin_render('products/index.php');
+    client_render('products/index.php');
 }
 
 ?>
