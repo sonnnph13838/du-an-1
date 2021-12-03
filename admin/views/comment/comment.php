@@ -44,7 +44,8 @@ th {
 							<td><?= $ds['name_user'] ?></td>
 							<td><?= $ds['content'] ?></td>
 							<td><?= $ds['date'] ?></td>
-							<td> <a href="<?= ADMIN_URL . 'xoa-cmt&id=' . $ds['id_cm'] ?>"> Xóa</a> </td>
+							<td> <a href="<?= ADMIN_URL . 'xoa-cmt&id=' . $ds['id_cm'] ?>" onclick="confirm_remove()">
+									Xóa</a> </td>
 						</tr>
 						<?php endforeach ?>
 					</tbody>
@@ -53,3 +54,9 @@ th {
 		</div>
 	</div>
 </div>
+<script language="javascript">
+function confirm_remove() {
+	confirm("Bạn có chắc chắn muốn xóa?");
+	return true;
+}
+</script>
