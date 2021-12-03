@@ -10,6 +10,10 @@ switch ($url) {
         require_once './client/business/homepage.php';
         home();
         break;
+    case 'spct':
+        require_once './client/business/product.php';
+        loadone_sanpham();
+        break;
     case 'dang-nhap':
         require_once './client/business/user.php';
         formdn();

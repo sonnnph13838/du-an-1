@@ -13,7 +13,8 @@
 	<div class="carousel-inner">
 
 		<div class="item active">
-			<img src="https://kfcvietnam.com.vn/uploads/banner/6623578de98cdfd67dd57ad527cd52bc.jpg" alt="Los Angeles" style="width:100%; height:800px">
+			<img src="https://kfcvietnam.com.vn/uploads/banner/6623578de98cdfd67dd57ad527cd52bc.jpg" alt="Los Angeles"
+				style="width:100%; height:800px">
 			<div class="carousel-caption">
 				<h3>Los Angeles</h3>
 				<p>LA is always so much fun!</p>
@@ -21,7 +22,8 @@
 		</div>
 
 		<div class="item">
-			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg" alt="Chicago" style="width:100%;height:800px">
+			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg"
+				alt="Chicago" style="width:100%;height:800px">
 			<div class="carousel-caption">
 				<h3>Chicago</h3>
 				<p>Thank you, Chicago!</p>
@@ -29,7 +31,8 @@
 		</div>
 
 		<div class="item">
-			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg" alt="New York" style="width:100%;height:800px">
+			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg"
+				alt="New York" style="width:100%;height:800px">
 			<div class="carousel-caption">
 				<h3>New York</h3>
 				<p>We love the Big Apple!</p>
@@ -82,31 +85,32 @@
 	<div class="box-container">
 		<?php
 
-		require_once './client/business/product.php';
-		$list4like = list_products_top();
+    require_once './client/business/product.php';
+    $list4like = list_products_top();
 
-		?>
+    ?>
 
 		<?php foreach ($list4like as $itemLike) : ?>
-			<div class="boxx">
-				<div class="image">
-					<?php $img = UPLOAD_IMAGE . $itemLike['image_food']  ?>
-					<img src="<?= $img ?>" alt="">
-				</div>
-				<div class="content">
-					<h3><a href="" class="name-pro"><?= $itemLike['name_food'] ?></a></h3>
-					<div class="gia">
-						<?php if ($itemLike['discount_food'] > 0) : ?>
-							<span class="price"><?= number_format($itemLike['discount_food'], 0, ',', '.') ?> vnđ</span>
-							<span class="price-km"><?= number_format($itemLike['price_food'], 0, ',', '.') ?> vnđ</span>
-						<?php else : ?>
-							<span class="price"><?= number_format($itemLike['price_food'], 0, ',', '.') ?> vnđ</span>
-						<?php endif ?>
-					</div>
-					<a href="#" class="btn">Xem chi tiết</a>
-					<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $itemLike['id_food'] ?>   " class="btn" onclick="abc()">Thêm vào giỏ hàng</a>
-				</div>
+		<div class="boxx">
+			<div class="image">
+				<?php $img = UPLOAD_IMAGE . $itemLike['image_food']  ?>
+				<img src="<?= $img ?>" alt="">
 			</div>
+			<div class="content">
+				<h3><a href="" class="name-pro"><?= $itemLike['name_food'] ?></a></h3>
+				<div class="gia">
+					<?php if ($itemLike['discount_food'] > 0) : ?>
+					<span class="price"><?= number_format($itemLike['discount_food'], 0, ',', '.') ?> vnđ</span>
+					<span class="price-km"><?= number_format($itemLike['price_food'], 0, ',', '.') ?> vnđ</span>
+					<?php else : ?>
+					<span class="price"><?= number_format($itemLike['price_food'], 0, ',', '.') ?> vnđ</span>
+					<?php endif ?>
+				</div>
+				<a href="#" class="btn">Xem chi tiết</a>
+				<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $itemLike['id_food'] ?>   " class="btn"
+					onclick="abc()">Thêm vào giỏ hàng</a>
+			</div>
+		</div>
 		<?php endforeach ?>
 
 	</div>
@@ -121,39 +125,39 @@
 
 	<div class="box-container">
 		<?php
-		$spkhuyenmai = list_products_sell();
+    $spkhuyenmai = list_products_sell();
 
-		?>
+    ?>
 
 		<?php foreach ($spkhuyenmai as $itemKm) : ?>
-			<div class="boxx">
-				<div class="image">
-					<?php $img = UPLOAD_IMAGE . $itemLike['image_food']  ?>
-					<img src="<?= $img ?>" alt="">
+		<div class="boxx">
+			<div class="image">
+				<?php $img = UPLOAD_IMAGE . $itemLike['image_food']  ?>
+				<img src="<?= $img ?>" alt="">
+			</div>
+			<div class="content">
+				<h3><a href="" class="name-pro"><?= $itemKm['name_food'] ?></a></h3>
+				<div class="gia">
+					<?php if ($itemKm['discount_food'] > 0) : ?>
+					<span class="price"><?= number_format($itemKm['discount_food'], 0, ',', '.') ?> vnđ</span>
+					<span class="price-km"><?= number_format($itemKm['price_food'], 0, ',', '.') ?> vnđ</span>
+					<?php else : ?>
+					<span class="price"><?= number_format($itemKm['price_food'], 0, ',', '.') ?> vnđ</span>
+					<?php endif ?>
 				</div>
-				<div class="content">
-					<h3><a href="" class="name-pro"><?= $itemKm['name_food'] ?></a></h3>
-					<div class="gia">
-						<?php if ($itemKm['discount_food'] > 0) : ?>
-							<span class="price"><?= number_format($itemKm['discount_food'], 0, ',', '.') ?> vnđ</span>
-							<span class="price-km"><?= number_format($itemKm['price_food'], 0, ',', '.') ?> vnđ</span>
-						<?php else : ?>
-							<span class="price"><?= number_format($itemKm['price_food'], 0, ',', '.') ?> vnđ</span>
-						<?php endif ?>
-					</div>
-					<div class="btn-control">
-						<a href="#" class="mg-right">Xem chi tiết</a>
-						<a href="<?= BASE_URL . 'add-to-cart' ?>" class="btnn" onclick="abc()">Thêm vào giỏ hàng</a>
-					</div>
+				<div class="btn-control">
+					<a href="#" class="mg-right">Xem chi tiết</a>
+					<a href="<?= BASE_URL . 'add-to-cart' ?>" class="btnn" onclick="abc()">Thêm vào giỏ hàng</a>
 				</div>
 			</div>
+		</div>
 		<?php endforeach ?>
 
 	</div>
 </section>
 <script>
-	function abc() {
-		confirm("Bạn đã thêm thành công");
-	}
+function abc() {
+	confirm("Bạn đã thêm thành công");
+}
 </script>
 <!-- sản phẩm khuyến mại  -->
