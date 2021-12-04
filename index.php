@@ -70,6 +70,11 @@ switch ($url) {
         comfirmbill();
         break;
 
+    case 'mon-an':
+        require_once './client/business/product.php';
+        page_product();
+        break;
+
 
         //welcome to admin...
 
@@ -125,6 +130,11 @@ switch ($url) {
     case 'cp-admin/bill/edit_status/edit':
         require_once './admin/business/bill.php';
         update_status();
+        break;
+
+    case 'cp-admin/display';
+        require_once './admin/business/display.php';
+        display_index();
         break;
     default:
         # code...

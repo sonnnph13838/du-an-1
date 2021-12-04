@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>complete responsive food website design tutorial</title>
+	<title>N6-food: đồ ăn nhanh</title>
 	<!-- bootrap-link -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,7 +14,10 @@
 
 
 	<!-- custom css file link  -->
+
 	<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/style.css" />
+	<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/page-product.css" />
+	
 </head>
 
 <body>
@@ -28,7 +31,7 @@
 				<ul class="menu">
 					<li><a href="">Trang chủ</a></li>
 					<li class="thucdon">
-						<a href="">Thực đơn</a>
+						<a href="<?= BASE_URL . 'mon-an'?>">Thực đơn</a>
 						<ul class="dropdowm">
 							<?php require_once './client/business/category.php';
 							$categorys = list_category();
@@ -81,19 +84,43 @@
 	<!-- footer section  -->
 
 	<section class="footer">
-		<div class="share">
-			<a href="<?= CLIENT_ASSET ?>dist/#" class="btn">facebook</a>
-			<a href="<?= CLIENT_ASSET ?>dist/#" class="btn">twitter</a>
-			<a href="<?= CLIENT_ASSET ?>dist/#" class="btn">instagram</a>
-			<a href="<?= CLIENT_ASSET ?>dist/#" class="btn">pinterest</a>
-			<a href="<?= CLIENT_ASSET ?>dist/#" class="btn">linkedin</a>
-		</div>
 
-		<h1 class="credit">
-			created by <span> N6 </span> | all rights reserved!
-		</h1>
-	</section>
+    <div class="box-container">
 
+        <div class="box">
+            <h2 class="logo-fter"><i class="fas fa-utensils"></i>food</h2>
+            <p class="introduce_content">Sản phẩm độc quyền của Ns6. Chuyên phục vụ những món ăn nhanh chất lượng. Giá cả hợp lí. Nhanh chóng, tiện lợi</p>
+        </div>
+
+        <div class="box">
+            <h3>Thực đơn gồm</h3>
+            <?php foreach ($categorys as $item) : ?>
+				<a href=""><?= $item['name_category'] ?></a>
+			<?php endforeach ?>
+        </div>
+
+        <div class="box">
+            <h3>Thông tin liên hệ</h3>
+            <a href="#">+123-456-7890</a>
+            <a href="#">+111-222-3333</a>
+            <a href="#">shaikhanas@gmail.com</a>
+            <a href="#">anasbhai@gmail.com</a>
+            <a href="#">mumbai, india - 400104</a>
+        </div>
+
+        <div class="box">
+            <h3>Theo dõi chúng tôi tại</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> copyright @ 2021 by <span>Ns6</span> </div>
+
+</section>
 
 	<!-- loader  -->
 
