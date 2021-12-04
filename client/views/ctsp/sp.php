@@ -50,8 +50,8 @@
 
 								<tbody>
 									<?php
-                  foreach ($listcmt as $cmt) :
-                  ?>
+									foreach ($listcmt as $cmt) :
+									?>
 
 									<tr>
 										<td><?= $cmt['content'] ?></td>
@@ -67,11 +67,11 @@
 
 					<?php
 
-              if (isset($_SESSION['email'])) : ?>
+							if (isset($_SESSION['email'])) : ?>
 					<?php
-                // dd($_SESSION['email']['id_user']);
+								// dd($_SESSION['email']['id_user']);
 
-            ?>
+						?>
 					<div class="mgt-dn cnter">
 						<div class="forgot-pass">
 							<form action="post-comment" method="post">
@@ -162,5 +162,3 @@
 
 	</section>
 </div>
-
-<!--Section: Block Content-->

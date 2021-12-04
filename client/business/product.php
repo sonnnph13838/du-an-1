@@ -55,7 +55,7 @@ function loadone_sanpham()
     $sp = executeQuery($sql, true);
     $sqls = "select * from option where id_food=" . $id_food;
     $sps = executeQuery($sqls, true);
-    $sqlcmt = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user";
+    $sqlcmt = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user where id_food= " . $id_food;
     $listcmt = executeQuery($sqlcmt, true);
     // dd($listcmt);
     client_render('ctsp/sp.php', compact('sp', 'sps', 'listcmt'));
