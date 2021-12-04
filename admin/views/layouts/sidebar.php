@@ -75,19 +75,11 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="<?= ADMIN_URL . 'food'?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tạo mới</p>
-                </a>
-              </li>
-              
-
             </ul>
           </li>
           <li class="nav-item">
@@ -124,6 +116,11 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="fas fa-money-option"></i>
+              <p>
+                Option
 
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -135,17 +132,8 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= ADMIN_URL . 'display'?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Sửa thông tin</p>
+                <a href="<?= ADMIN_URL . 'display'?>" class="nav-link">
                 </a>
               </li>
-            </ul>
-          </li>
           
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
