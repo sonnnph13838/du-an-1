@@ -37,10 +37,9 @@
 						<?php endforeach ?>
 					</div>
 					<!-- danh sach binh luan -->
-					<div class="mgt-dn cnter">
-
+					<div class="cmt">
 						<div class="forgot-pass">
-							<h3>Bình luận</h3>
+							<h2>Bình luận</h2>
 							<table>
 								<thead>
 									<th>Nội dung</th>
@@ -63,36 +62,25 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
-
-					<?php
-
-							if (isset($_SESSION['email'])) : ?>
-					<?php
-								// dd($_SESSION['email']['id_user']);
-
-						?>
-					<div class="mgt-dn cnter">
-						<div class="forgot-pass">
-							<form action="post-comment" method="post">
-								<input type="hidden" name="id_user" value="<?= $_SESSION['email']['id_user'] ?>">
-								<input type="hidden" name="id_food" value="<?= $_GET['id_food'] ?>">
-								<div class="field password">
-									<div class="input-area">
-										<input type="text" placeholder="Nhập bình luận " name="cmt">
-										<i class="icon fas fa-phone-alt"></i>
-									</div>
+						<?php if (isset($_SESSION['email'])) : ?>
+						<form action="post-comment" method="post">
+							<input type="hidden" name="id_user" value="<?= $_SESSION['email']['id_user'] ?>">
+							<input type="hidden" name="id_food" value="<?= $_GET['id_food'] ?>">
+							<div class="field password">
+								<div class="input-area">
+									<input type="text" placeholder="Nhập bình luận " name="cmt">
+									<i class="icon fas fa-phone-alt"></i>
 								</div>
-								<input type="submit" value="Gửi bình luận" name="guibl">
-							</form>
+							</div>
+							<input type="submit" value="Gửi bình luận" name="guibl">
+						</form>
+						<?php else : ?>
+						<div class="mgt-dn cnter">
+							<h2>Vui lòng đăng nhập để bình luận</h2>
 						</div>
+						<?php endif ?>
 					</div>
-
-					<?php else : ?>
-					<div class="mgt-dn cnter">
-						<h2>Vui lòng đăng nhập để bình luận</h2>
-					</div>
-					<?php endif ?>
+					<!-- end ds bl -->
 				</div>
 
 			</div>
@@ -162,3 +150,19 @@
 
 	</section>
 </div>
+<style>
+.cmt {
+	line-height: 1.6;
+	width: 100%;
+	font-size: 15px;
+}
+
+.cmt table {
+	width: 100%;
+
+}
+
+.cmt form {
+	width: 80%;
+}
+</style>

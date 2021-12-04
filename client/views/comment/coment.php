@@ -26,23 +26,18 @@
 	</div>
 </div>
 
-<?php
+<?php if (isset($_SESSION['email'])) : ?>
 
-if (isset($_SESSION['email'])) : ?>
-<?php
-	// dd($_SESSION['email']['id_user']);
-
-	?>
 <div class="mgt-dn cnter">
 	<div class="forgot-pass">
 		<form action="post-comment" method="post">
+			<input type="hidden" name="id_user" value="<?= $_SESSION['email']['id_user'] ?>">
+			<input type="hidden" name="id_food" value="<?= $_GET['id_food'] ?>">
 			<div class="field password">
 				<div class="input-area">
 					<input type="text" placeholder="Nhập bình luận " name="cmt">
 					<i class="icon fas fa-phone-alt"></i>
 				</div>
-				<input type="hidden" name="id_user" value="<?= $_SESSION['email']['id_user'] ?>">
-
 			</div>
 			<input type="submit" value="Gửi bình luận" name="guibl">
 		</form>
