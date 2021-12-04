@@ -16,6 +16,15 @@ function executeQuery($sql, $getAll = true){
 
     return $stmt->fetch();
 }
+
+function get_rows($sql){
+    $connect = get_connect();
+    $stmt = $connect->prepare($sql);
+	$stmt->execute();
+	$number_of_rows = $stmt->fetchColumn();
+	return $number_of_rows;
+}
+
 /**
  * Mở kết nối đến CSDL sử dụng PDO
  */
@@ -112,18 +121,6 @@ function pdo_query_value($sql)
 	} finally {
 		unset($conn);
 	}
-}
-function exeQuery($getQuery, $getAll = true)
-{
-
-	global $conn;
-	$stmt =  $conn->prepare($getQuery);
-	$stmt->execute();
-
-	if ($getAll == true) {
-		return $stmt->fetchAll();
-	}
-	return $stmt->fetch();
 }
 function pdo_execute_return_lastInsertId($sql){
 	$sql_args = array_slice(func_get_args(),1);

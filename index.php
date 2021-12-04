@@ -131,6 +131,11 @@ switch ($url) {
         require_once './admin/business/bill.php';
         update_status();
         break;
+
+    case 'cp-admin/display';
+        require_once './admin/business/display.php';
+        display_index();
+        break;
     default:
         # code...
         break;

@@ -53,3 +53,29 @@
 .product {
   flex-grow: 2;
 }
+
+.ptrang {
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.trang_so {
+  margin-left: 20px;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  background: var(--red);
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.trang_so:hover {
+  text-decoration: none;
+  color: #fff;
+  transform: scale(1.2);
+}
