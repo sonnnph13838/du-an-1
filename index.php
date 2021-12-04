@@ -45,6 +45,10 @@ switch ($url) {
         require_once './client/business/cart.php';
         add_cart();
         break;
+    case 'addOption-to-cart';
+        require_once './client/business/cart.php';
+        add_option_cart();
+        break;
     case 'delete-cart':
         require_once './client/business/cart.php';
         delete_cart();
@@ -53,9 +57,17 @@ switch ($url) {
         require_once './client/business/cart.php';
         plus();
         break;
+    case 'pluss':
+        require_once './client/business/cart.php';
+        pluss();
+        break;
     case 'minus':
         require_once './client/business/cart.php';
         minus();
+        break;
+    case 'minuss':
+        require_once './client/business/cart.php';
+        minuss();
         break;
     case 'order':
         require_once './client/business/cart.php';
@@ -68,6 +80,10 @@ switch ($url) {
     case 'comfirmbill':
         require_once './client/business/cart.php';
         comfirmbill();
+        break;
+    case 'client/user/bill-user/ctdh':
+        require_once './client/business/cart.php';
+        ctdh();
         break;
 
 

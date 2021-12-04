@@ -36,6 +36,19 @@ function update_status(){
         $sql = "UPDATE bill SET status = 3 where  id_bill =  '$id'";
         pdo_execute($sql);
     }
+    if ($status == 0) {
+        $sql = "UPDATE cart SET status = 0 where  id_bill = '$id'";
+        pdo_execute($sql);
+    } elseif ($status == 1) {
+        $sql = "UPDATE cart SET status = 1 where  id_bill =  '$id'";
+        pdo_execute($sql);
+    }elseif ($status == 2) {
+        $sql = "UPDATE cart SET status = 2 where  id_bill =  '$id'";
+        pdo_execute($sql);
+    }elseif ($status == 3) {
+        $sql = "UPDATE cart SET status = 3 where  id_bill =  '$id'";
+        pdo_execute($sql);
+    }
     header('Location: '. ADMIN_URL . 'bill');
 }
 ?>

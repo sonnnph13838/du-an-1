@@ -5,7 +5,6 @@ const ADMIN_URL = BASE_URL . 'cp-admin/';
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
 const CLIENT_ASSET = BASE_URL . 'public/client-assets/';
 const UPLOAD_IMAGE = CLIENT_ASSET . 'dist/images/';
-const SAVE_IMAGE = 'du-an-1/public/client-assets/dist/images/';
 
 function dd()
 {

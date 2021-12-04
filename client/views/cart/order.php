@@ -150,7 +150,32 @@ if (isset($_session['email']) && (is_array($_session['email']))) {
 
                                     </tr>
                                 <?php endforeach ?>
+                                <?php if (!isset($_SESSION['option']) || $_SESSION['option'] == []) : ?>
+                                <?php else : ?>
+                                    <?php foreach ($listoption as $index => $p) :  ?>
+                                        <tr>
+                                            <td>Thêm</td>
 
+                                            <td><?= $p['name_option'] ?></td>
+                                            <td>
+                                                <?php $img = UPLOAD_IMAGE . $p['image']  ?>
+                                                <img src="<?= $img ?>" alt="" width="150">
+                                            </td>
+
+
+                                            <td><?= number_format($p['discount'], 0, ',', '.') ?> VNĐ</td>
+                                            <td>
+                                                <span class="sl"><?= $p['quantity'] ?></span>
+                                            </td>
+                                            <td>
+                                                <?= number_format($p['discount'] * $p['quantity'], 0, ',', '.') ?>
+                                                VNĐ
+                                            </td>
+                                            
+                                            <?php $tong += $p['discount'] * $p['quantity']; ?>
+                                        </tr>
+                                    <?php endforeach ?>
+                                <?php endif ?>
                                 <tr>
                                     <td colspan="4" class="total"> <b>Tổng giá trị đơn hàng:<b> </td>
 
