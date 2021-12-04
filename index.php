@@ -91,6 +91,11 @@ switch ($url) {
         ctdh();
         break;
 
+    case 'mon-an':
+        require_once './client/business/product.php';
+        page_product();
+        break;
+
 
         //welcome to admin...
 
@@ -194,6 +199,10 @@ switch ($url) {
     case 'cp-admin/option/del_option':
         require_once './admin/business/option.php';
         del_option();
+
+    case 'cp-admin/display';
+        require_once './admin/business/display.php';
+        display_index();
         break;
     default:
         # code...

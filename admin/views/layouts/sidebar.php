@@ -121,21 +121,19 @@
             <i class="fas fa-money-option"></i>
               <p>
                 Option
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="fas fa-code"></i>
+              <p>
+                Sửa giao diện
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= ADMIN_URL . 'option'?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách</p>
+                <a href="<?= ADMIN_URL . 'display'?>" class="nav-link">
                 </a>
               </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+          

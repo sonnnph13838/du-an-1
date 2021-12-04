@@ -2,6 +2,10 @@
 
 :root {
   --red: green;
+  --green: #27ae60;
+  --black: #192a56;
+  --light-color: #666;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -105,7 +109,9 @@ header .logo {
   display: block;
   margin-right: 20px;
 }
-
+header .logo a {
+  text-decoration: none;
+}
 header .logo i {
   padding-right: 0.5rem;
   color: var(--red);
@@ -119,6 +125,7 @@ header .navbarr a {
 
 header .navbarr a:hover {
   color: var(--red);
+  text-decoration: none;
 }
 
 #menu-bar {
@@ -199,7 +206,7 @@ header .navbarr a:hover {
   }
 }
 
-.footer {
+/* .footer {
   background: #000;
   text-align: center;
   position: absolute;
@@ -223,6 +230,72 @@ header .navbarr a:hover {
 
 .footer .credit span {
   color: var(--red);
+} */
+
+.footer {
+  text-align: center;
+  background: #000;
+  /* text-align: center; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer > .box-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 3.5rem;
+}
+
+.footer > .box-container > .box h3 {
+  padding: 0.5rem 0;
+  font-size: 2.5rem;
+  color: var(--red);
+}
+
+.footer > .box-container > .box a {
+  display: block;
+  padding: 0.5rem 0;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.footer > .box-container > .box > a:hover {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.footer > .credit {
+  text-align: center;
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+  color: var(--green);
+  padding: 0.5rem;
+  padding-top: 1.5rem;
+  margin-top: 1.9rem;
+}
+
+.footer > .credit span {
+  color: var(--green);
+}
+.logo-fter {
+  font-size: 4.5rem;
+  font-weight: bolder;
+  color: #666;
+  display: block;
+  margin-right: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.logo-fter i {
+  padding-right: 0.5rem;
+  color: var(--red);
+}
+
+.introduce_content {
+  color: #fff;
+  line-height: 2.2;
 }
 
 #scroll-top {
@@ -484,9 +557,7 @@ form .pass-txt {
   color: var(--red);
   text-decoration: none;
 }
-.wrapper a:hover {
-  text-decoration: underline;
-}
+
 form input[type="submit"] {
   height: 50px;
   margin-top: 30px;
@@ -640,6 +711,9 @@ form input[type="submit"]:hover {
   margin-bottom: 200px;
 }
 
+.mg-fterr {
+  margin-bottom: 400px;
+}
 /* sản phẩm khuyến mại */
 .btn-control {
   justify-content: center;
@@ -648,7 +722,7 @@ form input[type="submit"]:hover {
 
 .btn-control a {
   display: block;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1rem;
   border: 0.2rem solid var(--red);
   font-weight: bold;
   cursor: pointer;
