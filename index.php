@@ -29,6 +29,7 @@ switch ($url) {
     case 'postdk':
         require_once './client/business/user.php';
         postdk();
+        break;
     case 'quen-mk':
         require_once './client/business/user.php';
         formqmk();
@@ -52,6 +53,10 @@ switch ($url) {
     case 'delete-cart':
         require_once './client/business/cart.php';
         delete_cart();
+        break;
+    case 'delete-cart-option':
+        require_once './client/business/cart.php';
+        delete_cart_option();
         break;
     case 'plus':
         require_once './client/business/cart.php';
@@ -145,6 +150,7 @@ switch ($url) {
     case 'cp-admin/food':
         require_once './admin/business/food.php';
         list_food();
+        break;
     case 'cp-admin/food/edit_food':
         require_once './admin/business/food.php';
         edit_food();
@@ -164,6 +170,31 @@ switch ($url) {
     case 'cp-admin/food/del_food':
         require_once './admin/business/food.php';
         del_food();
+        break;
+    case 'cp-admin/option':
+        require_once './admin/business/option.php';
+        list_option();
+        break;
+    case 'cp-admin/option/add_option':
+        require_once './admin/business/option.php';
+        add_option();
+        break;
+    case 'cp-admin/option/add_option/save':
+        require_once './admin/business/option.php';
+        add_new_option();
+        break;
+    case 'cp-admin/option/edit_option':
+        require_once './admin/business/option.php';
+        edit_option();
+        break;
+    case 'cp-admin/option/update_option/save':
+        require_once './admin/business/option.php';
+        update_option();
+        break;
+    case 'cp-admin/option/del_option':
+        require_once './admin/business/option.php';
+        del_option();
+        break;
     default:
         # code...
         break;

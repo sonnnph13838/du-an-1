@@ -34,6 +34,7 @@ function add_food()
 }
 function save_add_food()
 {
+    
     $name = $_POST['name'];
     $image = $_FILES['image']['name'];
     $price = $_POST['price'];
@@ -45,7 +46,7 @@ function save_add_food()
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
         // echo "The file ". htmlspecialchars( basename( $_FILES['hinh']['name'])). " has been uploaded.";
       }
-    $sql = "insert into food (name_food,image_food,price_food,discount_food,detail_food,id_type) values ('$name','$image','$price','$discount','$detail','$category')";
+    $sql = "INSERT into food (name_food,image_food,price_food,discount_food,detail_food,id_type) values ('$name','$image','$price','$discount','$detail','$category')";
     executeQuery($sql);
     header('location: ' . ADMIN_URL . 'food');
 }

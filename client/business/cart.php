@@ -91,6 +91,19 @@ function delete_cart()
 	}
 	header('location: ' . BASE_URL . 'cart');
 }
+function delete_cart_option()
+{
+
+	$idoption = $_GET['id'];
+	if (!empty($_SESSION['option'])) {
+		foreach ($_SESSION['option'] as $select => $val) {
+			if ($idoption == $val['id_option']) {
+				unset($_SESSION['option'][$select]);
+			}
+		}
+	}
+	header('location: ' . BASE_URL . 'cart');
+}
 
 function add_cart()
 {
@@ -200,6 +213,11 @@ function bill()
 			$myfood = "INSERT into cart_food (id_cart,id_food,name,image,price,quantity) VALUES ('$insCart','$cart[0]','$cart[1]','$cart[2]','$cart[4]','$quantity')";
 			executeQuery($myfood, false);
 		}
+		foreach ($_SESSION['option'] as $option) {
+			$quantity = $option['quantity'];
+			$myoption = "INSERT into cart_option (id_cart,id_option,name,image,price,quantity) VALUES ('$insCart','$option[0]','$option[1]','$option[2]','$option[4]','$quantity')";
+			executeQuery($myoption, false);
+		}
 	}
 	$listoption = $_SESSION['option'];
 	$listCart = $_SESSION['cart'];
@@ -236,6 +254,8 @@ function comfirmbill()
 		$sql = "DELETE from  bill  where id_bill=$id_bill";
 		pdo_execute($sql);
 	}
+	unset($_SESSION['cart']);
+	unset($_SESSION['option']);
 	header('Location: ' . BASE_URL . '');
 }
 function bill_user()
@@ -259,8 +279,10 @@ function ctdh()
 {
 	$sql = "SELECT * from cart_food where id_cart=" . $_GET['id'];
 	$listCthd = executeQuery($sql, true);
+	$sql = "SELECT * from cart_option where id_cart=" . $_GET['id'];
+	$listOption = executeQuery($sql, true);
 	client_render(
 		'cart/ctdh.php',
-		compact('listCthd')
+		compact('listCthd','listOption')
 	);
 }
