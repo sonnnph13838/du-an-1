@@ -37,7 +37,7 @@
 							$categorys = list_category();
 							?>
 							<?php foreach ($categorys as $item) : ?>
-							<li><a href=""><?= $item['name_category'] ?></a></li>
+							<li><a href="<?= BASE_URL . 'mon-an'.'&iddm='.$item['id_category']?>"><?= $item['name_category'] ?></a></li>
 							<?php endforeach ?>
 						</ul>
 					</li>
