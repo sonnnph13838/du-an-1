@@ -1,5 +1,6 @@
 <?php
 
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 require './lib/PHPMailer/src/Exception.php';
 require './lib/PHPMailer/src/PHPMailer.php';
@@ -58,16 +59,29 @@ function formqmk()
     client_render('tai-khoan/quen-mk.php');
 }
 
+function form_reset()
+{
+    client_render('tai-khoan/reset-pass.php');
+}
+
+function post_pass_reset(){
+    $token = $_GET['token'];
+    $now = date("Y-m-d H:i:s");
+    $sql = "select * from forgot_password where token = '$token' and expire_time >= '$now'";
+    $user = executeQuery($sql,false);
+    $email = $user['email'];
+    var_dump($email);die;
+}
+
 function sendmail()
 {
     $email = $_POST['email'];
-
-    $sql = "select * from user where email = '$email'";
-    $checkEmail = executeQuery($sql);
-    $email = $checkEmail['email'];
-    if (is_array($checkEmail)) {
-        $pass = $checkEmail['password'];
-    }
+    $token  = uniqid();
+    $timestamp = strtotime("+1 day");
+    $expireTime = date("Y-m-d H:i:s",$timestamp);
+    $sql = "insert into forgot_password(email,token,expire_time)
+                  values('$email','$token','$expireTime')";
+    executeQuery($sql,false);
     //Load Composer's autoloader
     // require 'vendor/autoload.php';
 
@@ -99,7 +113,7 @@ function sendmail()
 
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Thông báo mật khẩu mới';
-        $mail->Body    = 'Mật khẩu mới: ' . $pass;
+        $mail->Body    = 'Bạn vui lòng ấn <a href="'.BASE_URL.'reset-pass&token='.$token. '">Tại đây!</a> ' ;
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
