@@ -39,7 +39,7 @@ body {
 }
 
 section {
-  padding: 2rem 9%;
+  padding: 2rem 2%;
 }
 
 .heading {
@@ -598,10 +598,17 @@ form input[type="submit"]:hover {
 
 .menuu .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+
   gap: 1.5rem;
 }
 
+.homepage {
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+
+.page_product {
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
 .menuu .box-container .boxx {
   background: #fff;
   border: 0.1rem solid rgba(0, 0, 0, 0.2);

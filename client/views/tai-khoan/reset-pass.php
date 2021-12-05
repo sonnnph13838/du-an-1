@@ -13,17 +13,18 @@
     
   <div class="forgot-pass">
     
-    <h3>Quên mật khẩu</h3>
-    <form action="<?= BASE_URL . 'send-email'?>" method="post">
+    <h3>Đặt lại mật khẩu</h3>
+    <form action="<?= BASE_URL . 'post-reset'?>" method="post">
       <div class="field email">
         <div class="input-area">
-          <input type="text" placeholder="Email Address" name="email">
-          <i class="icon fas fa-envelope"></i>
+          <input type="hidden" name="email" value="<?= $email?>">
+          <input type="password" name="mat_khau" placeholder="Password">
+          <i class="icon fas fa-lock"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
       </div>
 
-      <input type="submit" value="Quên mật khẩu">
+      <input type="submit" value="Gửi" name="submit">
     </form>
     <div class="sign-txt">Bạn chưa có tài khoản? <a href="client-dangki">Đăng kí ngay</a></div>
   </div>

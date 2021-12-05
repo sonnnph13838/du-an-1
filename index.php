@@ -34,6 +34,14 @@ switch ($url) {
         require_once './client/business/user.php';
         formqmk();
         break;
+    case 'reset-pass':
+        require_once './client/business/user.php';
+        form_reset();
+        break;
+    case 'post-reset':
+        require_once './client/business/user.php';
+        post_pass_reset();
+        break;
     case 'send-email':
         require_once './client/business/user.php';
         sendmail();

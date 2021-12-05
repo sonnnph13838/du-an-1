@@ -62,7 +62,7 @@ if (isset($_session['email']) && (is_array($_session['email']))) {
 </style>
 
 
-<div class="mgt-dn lefa mg-fter">
+<div class="mgt-dn lefa mg-fterr">
     <form action="bill" method="post">
         <div class="radiogroups">
             <div class="title" align="center">
