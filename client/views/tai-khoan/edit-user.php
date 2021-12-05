@@ -5,7 +5,7 @@
 	 
 }
 ?>
-<div class="mgt-dn cnter">
+<div class="mgt-dn cnter mg-fterr">
 	<div class="wrapper">
 		<h3>Sửa tài khoản</h3>
 		<form action="update-user" method="post">

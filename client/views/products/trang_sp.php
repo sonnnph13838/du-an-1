@@ -16,7 +16,7 @@
 <!-- products div -->
 <div class="menuu product">
 
-	<div class="box-container">
+	<div class="box-container page_product">
 		<?php
 
 		require_once './client/business/product.php';
@@ -34,10 +34,10 @@
 					<h3><a href="" class="name-pro"><?= $item['name_food'] ?></a></h3>
 					<div class="gia">
 						<?php if ($item['discount_food'] > 0) : ?>
-							<span class="price"><?= number_format($item['discount_food'], 0, ',', '.') ?> vnđ</span>
-							<span class="price-km"><?= number_format($item['price_food'], 0, ',', '.') ?> vnđ</span>
+							<span class="e"><?= number_format($item['discount_food'], 0, ',', '.') ?> vnđ</span>
+							<span class="m"><?= number_format($item['price_food'], 0, ',', '.') ?> vnđ</span>
 						<?php else : ?>
-							<span class="price"><?= number_format($item['price_food'], 0, ',', '.') ?> vnđ</span>
+							<span class="e"><?= number_format($item['price_food'], 0, ',', '.') ?> vnđ</span>
 						<?php endif ?>
 					</div>
 					<a href="#" class="btn">Xem chi tiết</a>

@@ -60,17 +60,27 @@ function formqmk()
 }
 
 function form_reset()
-{
-    client_render('tai-khoan/reset-pass.php');
-}
-
-function post_pass_reset(){
+{ 
     $token = $_GET['token'];
     $now = date("Y-m-d H:i:s");
     $sql = "select * from forgot_password where token = '$token' and expire_time >= '$now'";
     $user = executeQuery($sql,false);
     $email = $user['email'];
-    var_dump($email);die;
+
+    client_render('tai-khoan/reset-pass.php',compact('email'));
+}
+
+function post_pass_reset(){
+    if(isset($_POST['submit']) && ($_POST['submit'])){
+        $email = $_POST['email'];
+        $pass = $_POST['mat_khau'];
+        $sql = "update user set password = '$pass' where email = '$email'";
+        executeQuery($sql,false);
+        // xóa token trong forgot-pas
+        $dele = "delete  from forgot_password where email = '$email'";
+        executeQuery($dele,false);
+        header('location:' . BASE_URL . 'quen-mk&msg= Đổi thành công vui lòng đăng nhập!!');
+    }
 }
 
 function sendmail()

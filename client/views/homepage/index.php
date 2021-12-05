@@ -73,7 +73,7 @@
 
 	<h1 class="heading-product"> Top Món ăn nổi bật </h1>
 
-	<div class="box-container">
+	<div class="box-container homepage">
 		<?php
 
 		require_once './client/business/product.php';
@@ -113,7 +113,7 @@
 
 	<h1 class="heading-product"> Món ăn được khuyến mại </h1>
 
-	<div class="box-container">
+	<div class="box-container homepage">
 		<?php
 		$spkhuyenmai = list_products_sell();
 
