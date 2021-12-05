@@ -10,6 +10,11 @@ switch ($url) {
         require_once './client/business/homepage.php';
         home();
         break;
+    case 'spct':
+        require_once './client/business/product.php';
+        loadone_sanpham();
+        // show_cmt();
+        break;
     case 'dang-nhap':
         require_once './client/business/user.php';
         formdn();
@@ -68,11 +73,6 @@ switch ($url) {
     case 'comfirmbill':
         require_once './client/business/cart.php';
         comfirmbill();
-        break;
-
-    case 'comment':
-        require_once './client/business/product.php';
-        show_cmt(0);
         break;
     case 'post-comment':
         require_once './client/business/product.php';
