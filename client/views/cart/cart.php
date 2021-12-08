@@ -23,7 +23,7 @@
 				$tong = 0;
 				?>
 				<?php foreach ($listCart as $index => $c) :  ?>
-					
+
 
 					<tr>
 
@@ -53,34 +53,34 @@
 
 					</tr>
 				<?php endforeach ?>
-				<?php if (!isset($_SESSION['option']) || $_SESSION['option'] == []  ) : ?>
-					<?php else : ?>
-						<?php foreach ($listoption as $index => $p) :  ?>
-					<tr>
-						<td>Thêm</td>
+				<?php if (!isset($_SESSION['option']) || $_SESSION['option'] == []) : ?>
+				<?php else : ?>
+					<?php foreach ($listoption as $index => $p) :  ?>
+						<tr>
+							<td>Thêm</td>
 
-						<td><?= $p['name_option'] ?></td>
-						<td>
-							<?php $img = UPLOAD_IMAGE . $p['image']  ?>
-							<img src="<?= $img ?>" alt="" width="150">
-						</td>
+							<td><?= $p['name_option'] ?></td>
+							<td>
+								<?php $img = UPLOAD_IMAGE . $p['image']  ?>
+								<img src="<?= $img ?>" alt="" width="150">
+							</td>
 
 
-						<td><?= number_format($p['discount'], 0, ',', '.') ?> VNĐ</td>
-						<td>
-							<a class="plus" href=" <?= BASE_URL . 'pluss' ?>&index=<?= $index ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-plus"></i></a>
-							<span class="sl"><?= $p['quantity'] ?></span>
-							<a class="minus" href="<?= BASE_URL . 'minuss' ?>&index=<?= $index ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-minus"></i></a>
-						</td>
-						<td>
-							<?= number_format($p['discount'] * $p['quantity'], 0, ',', '.') ?>
-							VNĐ
-						</td>
-						<td>
-							<a class="btn" href="<?= BASE_URL . 'delete-cart-option' ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-trash"></i></a>
-						</td>
-						<?php $tong += $p['discount'] * $p['quantity']; ?>
-					</tr>
+							<td><?= number_format($p['price'], 0, ',', '.') ?> VNĐ</td>
+							<td>
+								<a class="plus" href=" <?= BASE_URL . 'pluss' ?>&index=<?= $index ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-plus"></i></a>
+								<span class="sl"><?= $p['quantity'] ?></span>
+								<a class="minus" href="<?= BASE_URL . 'minuss' ?>&index=<?= $index ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-minus"></i></a>
+							</td>
+							<td>
+								<?= number_format($p['price'] * $p['quantity'], 0, ',', '.') ?>
+								VNĐ
+							</td>
+							<td>
+								<a class="btn" href="<?= BASE_URL . 'delete-cart-option' ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-trash"></i></a>
+							</td>
+							<?php $tong += $p['price'] * $p['quantity']; ?>
+						</tr>
 					<?php endforeach ?>
 				<?php endif ?>
 				<tr>
@@ -97,8 +97,8 @@
 
 			</tbody>
 		</table>
-
 </div>
+<div class="mgt-dn cnter">
 <h1>Sẽ thật tuyệt khi có :</h1>
 <div class="mgt-dn cnter">
 	<?php foreach ($listOption as $itemLike) : ?>
@@ -110,9 +110,8 @@
 			<div class="content">
 				<h3><a href="" class="name-pro"><?= $itemLike['name_option'] ?></a></h3>
 				<div class="gia">
-					<?php if ($itemLike['discount'] > 0) : ?>
-						<span class="price"><?= number_format($itemLike['discount'], 0, ',', '.') ?> vnđ</span>
-						<span class="price-km"><?= number_format($itemLike['price'], 0, ',', '.') ?> vnđ</span>
+					<?php if ($itemLike['price'] > 0) : ?>
+						<span class="price"><?= number_format($itemLike['price'], 0, ',', '.') ?> vnđ</span>
 					<?php else : ?>
 						<span class="price"><?= number_format($itemLike['price'], 0, ',', '.') ?> vnđ</span>
 					<?php endif ?>
@@ -123,6 +122,9 @@
 	<?php endforeach ?>
 </div>
 </div>
+</div>
+
+
 <?php endif ?>
 
 <style>

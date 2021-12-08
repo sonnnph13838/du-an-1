@@ -48,10 +48,10 @@
                                     <span class="sl"><?= $p['quantity'] ?></span>
                                 </td>
                                 <td>
-                                    <?= number_format($c['price'] * $p['quantity'], 0, ',', '.') ?>
+                                    <?= number_format($p['price'] * $p['quantity'], 0, ',', '.') ?>
                                     VNĐ
                                 </td>
-                                <?php $tong += $c['price'] * $p['quantity']; ?>
+                                <?php $tong += $p['price'] * $p['quantity']; ?>
                             </tr>
                         <?php endforeach ?>
                         <tr>

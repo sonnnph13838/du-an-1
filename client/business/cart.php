@@ -170,9 +170,7 @@ function add_option_cart()
 		// sản phẩm không có trong giỏ hàng
 		$listoption['quantity'] = 1;
 
-		if ($listoption['discount'] > 0) {
-			$listoption['gia'] = $listoption['discount'];
-		} else {
+		if ($listoption['price'] > 0) {
 			$listoption['gia'] = $listoption['price'];
 		}
 		// array_push($cartData, $listfood);
@@ -210,12 +208,12 @@ function bill()
 		$insCart = pdo_execute_return_lastInsertId($carts);
 		foreach ($_SESSION['cart'] as $cart) {
 			$quantity = $cart['cart_amount'];
-			$myfood = "INSERT into cart_food (id_cart,id_food,name,image,price,quantity) VALUES ('$insCart','$cart[0]','$cart[1]','$cart[2]','$cart[4]','$quantity')";
+			$myfood = "INSERT into cart_food (id_cart,id_food,name,image,price,quantity) VALUES ('$insCart','$cart[0]','$cart[1]','$cart[2]','$cart[3]','$quantity')";
 			executeQuery($myfood, false);
 		}
 		foreach ($_SESSION['option'] as $option) {
 			$quantity = $option['quantity'];
-			$myoption = "INSERT into cart_option (id_cart,id_option,name,image,price,quantity) VALUES ('$insCart','$option[0]','$option[1]','$option[2]','$option[4]','$quantity')";
+			$myoption = "INSERT into cart_option (id_cart,id_option,name,image,price,quantity) VALUES ('$insCart','$option[0]','$option[1]','$option[2]','$option[3]','$quantity')";
 			executeQuery($myoption, false);
 		}
 	}

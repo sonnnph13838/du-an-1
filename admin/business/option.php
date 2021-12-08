@@ -18,7 +18,7 @@ function add_option()
 }
 function add_new_option()
 {
-    if (isset($_POST['luu']) && ($_POST['luu'])) {
+    
         $name = $_POST['name'];
         $image = $_FILES['image']['name'];
         $price = $_POST['price'];
@@ -31,7 +31,7 @@ function add_new_option()
         $sql = "INSERT into option (name_option,image,price,discount) VALUES('$name','$image','$price','$discount') ";
         executeQuery($sql);
         header('location: ' . ADMIN_URL . 'option');
-    }
+    
 }
 function edit_option()
 {

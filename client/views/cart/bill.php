@@ -198,20 +198,6 @@
                                         <span class="text">Thanh toán khi nhận hàng</span>
                                     </label>
                                 </div>
-                                <div class="wrappers">
-                                    <input class="state" type="radio" name="pttt" id="b" value="1">
-                                    <label class="label" for="b">
-                                        <div class="indicator"></div>
-                                        <span class="text">Thanh toán bằng thẻ tín dụng</span>
-                                    </label>
-                                </div>
-                                <div class="wrappers">
-                                    <input class="state" type="radio" name="pttt" id="c" value="2">
-                                    <label class="label" for="c">
-                                        <div class="indicator"></div>
-                                        <span class="text">Thanh toán bằng zaloPay</span>
-                                    </label>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -263,6 +249,7 @@
                                         </tr>
                                     <?php endforeach ?>
                                     <?php if (!isset($_SESSION['option']) || $_SESSION['option'] == []) : ?>
+                                        hi
                                     <?php else : ?>
                                         <?php foreach ($listoption as $index => $p) :  ?>
                                             <tr>
@@ -271,7 +258,7 @@
                                                 <td><?= $p['name_option'] ?></td>
                                                 <td>
                                                     <?php $img = UPLOAD_IMAGE . $p['image']  ?>
-                                                    <img src="<?= $img ?>" alt="" width="150">
+                                                    <img src="<?= $img ?>" alt="" width="100">
                                                 </td>
 
 

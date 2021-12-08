@@ -159,7 +159,7 @@ if (isset($_session['email']) && (is_array($_session['email']))) {
                                             <td><?= $p['name_option'] ?></td>
                                             <td>
                                                 <?php $img = UPLOAD_IMAGE . $p['image']  ?>
-                                                <img src="<?= $img ?>" alt="" width="150">
+                                                <img src="<?= $img ?>" alt="" width="100">
                                             </td>
 
 
