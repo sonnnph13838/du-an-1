@@ -70,7 +70,13 @@
 				<a href="<?= BASE_URL . 'dang-nhap' ?>">Đăng Nhập</a>
 				<a href="<?= BASE_URL . 'dang-ki' ?>"
 					style="margin-left: 5px; border-left: 1px solid #666; padding-left: 5px;">Đăng kí</a>
+				<div class="gio_hang">
 				<a href="<?= BASE_URL ?>cart"><i class="fas fa-shopping-cart"></i></a>
+				<?php if(count($_SESSION['cart']) > 0): ?>
+					<p><?= count($_SESSION['cart']) ?></p>
+				<?php endif?>
+				</div>
+				
 			</nav>
 			<?php } ?>
 		</div>
