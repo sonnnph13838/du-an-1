@@ -77,7 +77,7 @@
 								VNĐ
 							</td>
 							<td>
-								<a  href="<?= BASE_URL . 'delete-cart-option' ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-trash"></i></a>
+								<a  href="<?= BASE_URL . 'delete-cart-option' ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-trasgh"></i></a>
 							</td>
 							<?php $tong += $p['price'] * $p['quantity']; ?>
 						</tr>
@@ -89,7 +89,12 @@
 
 				</tr>
 				<tr>
-				   <td class="thanh-toan"><a href="<?= BASE_URL . 'order' ?>" class="">Thanh Toán</a></td>
+				   <td class="mua-sam" colspan="2">
+					   <div class="a">
+					   <a href="<?= BASE_URL . 'mon-an' ?>" class="btnxa"><i class="fas fa-arrow-left"></i>Tiếp tục mua hàng</a>
+					   <a href="<?= BASE_URL . 'order' ?>" class="btnx">Thanh Toán</a>
+					   </div>
+					</td>
 				</tr>
 
 			</tbody>
@@ -163,14 +168,63 @@
 
 	.table>tbody>tr:last-child>td {
 		border-bottom: none;
+		margin-top: 40px;
 	}
 
 	.total {
 		font-size: 20px;
 		color: var(--red);
+		text-align: left;
+	}
+
+	.total b {
+		padding-left: 20px;
 	}
 
 	.total-number {
 		font-size: 20px;
+	}
+
+	.minus,.plus {
+		border-radius: 3px;
+		width: 30px;
+		height: 30px;
+		background-color: var(--red);
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-size: 12px;
+		margin: 0 10px;
+	}
+	.sl {
+		font-size: 20px;
+	}
+
+	.btnxa,
+	.btnx {
+		background: var(--red);
+		padding: 16px 10px;
+		color: white;
+		border-radius: 4px;
+	}
+
+	.btnxa:hover,
+	.btnx:hover {
+		text-decoration: none;
+		color: white;
+	}
+
+	.a {
+		display: flex;
+
+	}
+
+	.btnxa {
+		margin-right: 20px;
+	}
+
+	.fa-arrow-left{
+		margin-right: 6px;
 	}
 </style>
