@@ -29,7 +29,7 @@
 			<nav class="navbarr">
 
 				<ul class="menu">
-					<li><a href="">Trang chủ</a></li>
+					<li><a href="<?= BASE_URL ?>">Trang chủ</a></li>
 					<li class="thucdon">
 						<a href="<?= BASE_URL . 'mon-an'?>">Thực đơn</a>
 						<ul class="dropdowm">

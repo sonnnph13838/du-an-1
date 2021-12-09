@@ -137,7 +137,7 @@
 					</div>
 					<div class="btn-control">
 						<a href="#" class="mg-right">Xem chi tiết</a>
-						<a href="<?= BASE_URL . 'add-to-cart' ?>" class="btnn" onclick="abc()">Thêm vào giỏ hàng</a>
+						<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $itemLike['id_food'] ?>  " class="btnn" onclick="abc()">Thêm vào giỏ hàng</a>
 					</div>
 				</div>
 			</div>
