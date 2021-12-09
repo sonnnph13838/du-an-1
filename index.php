@@ -10,6 +10,14 @@ switch ($url) {
         require_once './client/business/homepage.php';
         home();
         break;
+    case 'spct':
+        require_once './client/business/product.php';
+        loadone_sanpham();
+        break;
+    case 'post-timkiem':
+        require_once './client/business/product.php';
+        post_timkiem();
+        break;
     case 'dang-nhap':
         require_once './client/business/user.php';
         formdn();
@@ -68,6 +76,10 @@ switch ($url) {
     case 'comfirmbill':
         require_once './client/business/cart.php';
         comfirmbill();
+        break;
+    case 'mon-an':
+        require_once './client/business/product.php';
+        page_product();
         break;
 
 

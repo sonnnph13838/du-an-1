@@ -26,9 +26,9 @@
 			<nav class="navbarr">
 
 				<ul class="menu">
-					<li><a href="">Trang chủ</a></li>
+					<li><a href="<?= BASE_URL .''?>">Trang chủ</a></li>
 					<li class="thucdon">
-						<a href="">Thực đơn</a>
+						<a href="<?= BASE_URL . 'mon-an'?>">Thực đơn</a>
 						<ul class="dropdowm">
 							<?php require_once './client/business/category.php';
 							$categorys = list_category();
@@ -46,8 +46,8 @@
 		<div id="menu-bar" class="fas fa-bars"></div>
 
 		<div class="c">
-			<form action="">
-				<input type="text" placeholder="Nhập vào đây để tìm kiếm">
+			<form action="<?= BASE_URL .'post-timkiem'?>" method="post">
+				<input type="text" name="tukhoa" placeholder="Nhập vào đây để tìm kiếm">
 			</form>
 			<?php
 			if (isset($_SESSION['email'])) {
