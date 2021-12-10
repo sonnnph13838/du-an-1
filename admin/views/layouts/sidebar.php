@@ -143,7 +143,7 @@
 						</li>
 					</ul>
 				</li>
-        <li class="nav-item">
+                <li class="nav-item">
 					<a href="#" class="nav-link">
 						<i class="fas fa-comment-alt"></i>
 						<p>
@@ -160,6 +160,7 @@
 						</li>
 					</ul>
 				</li>
+				
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->

@@ -107,19 +107,19 @@
 
         <div class="box">
             <h3>Thông tin liên hệ</h3>
-            <a href="#">+123-456-7890</a>
-            <a href="#">+111-222-3333</a>
-            <a href="#">shaikhanas@gmail.com</a>
-            <a href="#">anasbhai@gmail.com</a>
-            <a href="#">mumbai, india - 400104</a>
+			<?php 
+			      require_once './client/business/contact_infor.php';
+				  $contact = slectData();
+			?>
+            <a href="#">+<?= $contact['sdt']?></a>
+            <a href="#"><?= $contact['email']?></a>
+            <a href="#"><?= $contact['address']?></a>
         </div>
 
         <div class="box">
             <h3>Theo dõi chúng tôi tại</h3>
-            <a href="#">facebook</a>
-            <a href="#">twitter</a>
-            <a href="#">instagram</a>
-            <a href="#">linkedin</a>
+            <a href="<?= $contact['facebook_url']?>">facebook</a>
+            <a href="#">zalo</a>
         </div>
 
     </div>
