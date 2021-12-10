@@ -64,21 +64,18 @@
 				<!-- <option value="index.php?act=dmk">Đổi mật khẩu</option> -->
 				<option value="<?= BASE_URL . 'dang-xuat' ?>">Thoát</option>
 			</select>
-			<a href="<?= BASE_URL ?>cart"><i class="fas fa-shopping-cart"></i></a>
 			<?php } else { ?>
 			<nav class="navbarr">
 				<a href="<?= BASE_URL . 'dang-nhap' ?>">Đăng Nhập</a>
-				<a href="<?= BASE_URL . 'dang-ki' ?>"
-					style="margin-left: 5px; border-left: 1px solid #666; padding-left: 5px;">Đăng kí</a>
-				<div class="gio_hang">
-				<a href="<?= BASE_URL ?>cart"><i class="fas fa-shopping-cart"></i></a>
-				<?php if(count($_SESSION['cart']) > 0): ?>
-					<p><?= count($_SESSION['cart']) ?></p>
-				<?php endif?>
-				</div>
-				
+				<a href="<?= BASE_URL . 'dang-ki' ?>" style="margin-left: 5px; border-left: 1px solid #666; padding-left: 5px;"> Đăng kí</a>
 			</nav>
 			<?php } ?>
+			<div class="gio_hang">
+				<a href="<?= BASE_URL ?>cart" class="cart"><i class="fas fa-shopping-cart"></i></a>
+				<?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
+					<p><?= count($_SESSION['cart']) ?></p>
+				<?php endif?>
+			</div>
 		</div>
 
 	</header>
@@ -92,10 +89,13 @@
 	<section class="footer">
 
     <div class="box-container">
-
+	        <?php 
+			      require_once './client/business/contact_infor.php';
+				  $contact = slectData();
+			?>
         <div class="box">
             <h2 class="logo-fter"><i class="fas fa-utensils"></i>food</h2>
-            <p class="introduce_content">Sản phẩm độc quyền của Ns6. Chuyên phục vụ những món ăn nhanh chất lượng. Giá cả hợp lí. Nhanh chóng, tiện lợi</p>
+            <p class="introduce_content"><?= $contact['sub_content']?></p>
         </div>
 
         <div class="box">
@@ -107,10 +107,6 @@
 
         <div class="box">
             <h3>Thông tin liên hệ</h3>
-			<?php 
-			      require_once './client/business/contact_infor.php';
-				  $contact = slectData();
-			?>
             <a href="#">+<?= $contact['sdt']?></a>
             <a href="#"><?= $contact['email']?></a>
             <a href="#"><?= $contact['address']?></a>

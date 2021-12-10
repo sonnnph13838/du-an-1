@@ -208,9 +208,13 @@ switch ($url) {
         require_once './admin/business/option.php';
         del_option();
 
-    case 'cp-admin/display';
+    case 'cp-admin/display':
         require_once './admin/business/display.php';
         display_index();
+        break;
+    case 'cp-admin/post-display':
+        require_once './admin/business/display.php';
+        post_display();
         break;
     default:
         # code...
