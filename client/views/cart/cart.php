@@ -1,6 +1,5 @@
-
 <div class="mgt-dn cnter">
-<?php if(!isset($_SESSION['cart']) || $_SESSION['cart'] == []) : ?>
+	<?php if(!isset($_SESSION['cart']) || $_SESSION['cart'] == []) : ?>
 	<h1>Bạn chưa có món ăn nào trong giỏ hàng !!!</h1>
 	<?php else : ?>
 
@@ -32,9 +31,8 @@
 				<td><?= $c['name_food'] ?></td>
 				<td>
 					<img src="<?= $c['image_food'] ?>" alt="" width="100">
+					
 				</td>
-
-
 				<td><?= number_format($c['gia'], 0, ',', '.') ?> VNĐ</td>
 				<td>
 					<a class="plus" href=" <?= BASE_URL . 'plus' ?>&index=<?= $index ?>&id=<?= $c['id_food'] ?>"><i
@@ -55,7 +53,7 @@
 
 			</tr>
 			<?php endforeach ?>
-			
+
 			<tr>
 				<td colspan="4" class="total"> <b>Tổng giá trị đơn hàng:<b> </td>
 
