@@ -126,6 +126,10 @@ switch ($url) {
         require_once './admin/business/bill.php';
         update_status();
         break;
+    case 'about':
+        require_once './client/business/aboutus.php';
+        aboutus();
+        break;
     default:
         # code...
         break;
