@@ -32,10 +32,9 @@
 
 
 </style>
+<div class="mgt-dn cnter mg-fterr"> 
+
 <div class="container">
-    <div>
-        <h2>ahbasbsahbf</h2>
-    </div>
     <div class="gt">
         <h2>Giới thiệu</h2>
     </div>
@@ -131,4 +130,5 @@
     </div>
 
 
+</div>
 </div>
