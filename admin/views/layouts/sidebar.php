@@ -5,7 +5,11 @@
 			class="brand-image img-circle elevation-3" style="opacity: .8">
 		<span class="brand-text font-weight-light">AdminLTE 3</span>
 	</a>
-
+	<?php
+			if (isset($_SESSION['email'])) {
+				extract($_SESSION['email']);
+			?>
+			
 	<!-- Sidebar -->
 	<div class="sidebar">
 		<!-- Sidebar user panel (optional) -->
@@ -14,10 +18,10 @@
 				<img src="<?= ADMIN_ASSET ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 			</div>
 			<div class="info">
-				<a href="#" class="d-block">Alexander Pierce</a>
+				<a href="#" class="d-block"><?= $name_user ?></a>
 			</div>
 		</div>
-
+		<?php } ?>
 		<!-- SidebarSearch Form -->
 		<div class="form-inline">
 			<div class="input-group" data-widget="sidebar-search">

@@ -1,4 +1,4 @@
-<div class="mgt-dn lefa mg-fter mg-fterr">
+<div class="mgt-dn lefa mg-fter">
     <form action="bill" method="post">
         <div class="radiogroups">
             <h2>Chi tiết đơn hàng</h2>

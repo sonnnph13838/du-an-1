@@ -5,7 +5,6 @@ function list_bill()
     // lấy danh sách danh mục
     $sql = "select * from bill where name_bill like '%$keyword%'";
     $cates = executeQuery($sql, true);
-
     // hiển thị view
     admin_render(
         'bill/index.php',
@@ -51,8 +50,4 @@ function edit_status()
         pdo_execute($sql);
     }
     header('Location: ' . ADMIN_URL . 'bill');
-}
-function update_status()
-{
-    
 }

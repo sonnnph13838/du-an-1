@@ -98,8 +98,8 @@
 			</tbody>
 		</table>
 </div>
-<div class="mgt-dn cnter">
-<h1>Sẽ thật tuyệt khi có :</h1>
+<div class="mgt-dn mg-fterr">
+<h1 align="center">Sẽ thật tuyệt khi có :</h1>
 <div class="mgt-dn cnter">
 	<?php foreach ($listOption as $itemLike) : ?>
 		<div class="boxx">
