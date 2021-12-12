@@ -43,6 +43,7 @@
 					</li>
 					<li><a href="">Giới thiệu</a>
 					</li>
+					<li><a href="<?= BASE_URL . 'lien-he'?>">Liên Hệ</a>
 				</ul>
 			</nav>
 		</div>

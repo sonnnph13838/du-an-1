@@ -103,6 +103,14 @@ switch ($url) {
         require_once './client/business/product.php';
         page_product();
         break;
+    case 'lien-he':
+        require_once './client/business/homepage.php';
+        lien_he();
+        break;
+    case 'post-lien-he':
+        require_once './client/business/lien_he.php';
+        check_email();
+        break;
 
 
         //welcome to admin...
