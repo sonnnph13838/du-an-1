@@ -47,6 +47,10 @@
     .radiogroups {
         padding: 48px 64px;
         border-radius: 16px;
+        background: #7fff7f;
+        box-shadow:
+            4px 4px 4px 0px #d1d9e6 inset,
+            -4px -4px 4px 0px #ffffff inset;
     }
 
 
@@ -133,6 +137,11 @@
         text-align: right;
     }
 
+    .form-ct {
+        margin-left: 50px;
+        margin-top: 148px;
+    }
+
     .title {
         text-align: center;
     }
@@ -140,7 +149,7 @@
 <?php foreach ($bill as $bills) : ?>
 
 
-    <div class="mgt-dn lefa mg-fter mg-fterr ">
+    <div class="mgt-dn lefa mg-fter">
         <form action="comfirmbill" method="post">
             <div class="radiogroups">
                 <div class="title" align="center">

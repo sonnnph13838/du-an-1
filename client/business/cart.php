@@ -4,17 +4,8 @@ function layout_cart()
 {
 	$sql = "SELECT * from option ";
 	$listOption = executeQuery($sql);
-	if (!isset($_SESSION['cart'])) {
-		$listCart = [];
-	} else {
-		$listCart = $_SESSION['cart'];
-	}
-
-	if (!isset($_SESSION['option'])) {
-		$listoption = [];
-	} else {
-		$listoption = $_SESSION['option'];
-	}
+	$listCart = $_SESSION['cart'];
+	$listoption = $_SESSION['option'];
 
 	client_render('cart/cart.php', compact('listCart', 'listOption', 'listoption'));
 }
@@ -217,33 +208,17 @@ function bill()
 		$insCart = pdo_execute_return_lastInsertId($carts);
 		foreach ($_SESSION['cart'] as $cart) {
 			$quantity = $cart['cart_amount'];
-			if($cart[4] == 0) {
-				$myfood = "INSERT into cart_food (id_cart,id_food,name,image,price,quantity) VALUES ('$insCart','$cart[0]','$cart[1]','$cart[2]','$cart[3]','$quantity')";
-				executeQuery($myfood, false);
-			}else{
-				$myfood = "INSERT into cart_food (id_cart,id_food,name,image,price,quantity) VALUES ('$insCart','$cart[0]','$cart[1]','$cart[2]','$cart[4]','$quantity')";
-				executeQuery($myfood, false);
-			}
+			$myfood = "INSERT into cart_food (id_cart,id_food,name,image,price,quantity) VALUES ('$insCart','$cart[0]','$cart[1]','$cart[2]','$cart[3]','$quantity')";
+			executeQuery($myfood, false);
 		}
-		if (isset($_SESSION['option'])) {
-			foreach ($_SESSION['option'] as $option) {
-				$quantity = $option['quantity'];
-				$myoption = "INSERT into cart_option (id_cart,id_option,name,image,price,quantity) VALUES ('$insCart','$option[0]','$option[1]','$option[2]','$option[3]','$quantity')";
-				executeQuery($myoption, false);
-			}
+		foreach ($_SESSION['option'] as $option) {
+			$quantity = $option['quantity'];
+			$myoption = "INSERT into cart_option (id_cart,id_option,name,image,price,quantity) VALUES ('$insCart','$option[0]','$option[1]','$option[2]','$option[3]','$quantity')";
+			executeQuery($myoption, false);
 		}
 	}
-	if (!isset($_SESSION['cart'])) {
-		$listCart = [];
-	} else {
-		$listCart = $_SESSION['cart'];
-	}
-
-	if (!isset($_SESSION['option'])) {
-		$listoption = [];
-	} else {
-		$listoption = $_SESSION['option'];
-	}
+	$listoption = $_SESSION['option'];
+	$listCart = $_SESSION['cart'];
 	client_render('cart/bill.php', compact('bill', 'listCart', 'listoption'));
 }
 function comfirmbill()
@@ -306,6 +281,6 @@ function ctdh()
 	$listOption = executeQuery($sql, true);
 	client_render(
 		'cart/ctdh.php',
-		compact('listCthd', 'listOption')
+		compact('listCthd','listOption')
 	);
 }

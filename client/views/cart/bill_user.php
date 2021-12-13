@@ -4,7 +4,7 @@
     }
 </style>
 
-<div class="mgt-dn lefa mg-fter mg-fterr">
+<div class="mgt-dn lefa mg-fter">
     <div class="row">
         <div class="col-12">
             <div class="card">
