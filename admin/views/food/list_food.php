@@ -25,6 +25,24 @@
                         </div>
                     </div>
                 </form>
+                <form action="" method="get">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group" >
+                                <select name="category" id="" style="border: none;">
+                                    <option value="">Lọc</option>
+                                    <?php
+                                    foreach ($list_category as  $u) {
+                                        extract($u);
+                                        echo  '<option value="' . $u['id_category'] . '">' . $u['name_category']  . '</option>';
+                                    }
+                                    ?>
+                                </select> 
+                                <input type="submit" class="btn btn-sm btn-info" value="Tìm kiếm">
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="card-body">
                 <table class="table tabl-stripped">
