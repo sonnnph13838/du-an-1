@@ -29,7 +29,7 @@
 			<nav class="navbarr">
 
 				<ul class="menu">
-					<li><a href="<?= BASE_URL ?>">Trang chủ</a></li>
+					<li><a href="">Trang chủ</a></li>
 					<li class="thucdon">
 						<a href="<?= BASE_URL . 'mon-an'?>">Thực đơn</a>
 						<ul class="dropdowm">
@@ -64,18 +64,15 @@
 				<!-- <option value="index.php?act=dmk">Đổi mật khẩu</option> -->
 				<option value="<?= BASE_URL . 'dang-xuat' ?>">Thoát</option>
 			</select>
+			<a href="<?= BASE_URL ?>cart"><i class="fas fa-shopping-cart"></i></a>
 			<?php } else { ?>
 			<nav class="navbarr">
 				<a href="<?= BASE_URL . 'dang-nhap' ?>">Đăng Nhập</a>
-				<a href="<?= BASE_URL . 'dang-ki' ?>" style="margin-left: 5px; border-left: 1px solid #666; padding-left: 5px;"> Đăng kí</a>
+				<a href="<?= BASE_URL . 'dang-ki' ?>"
+					style="margin-left: 5px; border-left: 1px solid #666; padding-left: 5px;">Đăng kí</a>
+				<a href="<?= BASE_URL ?>cart"><i class="fas fa-shopping-cart"></i></a>
 			</nav>
 			<?php } ?>
-			<div class="gio_hang">
-				<a href="<?= BASE_URL ?>cart" class="cart"><i class="fas fa-shopping-cart"></i></a>
-				<?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
-					<p><?= count($_SESSION['cart']) ?></p>
-				<?php endif?>
-			</div>
 		</div>
 
 	</header>
@@ -89,13 +86,10 @@
 	<section class="footer">
 
     <div class="box-container">
-	        <?php 
-			      require_once './client/business/contact_infor.php';
-				  $contact = slectData();
-			?>
+
         <div class="box">
             <h2 class="logo-fter"><i class="fas fa-utensils"></i>food</h2>
-            <p class="introduce_content"><?= $contact['sub_content']?></p>
+            <p class="introduce_content">Sản phẩm độc quyền của Ns6. Chuyên phục vụ những món ăn nhanh chất lượng. Giá cả hợp lí. Nhanh chóng, tiện lợi</p>
         </div>
 
         <div class="box">
@@ -107,15 +101,19 @@
 
         <div class="box">
             <h3>Thông tin liên hệ</h3>
-            <a href="#">+<?= $contact['sdt']?></a>
-            <a href="#"><?= $contact['email']?></a>
-            <a href="#"><?= $contact['address']?></a>
+            <a href="#">+123-456-7890</a>
+            <a href="#">+111-222-3333</a>
+            <a href="#">shaikhanas@gmail.com</a>
+            <a href="#">anasbhai@gmail.com</a>
+            <a href="#">mumbai, india - 400104</a>
         </div>
 
         <div class="box">
             <h3>Theo dõi chúng tôi tại</h3>
-            <a href="<?= $contact['facebook_url']?>">facebook</a>
-            <a href="#">zalo</a>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
         </div>
 
     </div>

@@ -75,13 +75,14 @@
                                             <option value="2">Đã lấy hàng</option>
                                             <option value="3">Trả lại hàng</option>
                                         </select>
-                                        <input type="submit" class="button_sua" value="Sửa">
+                                        <input type="submit" class="btn btn-sm btn-info" value="Sửa">
                                         <!-- <i class="fas fa-edit"></i> -->
 
                                     </form>
                                 </td>
 
                                 <td>
+                                    <a href="<?= ADMIN_URL . 'cart?id=' . $item['id_bill'] ?>" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
                                     <a href="javascript:;" onclick="confirm_remove('<?= ADMIN_URL . 'bill/del-bill?id=' . $item['id_bill'] ?>', '<?= $item['name_bill'] ?>')" class="btn btn-sm btn-danger">
                                         <i class="fas fa-trash"></i>
                                     </a>

@@ -156,10 +156,6 @@ switch ($url) {
         require_once './admin/business/bill.php';
         edit_status();
         break;
-    case 'cp-admin/bill/edit_status/edit':
-        require_once './admin/business/bill.php';
-        update_status();
-        break;
     case 'cp-admin/food':
         require_once './admin/business/food.php';
         list_food();
@@ -208,13 +204,13 @@ switch ($url) {
         require_once './admin/business/option.php';
         del_option();
 
-    case 'cp-admin/display':
+    case 'cp-admin/display';
         require_once './admin/business/display.php';
         display_index();
         break;
-    case 'cp-admin/post-display':
-        require_once './admin/business/display.php';
-        post_display();
+    case 'cp-admin/cart';
+        require_once './admin/business/cart.php';
+        list_cart();
         break;
     default:
         # code...
