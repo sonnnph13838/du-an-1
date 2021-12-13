@@ -1,0 +1,92 @@
+.mgt {
+  margin-top: 100px;
+}
+#sidebar {
+  background-color: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  margin-right: 30px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+.font-weight-bold {
+  font-size: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 15px;
+  border-bottom: 3px solid var(--red);
+  color: var(--red);
+}
+
+.category {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+.category li {
+  display: block;
+}
+
+.category li a {
+  display: block;
+  font-size: 20px;
+  color: #000;
+  line-height: 48px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.category li:hover a {
+  color: var(--red);
+}
+
+.pro {
+  display: flex;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.product {
+  flex-grow: 2;
+}
+
+.e {
+  color: var(--green);
+  margin-left: 1rem;
+  font-size: 2.3rem;
+}
+.m {
+  color: rgb(134, 129, 129);
+  margin-left: 1rem;
+  font-size: 1.9rem;
+  text-decoration: line-through;
+}
+.ptrang {
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.trang_so {
+  margin-left: 20px;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  background: var(--red);
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.trang_so:hover {
+  text-decoration: none;
+  color: #fff;
+  transform: scale(1.2);
+}

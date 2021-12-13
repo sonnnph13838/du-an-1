@@ -5,7 +5,7 @@ function get_connect(){
 }
 
 
-function executeQuery($sql, $getAll = false){
+function executeQuery($sql, $getAll = true){
 
     $connect = get_connect();
     $stmt = $connect->prepare($sql);
@@ -16,6 +16,15 @@ function executeQuery($sql, $getAll = false){
 
     return $stmt->fetch();
 }
+
+function get_rows($sql){
+    $connect = get_connect();
+    $stmt = $connect->prepare($sql);
+	$stmt->execute();
+	$number_of_rows = $stmt->fetchColumn();
+	return $number_of_rows;
+}
+
 /**
  * Mở kết nối đến CSDL sử dụng PDO
  */
@@ -113,15 +122,16 @@ function pdo_query_value($sql)
 		unset($conn);
 	}
 }
-function exeQuery($getQuery, $getAll = true)
-{
-
-	global $conn;
-	$stmt =  $conn->prepare($getQuery);
-	$stmt->execute();
-
-	if ($getAll == true) {
-		return $stmt->fetchAll();
+function pdo_execute_return_lastInsertId($sql){
+	$sql_args = array_slice(func_get_args(),1);
+	try{
+		$conn = pdo_get_connection();
+		$stmt = $conn->prepare($sql);
+		$stmt->execute($sql_args);
+		return $conn->lastInsertId();
+	}catch(PDOException $e){
+		throw $e;
+	}finally{
+		unset($conn);
 	}
-	return $stmt->fetch();
 }

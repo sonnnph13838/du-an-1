@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 require './lib/PHPMailer/src/Exception.php';
 require './lib/PHPMailer/src/PHPMailer.php';
 require './lib/PHPMailer/src/SMTP.php';
@@ -18,17 +20,44 @@ function postdk()
         // $hoten = $_POST['name'];
         // $taikhoan = $_POST['taikhoan'];
         $matkhau = $_POST['matkhau'];
+        $repass=$_POST['matkhau2'];
         $email = $_POST['email'];
         $diachi = $_POST['diachi'];
-        $sdt = $_POST['sdt'];
-        $sql = "INSERT INTO `nguoi_dung`(`mat_khau`, `email`, `dia_chi`, `sdt`) VALUES ('$matkhau','$email','$diachi','$sdt')";
-        executeQuery($sql);
-        header('location: ' . BASE_URL . 'dang-ki&msg=Đăng kí thành công.. vui lòng đăng nhập!');
+        $sdt = $_POST['sdt'];       
+        if (($repass!=$matkhau) || $repass="") {
+            echo 'vui lòng nhập lại mk';
+            header('location: ' . BASE_URL . 'dang-ki&msg=Đăng kí không thành công..Vui lòng nhập lại mật khẩu');
+        }else{           
+                $sql = "INSERT INTO user (`password`, `email`, `address`, `tel`) VALUES ('$matkhau','$email','$diachi','$sdt')";
+                executeQuery($sql);
+                header('location: ' . BASE_URL . 'dang-ki&msg=Đăng kí thành công.. vui lòng đăng nhập!');
+        }
     }
 }
 function formdn()
 {
     client_render('tai-khoan/dang-nhap.php');
+}
+function post_login()
+{
+    if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
+        $email=$_POST['email'];
+        $mat_khau=$_POST['mat_khau'];
+        $sql="select * from user where email='".$email."' AND password='".$mat_khau."'";
+        $checkuser=pdo_query_one($sql);
+        if(is_array($checkuser)){
+        //$thongbao="Bạn Đã Đăng Nhập Thành Công";
+        $_SESSION['email']=$checkuser;
+        header('location: ' . BASE_URL . '');
+        }else{
+            header('location: ' . BASE_URL . 'dang-nhap&msg=Sai thông tin');
+        }
+    }
+}
+function logout()
+{
+    session_unset();
+    header('location: '. BASE_URL .'');
 }
 
 function formqmk()
@@ -36,16 +65,39 @@ function formqmk()
     client_render('tai-khoan/quen-mk.php');
 }
 
+function form_reset()
+{ 
+    $token = $_GET['token'];
+    $now = date("Y-m-d H:i:s");
+    $sql = "select * from forgot_password where token = '$token' and expire_time >= '$now'";
+    $user = executeQuery($sql,false);
+    $email = $user['email'];
+
+    client_render('tai-khoan/reset-pass.php',compact('email'));
+}
+
+function post_pass_reset(){
+    if(isset($_POST['submit']) && ($_POST['submit'])){
+        $email = $_POST['email'];
+        $pass = $_POST['mat_khau'];
+        $sql = "update user set password = '$pass' where email = '$email'";
+        executeQuery($sql,false);
+        // xóa token trong forgot-pas
+        $dele = "delete  from forgot_password where email = '$email'";
+        executeQuery($dele,false);
+        header('location:' . BASE_URL . 'quen-mk&msg= Đổi thành công vui lòng đăng nhập!!');
+    }
+}
+
 function sendmail()
 {
     $email = $_POST['email'];
-
-    $sql = "select * from nguoi_dung where email = '$email'";
-    $checkEmail = executeQuery($sql);
-    $email = $checkEmail['email'];
-    if (is_array($checkEmail)) {
-        $pass = $checkEmail['mat_khau'];
-    }
+    $token  = uniqid();
+    $timestamp = strtotime("+1 day");
+    $expireTime = date("Y-m-d H:i:s",$timestamp);
+    $sql = "insert into forgot_password(email,token,expire_time)
+                  values('$email','$token','$expireTime')";
+    executeQuery($sql,false);
     //Load Composer's autoloader
     // require 'vendor/autoload.php';
 
@@ -77,7 +129,7 @@ function sendmail()
 
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Thông báo mật khẩu mới';
-        $mail->Body    = 'Mật khẩu mới: ' . $pass;
+        $mail->Body    = 'Bạn vui lòng ấn <a href="'.BASE_URL.'reset-pass&token='.$token. '">Tại đây!</a> ' ;
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
@@ -85,4 +137,33 @@ function sendmail()
     } catch (Exception $e) {
         header('location:' . BASE_URL . 'quen-mk&msgerr= Đã gặp lỗi trong quá trình gửi email cho bạn, vui lòng thử lại sau!!');
     }
+}
+
+function edit_mk(){
+    client_render('tai-khoan/edit-user.php');
+}
+
+function post_update(){
+    if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+        $id=$_POST['id'];
+        
+        // $taikhoan=$_POST['taikhoan'];
+        $taikhoan=$_POST['taikhoan'];
+        $matkhau=$_POST['matkhau'];
+        $email=$_POST['email'];       
+        $diachi=$_POST['diachi'];
+        $sdt=$_POST['sdt'];
+        $sql = "update  user set  name_user ='" . $taikhoan . "'   ,password ='" . $matkhau . "' ,email ='" . $email . "', tel ='" . $sdt . "', address ='" . $diachi . "' 
+       
+        where id_user =  $id";
+        executeQuery($sql); 
+        $sql = "select *from user  where id_user = $id";
+        $cntk = executeQuery($sql); 
+        $_SESSION['email'] = $cntk; 
+        //unset($_SESSION['email']);
+        header('location: '. BASE_URL .'client/user/edit-user');
+        
+        
+
+}
 }
