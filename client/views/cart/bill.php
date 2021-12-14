@@ -47,10 +47,6 @@
     .radiogroups {
         padding: 48px 64px;
         border-radius: 16px;
-        background: #7fff7f;
-        box-shadow:
-            4px 4px 4px 0px #d1d9e6 inset,
-            -4px -4px 4px 0px #ffffff inset;
     }
 
 

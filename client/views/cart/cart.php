@@ -77,7 +77,7 @@
 								VNĐ
 							</td>
 							<td>
-								<a  href="<?= BASE_URL . 'delete-cart-option' ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-trasgh"></i></a>
+								<a class="btn"  href="<?= BASE_URL . 'delete-cart-option' ?>&id=<?= $p['id_option'] ?>"><i class="fas fa-trash"></i></a>
 							</td>
 							<?php $tong += $p['price'] * $p['quantity']; ?>
 						</tr>
