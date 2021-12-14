@@ -12,6 +12,7 @@ function xoa()
 		$id = $_GET['id'];
 		$sql = "delete from comment where id_cm=" . $id;
 		executeQuery($sql);
-		header('Location: ' . ADMIN_URL . 'list-comment');
+		
 	}
+	header('Location: ' . ADMIN_URL . 'list-comment');
 }
