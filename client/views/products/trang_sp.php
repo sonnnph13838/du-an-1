@@ -40,12 +40,11 @@
 							<span class="e"><?= number_format($item['price_food'], 0, ',', '.') ?> vnđ</span>
 						<?php endif ?>
 					</div>
-					<a href="#" class="btn">Xem chi tiết</a>
+					<a href="spct&id_food=<?= $item['id_food'] ?>" class="btn">Xem chi tiết</a>
 					<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $item['id_food'] ?>   " class="btn" onclick="abc()">Thêm vào giỏ hàng</a>
 				</div>
 			</div>
 		<?php endforeach ?>
-
 	</div>
 </div>
 </div>

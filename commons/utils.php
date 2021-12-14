@@ -28,3 +28,14 @@ function admin_render($view, $data = [], $jsFile = [])
     $view = './admin/views/' . $view;
     include_once "./admin/views/layouts/main.php";
 }
+
+function update_img($imageValue = "", $image){
+                // $imageValue = $_POST['imagehden'];
+                // $image = $_FILES['image'];
+                if($image['size']>0){
+                      $filename = uniqid() . '-' . $image['name'];
+                      move_uploaded_file($image['tmp_name'], '../images/' .$filename);
+                      $imageValue = 'images/' . $filename;
+                }
+                return $imageValue;
+}

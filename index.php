@@ -10,6 +10,15 @@ switch ($url) {
         require_once './client/business/homepage.php';
         home();
         break;
+    case 'spct':
+        require_once './client/business/product.php';
+        loadone_sanpham();
+        break;
+    case 'post-timkiem':
+        require_once './client/business/product.php';
+        post_timkiem();
+        // show_cmt();
+        break;
     case 'dang-nhap':
         require_once './client/business/user.php';
         formdn();
@@ -94,6 +103,10 @@ switch ($url) {
         require_once './client/business/cart.php';
         comfirmbill();
         break;
+    case 'post-comment':
+        require_once './client/business/product.php';
+        post_cmt();
+        break;
     case 'client/user/bill-user/ctdh':
         require_once './client/business/cart.php';
         ctdh();
@@ -102,6 +115,14 @@ switch ($url) {
     case 'mon-an':
         require_once './client/business/product.php';
         page_product();
+        break;
+    case 'lien-he':
+        require_once './client/business/homepage.php';
+        lien_he();
+        break;
+    case 'post-lien-he':
+        require_once './client/business/lien_he.php';
+        postlien_he();
         break;
 
 
@@ -156,9 +177,45 @@ switch ($url) {
         require_once './admin/business/bill.php';
         edit_status();
         break;
+    case 'cp-admin/list-comment':
+        require_once './admin/business/comment.php';
+        list_cmt();
+        break;
+    case 'cp-admin/xoa-cmt':
+        require_once './admin/business/comment.php';
+        xoa();
+        break;
+    case 'cp-admin/danh-muc/xoa';
+        require_once './admin/business/category.php';
+        cate_remove();
+        break;
+    case 'cp-admin/danh-muc/tao-moi';
+        require_once './admin/business/category.php';
+        add_cate();
+        break;
+    case 'cp-admin/danh-muc/post-cate';
+        require_once './admin/business/category.php';
+        post_cate();
+        break;
+    case 'cp-admin/danh-muc/cap-nhat';
+        require_once './admin/business/category.php';
+        update_cate();
+        break;
+    case 'cp-admin/danh-muc';
+        require_once './admin/business/category.php';
+        cate_index();
+        break;
+    case 'about':
+        require_once './client/business/aboutus.php';
+        aboutus();
+        break;
     case 'cp-admin/food':
         require_once './admin/business/food.php';
         list_food();
+        break;
+    case 'cp-admin/feedback':
+        require_once './admin/business/feedback.php';
+        list_feedback();
         break;
     case 'cp-admin/food/edit_food':
         require_once './admin/business/food.php';
@@ -203,14 +260,22 @@ switch ($url) {
     case 'cp-admin/option/del_option':
         require_once './admin/business/option.php';
         del_option();
-
-    case 'cp-admin/display';
+        break;
+    case 'cp-admin/display':
         require_once './admin/business/display.php';
         display_index();
         break;
-    case 'cp-admin/cart';
-        require_once './admin/business/cart.php';
-        list_cart();
+    case 'cp-admin/reply';
+        require_once './admin/business/feedback.php';
+        formreply();
+        break;
+    case 'cp-admin/post-reply':
+        require_once './admin/business/reply.php';
+        check_email();
+        break;
+    case 'cp-admin/post-display':
+        require_once './admin/business/display.php';
+        //post_display();
         break;
     default:
         # code...

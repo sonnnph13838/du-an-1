@@ -9,7 +9,6 @@ if (isset($_session['email']) && (is_array($_session['email']))) {
     .radiogroups {
         padding: 48px 64px;
         border-radius: 16px;
-        
     }
 
     .rows {
