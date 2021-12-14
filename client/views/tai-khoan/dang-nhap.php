@@ -1,4 +1,4 @@
-<div class="mgt-dn cnter">
+<div class="mgt-dn cnter mg-fterr">
 <div class="wrapper form-dn">
     <h3>Đăng nhập</h3>
     <?php

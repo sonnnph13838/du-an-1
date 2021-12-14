@@ -13,26 +13,20 @@
 	<div class="carousel-inner">
 
 		<div class="item active">
-			<img src="https://kfcvietnam.com.vn/uploads/banner/6623578de98cdfd67dd57ad527cd52bc.jpg" alt="Los Angeles" style="width:100%; height:800px">
+			<img src="https://kfcvietnam.com.vn/uploads/banner/6623578de98cdfd67dd57ad527cd52bc.jpg" alt="Los Angeles" style="width:100%; height:500px">
 			<div class="carousel-caption">
-				<h3>Los Angeles</h3>
-				<p>LA is always so much fun!</p>
 			</div>
 		</div>
 
 		<div class="item">
-			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg" alt="Chicago" style="width:100%;height:800px">
+			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg" alt="Chicago" style="width:100%;height:500px">
 			<div class="carousel-caption">
-				<h3>Chicago</h3>
-				<p>Thank you, Chicago!</p>
 			</div>
 		</div>
 
 		<div class="item">
-			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg" alt="New York" style="width:100%;height:800px">
+			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg" alt="New York" style="width:100%;height:500px">
 			<div class="carousel-caption">
-				<h3>New York</h3>
-				<p>We love the Big Apple!</p>
 			</div>
 		</div>
 
@@ -77,9 +71,9 @@
 <!-- sản phẩm nổi bật  -->
 <section class="menuu">
 
-	<h1 class="heading-product"> Top Món ă n được ưa thích </h1>
+	<h1 class="heading-product"> Top Món ăn nổi bật </h1>
 
-	<div class="box-container">
+	<div class="box-container homepage">
 		<?php
 
 		require_once './client/business/product.php';
@@ -115,11 +109,11 @@
 
 
 <!-- sản phẩm khuyến mại  -->
-<section class="menuu mg-fter">
+<section class="menuu mg-fterr">
 
 	<h1 class="heading-product"> Món ăn được khuyến mại </h1>
 
-	<div class="box-container">
+	<div class="box-container homepage">
 		<?php
 		$spkhuyenmai = list_products_sell();
 
@@ -143,7 +137,7 @@
 					</div>
 					<div class="btn-control">
 						<a href="#" class="mg-right">Xem chi tiết</a>
-						<a href="<?= BASE_URL . 'add-to-cart' ?>" class="btnn" onclick="abc()">Thêm vào giỏ hàng</a>
+						<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $itemLike['id_food'] ?>  " class="btnn" onclick="abc()">Thêm vào giỏ hàng</a>
 					</div>
 				</div>
 			</div>
