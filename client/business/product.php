@@ -54,13 +54,10 @@ function loadone_sanpham()
     $id_food = $_GET['id_food'];
     $sql = "select * from food where id_food=" . $id_food;
     $sp = executeQuery($sql, true);
-    $sqls = "select * from option where id_food=" . $id_food;
-    $sps = executeQuery($sqls, true);
-    $sqlcmt = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user";
+    $sqlcmt = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user where id_food= " . $id_food;
     $listcmt = executeQuery($sqlcmt, true);
     // dd($listcmt);
-
-    client_render('ctsp/sp.php', compact('sp', 'sps', 'listcmt'));
+    client_render('ctsp/sp.php', compact('sp', 'listcmt'));
 }
 
 function post_timkiem()
@@ -122,3 +119,4 @@ function phan_trang(){
         echo '<a class= "trang_so" href="'.$link.'">'.$i.'</a>';
     }
 }
+?>
