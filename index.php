@@ -103,6 +103,14 @@ switch ($url) {
         require_once './client/business/product.php';
         page_product();
         break;
+    case 'lien-he':
+        require_once './client/business/homepage.php';
+        lien_he();
+        break;
+    case 'post-lien-he':
+        require_once './client/business/lien_he.php';
+        postlien_he();
+        break;
 
 
         //welcome to admin...
@@ -164,6 +172,10 @@ switch ($url) {
         require_once './admin/business/food.php';
         list_food();
         break;
+    case 'cp-admin/feedback':
+        require_once './admin/business/feedback.php';
+        list_feedback();
+        break;
     case 'cp-admin/food/edit_food':
         require_once './admin/business/food.php';
         edit_food();
@@ -212,6 +224,13 @@ switch ($url) {
         require_once './admin/business/display.php';
         display_index();
         break;
+    case 'cp-admin/reply';
+    require_once './admin/business/feedback.php';
+        formreply();
+    break;
+    case 'cp-admin/post-reply':
+        require_once './admin/business/reply.php';
+        check_email();
     case 'cp-admin/post-display':
         require_once './admin/business/display.php';
         post_display();
