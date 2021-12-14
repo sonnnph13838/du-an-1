@@ -168,6 +168,9 @@ switch ($url) {
         require_once './admin/business/bill.php';
         update_status();
         break;
+    case 'about':
+        require_once './client/business/aboutus.php';
+        aboutus();
     case 'cp-admin/food':
         require_once './admin/business/food.php';
         list_food();

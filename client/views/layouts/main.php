@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<!-- font awesome cdn link  -->
+	
 
 
 	<!-- custom css file link  -->
@@ -41,7 +41,7 @@
 							<?php endforeach ?>
 						</ul>
 					</li>
-					<li><a href="">Giới thiệu</a>
+					<li><a href="<?=BASE_URL . 'about'?>">Giới thiệu</a>
 					</li>
 					<li><a href="<?= BASE_URL . 'lien-he'?>">Liên Hệ</a>
 				</ul>
@@ -82,13 +82,25 @@
 	</header>
 
 	<!-- header section ends -->
+	
+	<main>
+		<?php include_once $view;?>
+	</main>			
+		
+	
 
-	<!-- main --><?php include $view; ?>
+	<!-- main -->
 
 	<!-- footer section  -->
-
+	
 	<section class="footer">
 
+		<h1 class="credit">
+			created by <span> N6 </span> | all rights reserved!
+		</h1>
+
+		
+	</section>
     <div class="box-container">
 	        <?php 
 			      require_once './client/business/contact_infor.php';
