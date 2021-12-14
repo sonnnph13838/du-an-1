@@ -4,6 +4,7 @@ function list_products_top()
 {
     $sql = "select * from food where 1 order by views_food desc limit 0,4";
     $topsanpham = executeQuery($sql, true);
+    
     return $topsanpham;
 }
 
@@ -53,11 +54,25 @@ function loadone_sanpham()
     $id_food = $_GET['id_food'];
     $sql = "select * from food where id_food=" . $id_food;
     $sp = executeQuery($sql, true);
-    
     $sqlcmt = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user where id_food= " . $id_food;
     $listcmt = executeQuery($sqlcmt, true);
     // dd($listcmt);
-    client_render('ctsp/sp.php', compact('sp',  'listcmt'));
+    client_render('ctsp/sp.php', compact('sp', 'listcmt'));
+}
+
+function post_timkiem()
+{
+    if(isset($_POST['tukhoa'])&&($_POST['tukhoa']!="")){
+        $tukhoa=$_POST['tukhoa'];
+    }else{
+        $tukhoa="";
+    }
+    $sql="select * from food where 1";
+    if($tukhoa!=""){
+        $sql.=" and name_food like '%".$tukhoa."%'";
+    } 
+    $listsanpham= executeQuery($sql,true);
+    client_render('products/trang_sp.php', compact('listsanpham'));
 }
 
 function page_product(){

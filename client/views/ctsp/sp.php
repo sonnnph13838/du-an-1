@@ -77,7 +77,6 @@
 				<p><span class="mr-1" style="color: red"><strong><?= number_format($gg['price_food'], 0, ',', '.') ?>
 							vnđ</span></strong></span></p>
 				<p class="pt-1"><?= $gg['detail_food'] ?></p>
-
 				<div class="table-responsive">
 					<table class="table table-sm table-borderless mb-0">
 

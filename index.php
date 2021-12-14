@@ -13,6 +13,10 @@ switch ($url) {
     case 'spct':
         require_once './client/business/product.php';
         loadone_sanpham();
+        break;
+    case 'post-timkiem':
+        require_once './client/business/product.php';
+        post_timkiem();
         // show_cmt();
         break;
     case 'dang-nhap':

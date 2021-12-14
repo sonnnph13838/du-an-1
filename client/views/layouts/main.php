@@ -50,8 +50,8 @@
 		<div id="menu-bar" class="fas fa-bars"></div>
 
 		<div class="c">
-			<form action="">
-				<input type="text" placeholder="Nhập vào đây để tìm kiếm">
+			<form action="<?= BASE_URL .'post-timkiem'?>" method="post">
+				<input type="text" name="tukhoa" placeholder="Nhập vào đây để tìm kiếm">
 			</form>
 			<?php
 			if (isset($_SESSION['email'])) {
