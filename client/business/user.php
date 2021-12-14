@@ -20,12 +20,18 @@ function postdk()
         // $hoten = $_POST['name'];
         // $taikhoan = $_POST['taikhoan'];
         $matkhau = $_POST['matkhau'];
+        $repass=$_POST['matkhau2'];
         $email = $_POST['email'];
         $diachi = $_POST['diachi'];
-        $sdt = $_POST['sdt'];
-        $sql = "INSERT INTO `user`(`password`, `email`, `address`, `tel`) VALUES ('$matkhau','$email','$diachi','$sdt')";
-        executeQuery($sql);
-        header('location: ' . BASE_URL . 'dang-ki&msg=Đăng kí thành công.. vui lòng đăng nhập!');
+        $sdt = $_POST['sdt'];       
+        if (($repass!=$matkhau) || $repass="") {
+            echo 'vui lòng nhập lại mk';
+            header('location: ' . BASE_URL . 'dang-ki&msg=Đăng kí không thành công..Vui lòng nhập lại mật khẩu');
+        }else{           
+                $sql = "INSERT INTO user (`password`, `email`, `address`, `tel`) VALUES ('$matkhau','$email','$diachi','$sdt')";
+                executeQuery($sql);
+                header('location: ' . BASE_URL . 'dang-ki&msg=Đăng kí thành công.. vui lòng đăng nhập!');
+        }
     }
 }
 function formdn()

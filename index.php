@@ -220,7 +220,7 @@ switch ($url) {
         require_once './admin/business/option.php';
         del_option();
 
-    case 'cp-admin/display';
+    case 'cp-admin/display':
         require_once './admin/business/display.php';
         display_index();
         break;
@@ -231,6 +231,9 @@ switch ($url) {
     case 'cp-admin/post-reply':
         require_once './admin/business/reply.php';
         check_email();
+    case 'cp-admin/post-display':
+        require_once './admin/business/display.php';
+        post_display();
         break;
     default:
         # code...
