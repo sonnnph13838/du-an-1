@@ -133,11 +133,6 @@
         text-align: right;
     }
 
-    .form-ct {
-        margin-left: 50px;
-        margin-top: 148px;
-    }
-
     .title {
         text-align: center;
     }
@@ -145,7 +140,7 @@
 <?php foreach ($bill as $bills) : ?>
 
 
-    <div class="mgt-dn lefa mg-fter">
+    <div class="mgt-dn lefa mg-fter mg-fterr ">
         <form action="comfirmbill" method="post">
             <div class="radiogroups">
                 <div class="title" align="center">

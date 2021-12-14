@@ -23,7 +23,24 @@
                                 <input type="text" name="keyword" value="<?= $keyword ?>" class="form-control" placeholder="Tìm kiếm..." aria-describedby="helpId">
                             </div>
                         </div>
+                        
                     </div>
+                    
+                </form>
+                <form action="" method="get">
+                    <div class="row">
+                    <div class="col-6">
+                            <div class="form-group" >
+                                <select name="loc" id="" style="border: none;" >
+                                    <option value="">Lọc</option>
+                                    <option value="1">Nhân viên</option>
+                                    <option value="0">Khách hàng</option>
+                                </select>
+                                <input type="submit" class="btn btn-sm btn-info" value="Tìm kiếm">
+                            </div>
+                        </div>
+                    </div>
+                    
                 </form>
             </div>
             <div class="card-body">

@@ -2,8 +2,16 @@
 require_once './dao/system_dao.php';
 function list_users()
 {
+    $loc = isset($_GET['loc']) ? $_GET['loc'] : "";
     $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
-    $sql = "SELECT * from user where email like '%$keyword%'";
+    $sql = "SELECT * from user";
+    if ($loc == 0) {
+        $sql .= "  where  role = 0 ";
+    } elseif ($loc == 1) {
+        $sql .= "  where  role = 1 ";
+    } elseif ($keyword > 0) {
+        $sql .= "  where  email like '%$keyword%' ";
+    }
     $list_user =  pdo_query($sql);
     admin_render(
         'user/list_user.php',
@@ -37,12 +45,12 @@ function  update_user()
     }
     if ($role == 0) {
         $sql = "UPDATE user set name_user = '$name', image = '$image', email = '$email', address = '$address', tel = '$tel', role = 0 where id_user = $id";
-    }elseif($role == 1){
+    } elseif ($role == 1) {
         $sql = "UPDATE user set name_user = '$name', image = '$image', email = '$email', address = '$address', tel = '$tel', role = 1 where id_user = $id";
     }
-    if($image!=""){
+    if ($image != "") {
         $sql = "UPDATE user set name_user = '$name', image = '$image', email = '$email', address = '$address', tel = '$tel', role = '$role' where id_user = $id";
-    }else{
+    } else {
         $sql = "UPDATE user set name_user = '$name', email = '$email', address = '$address', tel = '$tel', role = '$role' where id_user = $id";
     }
     executeQuery($sql);

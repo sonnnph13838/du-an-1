@@ -177,10 +177,6 @@ switch ($url) {
         require_once './admin/business/bill.php';
         edit_status();
         break;
-    case 'cp-admin/bill/edit_status/edit':
-        require_once './admin/business/bill.php';
-        update_status();
-        break;
     case 'cp-admin/list-comment':
         require_once './admin/business/comment.php';
         list_cmt();
@@ -279,7 +275,7 @@ switch ($url) {
         break;
     case 'cp-admin/post-display':
         require_once './admin/business/display.php';
-        post_display();
+        //post_display();
         break;
     default:
         # code...
