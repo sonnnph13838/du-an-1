@@ -1,374 +1,153 @@
 <!-- home section starts  -->
 
-<section class="home" id="home">
-      <div class="content">
-        <h3>food made with love</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
-          accusamus tempore temporibus rem amet laudantium animi optio
-          voluptatum. Natus obcaecati unde porro nostrum ipsam itaque impedit
-          incidunt rem quisquam eos!
-        </p>
-        <a href="#" class="btn">order now</a>
-      </div>
 
-      <div class="image">
-        <img src="<?= CLIENT_ASSET ?>dist/images/home-img.png" alt="" />
-      </div>
-    </section>
+<div id="myCarousel" class="carousel slide mg" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
 
-    <!-- home section ends -->
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
 
-    <!-- speciality section starts  -->
+		<div class="item active">
+			<img src="https://kfcvietnam.com.vn/uploads/banner/6623578de98cdfd67dd57ad527cd52bc.jpg" alt="Los Angeles" style="width:100%; height:500px">
+			<div class="carousel-caption">
+			</div>
+		</div>
 
-    <section class="speciality" id="speciality">
-      <h1 class="heading">our <span>speciality</span></h1>
+		<div class="item">
+			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg" alt="Chicago" style="width:100%;height:500px">
+			<div class="carousel-caption">
+			</div>
+		</div>
 
-      <div class="box-container">
-        <div class="box">
-          <img class="image" src="<?= CLIENT_ASSET ?>dist/images/s-img-1.jpg" alt="" />
-          <div class="content">
-            <img src="<?= CLIENT_ASSET ?>dist/images/s-1.png" alt="" />
-            <h3>tasty burger</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              inventore neque amet ipsa tenetur voluptates aperiam tempore
-              libero labore aut.
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <img class="image" src="<?= CLIENT_ASSET ?>dist/images/s-img-2.jpg" alt="" />
-          <div class="content">
-            <img src="<?= CLIENT_ASSET ?>dist/images/s-2.png" alt="" />
-            <h3>tasty pizza</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              inventore neque amet ipsa tenetur voluptates aperiam tempore
-              libero labore aut.
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <img class="image" src="<?= CLIENT_ASSET ?>dist/images/s-img-3.jpg" alt="" />
-          <div class="content">
-            <img src="<?= CLIENT_ASSET ?>dist/images/s-3.png" alt="" />
-            <h3>cold ice-cream</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              inventore neque amet ipsa tenetur voluptates aperiam tempore
-              libero labore aut.
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <img class="image" src="<?= CLIENT_ASSET ?>dist/images/s-img-4.jpg" alt="" />
-          <div class="content">
-            <img src="<?= CLIENT_ASSET ?>dist/images/s-4.png" alt="" />
-            <h3>cold drinks</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              inventore neque amet ipsa tenetur voluptates aperiam tempore
-              libero labore aut.
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <img class="image" src="<?= CLIENT_ASSET ?>dist/images/s-img-5.jpg" alt="" />
-          <div class="content">
-            <img src="<?= CLIENT_ASSET ?>dist/images/s-5.png" alt="" />
-            <h3>tasty sweets</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              inventore neque amet ipsa tenetur voluptates aperiam tempore
-              libero labore aut.
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <img class="image" src="<?= CLIENT_ASSET ?>dist/images/s-img-6.jpg" alt="" />
-          <div class="content">
-            <img src="<?= CLIENT_ASSET ?>dist/images/s-6.png" alt="" />
-            <h3>healty breakfast</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              inventore neque amet ipsa tenetur voluptates aperiam tempore
-              libero labore aut.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+		<div class="item">
+			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg" alt="New York" style="width:100%;height:500px">
+			<div class="carousel-caption">
+			</div>
+		</div>
 
-    <!-- speciality section ends -->
+	</div>
 
-    <!-- popular section starts  -->
+	<!-- Left and right controls -->
+	<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
 
-    <section class="popular" id="popular">
-      <h1 class="heading">most <span>popular</span> foods</h1>
+<!-- home section ends -->
 
-      <div class="box-container">
-      <?php
-    
-    require_once './client/business/product.php';
-    $list4like = list_products_top();
-    
-    ?>
+<!-- step -->
+<div class="step-container">
+	<section class="steps">
+		<div class="box">
+			<img src="<?= CLIENT_ASSET ?>dist/images/step-1.jpg" alt="" />
+			<h3>chọn món ăn cần mua</h3>
+		</div>
+		<div class="box">
+			<img src="<?= CLIENT_ASSET ?>dist/images/step-2.jpg" alt="" />
+			<h3>đợi nhân viên ship tới</h3>
+		</div>
+		<div class="box">
+			<img src="<?= CLIENT_ASSET ?>dist/images/step-3.jpg" alt="" />
+			<h3>trả tiền khi nhận được hàng</h3>
+		</div>
+		<div class="box">
+			<img src="<?= CLIENT_ASSET ?>dist/images/step-4.jpg" alt="" />
+			<h3>cuối cùng, thưởng thức thôi </h3>
+		</div>
+	</section>
+</div>
+<!-- step -->
 
-    <?php foreach($list4like as $itemLike):?>
-    <div class="boxx">
-        <div class="image">
-        <?php $img = UPLOAD_IMAGE . $itemLike['image_food'] ?>
-					      <img src="<?= $img ?>" alt="">
-        </div>
-        <div class="content">
-            <h3><a href="" class="name-pro"><?= $itemLike['name_food']?></a></h3>
-            <div class="gia">
-            <?php if($itemLike['discount_food'] > 0):?>
-              <span class="price"><?= number_format($itemLike['discount_food'],0,',','.')?> vnđ</span>
-              <span class="price-km"><?= number_format($itemLike['price_food'],0,',','.')?> vnđ</span>
-            <?php else:?>
-              <span class="price"><?= number_format($itemLike['price_food'],0,',','.')?> vnđ</span>
-            <?php endif?>
-            </div>
-            <a href="spct&id_food=<?=$itemLike['id_food']?>" class="btn">Xem chi tiết</a>
-            <a href="#" class="btn">Thêm vào giỏ hàng</a>
-        </div>
-    </div>
-    <?php endforeach?>
-      </div>
-    </section>
+<!-- sản phẩm nổi bật  -->
+<section class="menuu">
 
-    <!-- popular section ends -->
+	<h1 class="heading-product"> Top Món ăn nổi bật </h1>
 
-    <!-- steps section starts  -->
+	<div class="box-container homepage">
+		<?php
 
-    <div class="step-container">
-      <h1 class="heading">Cách bước để mua <span>hàng</span></h1>
+		require_once './client/business/product.php';
+		$list4like = list_products_top();
 
-      <section class="steps">
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/step-1.jpg" alt="" />
-          <h3>Chọn món ưa thích của bạn</h3>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/step-2.jpg" alt="" />
-          <h3>Ship hàng nhanh miễn phí và nhanh chóng</h3>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/step-3.jpg" alt="" />
-          <h3>Thanh toán khi nhận được hàng</h3>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/step-4.jpg" alt="" />
-          <h3>Cuối cùng, thưởng thức thôi nào!</h3>
-        </div>
-      </section>
-    </div>
+		?>
 
-    <!-- steps section ends -->
+		<?php foreach ($list4like as $itemLike) : ?>
+			<div class="boxx">
+				<div class="image">
+					<?php $img = UPLOAD_IMAGE . $itemLike['image_food']  ?>
+					<img src="<?= $img ?>" alt="">
+				</div>
+				<div class="content">
+					<h3><a href="" class="name-pro"><?= $itemLike['name_food'] ?></a></h3>
+					<div class="gia">
+						<?php if ($itemLike['discount_food'] > 0) : ?>
+							<span class="price"><?= number_format($itemLike['discount_food'], 0, ',', '.') ?> vnđ</span>
+							<span class="price-km"><?= number_format($itemLike['price_food'], 0, ',', '.') ?> vnđ</span>
+						<?php else : ?>
+							<span class="price"><?= number_format($itemLike['price_food'], 0, ',', '.') ?> vnđ</span>
+						<?php endif ?>
+					</div>
+					<a href="spct&id_food=<?=$itemLike['id_food']?>" class="btn">Xem chi tiết</a>
+					<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $itemLike['id_food'] ?>   " class="btn" onclick="abc()">Thêm vào giỏ hàng</a>
+				</div>
+			</div>
+		<?php endforeach ?>
 
-    <!-- gallery section starts  -->
+	</div>
+</section>
+<!-- sản phẩm nổi bật  -->
 
-    <section class="gallery" id="gallery">
-      <h1 class="heading">our food <span> gallery </span></h1>
 
-      <div class="box-container">
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/g-1.jpg" alt="" />
-          <div class="content">
-            <h3>tasty food</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, ipsum.
-            </p>
-            <a href="#" class="btn">ordern now</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/g-2.jpg" alt="" />
-          <div class="content">
-            <h3>tasty food</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, ipsum.
-            </p>
-            <a href="#" class="btn">ordern now</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/g-3.jpg" alt="" />
-          <div class="content">
-            <h3>tasty food</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, ipsum.
-            </p>
-            <a href="#" class="btn">ordern now</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/g-4.jpg" alt="" />
-          <div class="content">
-            <h3>tasty food</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, ipsum.
-            </p>
-            <a href="#" class="btn">ordern now</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/g-5.jpg" alt="" />
-          <div class="content">
-            <h3>tasty food</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, ipsum.
-            </p>
-            <a href="#" class="btn">ordern now</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/g-6.jpg" alt="" />
-          <div class="content">
-            <h3>tasty food</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, ipsum.
-            </p>
-            <a href="#" class="btn">ordern now</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/g-7.jpg" alt="" />
-          <div class="content">
-            <h3>tasty food</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, ipsum.
-            </p>
-            <a href="#" class="btn">ordern now</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/g-8.jpg" alt="" />
-          <div class="content">
-            <h3>tasty food</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, ipsum.
-            </p>
-            <a href="#" class="btn">ordern now</a>
-          </div>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/g-9.jpg" alt="" />
-          <div class="content">
-            <h3>tasty food</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Deleniti, ipsum.
-            </p>
-            <a href="#" class="btn">ordern now</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- sản phẩm khuyến mại  -->
+<section class="menuu mg-fterr">
 
-    <!-- gallery section ends -->
+	<h1 class="heading-product"> Món ăn được khuyến mại </h1>
 
-    <!-- review section starts  -->
+	<div class="box-container homepage">
+		<?php
+		$spkhuyenmai = list_products_sell();
 
-    <section class="review" id="review">
-      <h1 class="heading">our customers <span>reviews</span></h1>
+		?>
 
-      <div class="box-container">
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/pic1.png" alt="" />
-          <h3>john deo</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            delectus, ducimus facere quod ratione vel laboriosam? Est, maxime
-            rem. Itaque.
-          </p>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/pic2.png" alt="" />
-          <h3>john deo</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            delectus, ducimus facere quod ratione vel laboriosam? Est, maxime
-            rem. Itaque.
-          </p>
-        </div>
-        <div class="box">
-          <img src="<?= CLIENT_ASSET ?>dist/images/pic3.png" alt="" />
-          <h3>john deo</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            delectus, ducimus facere quod ratione vel laboriosam? Est, maxime
-            rem. Itaque.
-          </p>
-        </div>
-      </div>
-    </section>
+		<?php foreach ($spkhuyenmai as $itemKm) : ?>
+			<div class="boxx">
+				<div class="image">
+					<?php $img = UPLOAD_IMAGE . $itemLike['image_food']  ?>
+					<img src="<?= $img ?>" alt="">
+				</div>
+				<div class="content">
+					<h3><a href="" class="name-pro"><?= $itemKm['name_food'] ?></a></h3>
+					<div class="gia">
+						<?php if ($itemKm['discount_food'] > 0) : ?>
+							<span class="price"><?= number_format($itemKm['discount_food'], 0, ',', '.') ?> vnđ</span>
+							<span class="price-km"><?= number_format($itemKm['price_food'], 0, ',', '.') ?> vnđ</span>
+						<?php else : ?>
+							<span class="price"><?= number_format($itemKm['price_food'], 0, ',', '.') ?> vnđ</span>
+						<?php endif ?>
+					</div>
+					<div class="btn-control">
+						<a href="spct&id_food=<?=$itemLike['id_food']?>" class="mg-right">Xem chi tiết</a>
+						<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $itemLike['id_food'] ?>  " class="btnn" onclick="abc()">Thêm vào giỏ hàng</a>
+					</div>
+				</div>
+			</div>
+		<?php endforeach ?>
 
-    <!-- review section ends -->
-
-    <!-- order section starts  -->
-
-    <section class="order" id="order">
-      <h1 class="heading"><span>order</span> now</h1>
-
-      <div class="row">
-        <div class="image">
-          <img src="<?= CLIENT_ASSET ?>dist/images/order-img.jpg" alt="" />
-        </div>
-
-        <form action="">
-          <div class="inputBox">
-            <input type="text" placeholder="name" />
-            <input type="email" placeholder="email" />
-          </div>
-
-          <div class="inputBox">
-            <input type="number" placeholder="number" />
-            <input type="text" placeholder="food name" />
-          </div>
-
-          <textarea
-            placeholder="address"
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
-
-          <input type="submit" value="order now" class="btn" />
-        </form>
-      </div>
-    </section>
-
-    <!-- order section ends -->
+	</div>
+</section>
+<script>
+	function abc() {
+		confirm("Bạn đã thêm thành công");
+	}
+</script>
+<!-- sản phẩm khuyến mại  -->
