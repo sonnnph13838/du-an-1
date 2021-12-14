@@ -136,6 +136,10 @@ switch ($url) {
         require_once './admin/business/user.php';
         list_users();
         break;
+    case 'cp-admin/cart':
+        require_once './admin/business/cart.php';
+        list_cart();
+        break;
     case 'cp-admin/user/del_user':
         require_once './admin/business/user.php';
         del_user();
