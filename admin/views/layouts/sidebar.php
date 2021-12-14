@@ -88,6 +88,24 @@
 								<p>Tạo mới</p>
 							</a>
 						</li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">
+					<i class="fas fa-comments"></i>
+						<p>
+							Feedback
+							<i class="fas fa-angle-left right"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="<?= ADMIN_URL . 'feedback' ?>" class="nav-link">
+							<i class="fas fa-comments"></i>
+								<p>Danh sách</p>
+							</a>
+						</li>
+						
 
 
 					</ul>
