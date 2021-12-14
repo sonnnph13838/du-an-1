@@ -15,9 +15,7 @@ function loadone_sanpham(){
     $id_food=$_GET['id_food'];
     $sql="select * from food where id_food=".$id_food;
     $sp= executeQuery($sql,true);
-    $sqls="select * from option where id_food=".$id_food;
-    $sps= executeQuery($sqls,true);
-    client_render('ctsp/sp.php', compact('sp', 'sps'));
+    client_render('ctsp/sp.php', compact('sp'));
     
 }
 
