@@ -3,6 +3,7 @@
         margin: 0px 30px;
     }
 </style>
+
 <div class="mgt-dn lefa mg-fter">
     <div class="row">
         <div class="col-12">
@@ -11,22 +12,20 @@
                     <table class="table tabl-stripped">
                         <thead>
                             <th>ID</th>
-                            <th>Họ Tên</th>
-                            <th>Đia chỉ</th>
-                            <th>SĐT</th>
+                            <th>Ngày đặt hàng</th>
+                            <th>Tổng tiền</th>
+                            
                             <th>Phương thức</th>
-                            <th>Tổng</th>
-                            <th>Ngày</th>
                             <th>Trạng thái</th>
+                            <th>Chi tiết đơn hàng</th>
                             <th></th>
                         </thead>
                         <tbody>
                             <?php foreach ($cates as $item) : ?>
                                 <tr>
-                                    <td><?= $item['id_bill'] ?></td>
-                                    <td><?= $item['name_bill'] ?></td>
-                                    <td><?= $item['address'] ?></td>
-                                    <td><?= $item['tel'] ?></td>
+                                    <td><?= $item['id_cart'] ?></td>
+                                    <td><?= $item['date'] ?></td>
+                                    <td><?= $item['into_money'] ?> VNĐ</td>
                                     <?php
                                     $payment = $item['payment'];
                                     if ($item['payment'] == 0) {
@@ -38,8 +37,6 @@
                                     }
                                     ?>
                                     <td><?= $payment ?></td>
-                                    <td><?= $item['total'] ?></td>
-                                    <td><?= $item['date'] ?></td>
                                     <?php
                                     $status = $item['status'];
                                     if ($item['status'] == 0) {
@@ -53,6 +50,7 @@
                                     }
                                     ?>
                                     <td><?= $status ?></td>
+                                    <td> <a href="<?= BASE_URL . 'client/user/bill-user/ctdh?id=' . $item['id_cart']  ?>">Xem chi tiết</a> </td>
                                     <?php if($item['status'] == 0){  ?>
                                         <td>
                                             <a onclick="if (!confirm('Bạn chắc chắn muốn huỷ đơn hàng ?')) { return false }" href="<?= 'huy-don?id=' . $item['id_bill'] ?>">Huỷ đơn</a>
@@ -62,9 +60,9 @@
                                             <p>Không thể huỷ đơn</p>
                                         </td>
                                     <?php } ?>
-
-                                </tr>
-                            <?php endforeach ?>
+                                    
+                              </tr>
+                              <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>

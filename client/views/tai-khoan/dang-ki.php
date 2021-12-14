@@ -25,7 +25,7 @@
 	<input type="submit" value="Đăng kí" name="dangki">
 </form> -->
 <!-- From có css -->
-<div class="mgt-dn cnter">
+<div class="mgt-dn cnter mg-fterr">
 	<div class="wrapper">
 	<?php if(isset($_GET['msg']) && ($_GET['msg'] != "")):?>
       <div class="msg-quenmk">

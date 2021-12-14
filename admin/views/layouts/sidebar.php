@@ -77,7 +77,7 @@
 					</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item">
-							<a href="pages/layout/top-nav.html" class="nav-link">
+							<a href="<?= ADMIN_URL . 'food' ?>" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
 								<p>Danh sách</p>
 							</a>
@@ -88,6 +88,24 @@
 								<p>Tạo mới</p>
 							</a>
 						</li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">
+					<i class="fas fa-comments"></i>
+						<p>
+							Feedback
+							<i class="fas fa-angle-left right"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="<?= ADMIN_URL . 'feedback' ?>" class="nav-link">
+							<i class="fas fa-comments"></i>
+								<p>Danh sách</p>
+							</a>
+						</li>
+						
 
 
 					</ul>
@@ -143,6 +161,42 @@
 						</li>
 					</ul>
 				</li>
+                <li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="fas fa-comment-alt"></i>
+						<p>
+							Option
+							<i class="fas fa-angle-left right"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="<?= ADMIN_URL . 'option' ?>" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Danh sách</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="fas fa-comment-alt"></i>
+						<p>
+							Thông tin - Banner
+							<i class="fas fa-angle-left right"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="<?= ADMIN_URL . 'display' ?>" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Danh sách</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+				
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->
