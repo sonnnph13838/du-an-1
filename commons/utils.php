@@ -1,11 +1,10 @@
 <?php
 
-const BASE_URL = "http://localhost/DA1/du-an-1/";
+const BASE_URL = "http://localhost/du-an-1/";
 const ADMIN_URL = BASE_URL . 'cp-admin/';
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
 const CLIENT_ASSET = BASE_URL . 'public/client-assets/';
 const UPLOAD_IMAGE = CLIENT_ASSET . 'dist/images/';
-
 
 function dd()
 {
