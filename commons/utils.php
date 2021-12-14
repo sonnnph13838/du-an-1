@@ -6,6 +6,7 @@ const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
 const CLIENT_ASSET = BASE_URL . 'public/client-assets/';
 const UPLOAD_IMAGE = CLIENT_ASSET . 'dist/images/';
 
+
 function dd()
 {
     $data = func_get_args();

@@ -11,6 +11,14 @@ function list_products_sell(){
     $sanphamkm = executeQuery($sql,true);
     return $sanphamkm;
 }
+function loadone_sanpham(){ 
+    $id_food=$_GET['id_food'];
+    $sql="select * from food where id_food=".$id_food;
+    $sp= executeQuery($sql,true);
+    client_render('ctsp/sp.php', compact('sp'));
+    
+}
+
 
 function page_product(){
     client_render('products/trang_sp.php');
