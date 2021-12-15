@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< Updated upstream
 const BASE_URL = "http://localhost/du-an-1/";
+=======
+const BASE_URL = "http://localhost:8080/DA1/";
+>>>>>>> Stashed changes
 const ADMIN_URL = BASE_URL . 'cp-admin/';
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
 const CLIENT_ASSET = BASE_URL . 'public/client-assets/';
