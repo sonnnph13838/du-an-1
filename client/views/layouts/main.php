@@ -98,13 +98,6 @@
 	<!-- footer section  -->
 	
 	<section class="footer">
-
-		<h1 class="credit">
-			created by <span> N6 </span> | all rights reserved!
-		</h1>
-
-		
-	</section>
     <div class="box-container">
 
         <div class="box">
