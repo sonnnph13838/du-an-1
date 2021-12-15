@@ -3,8 +3,13 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 $date = date('m/d/Y h:i:s a', time());
 if (isset($_session['email']) && (is_array($_session['email']))) {
     extract($_session['email']);
+}else{
+   header('Location: '.BASE_URL. 'dang-nhap');
 }
+    
 ?>
+
+
 <style>
     .radiogroups {
         padding: 48px 64px;
@@ -197,4 +202,5 @@ if (isset($_session['email']) && (is_array($_session['email']))) {
         </div>
 
     </form>
+    
 </div>

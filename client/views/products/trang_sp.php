@@ -23,8 +23,10 @@
 		$listSp = list_product();
 
 		?>
-
-		<?php foreach ($listSp as $item) : ?>
+        <?php if(isset($listsanpham) && ($listsanpham)!=""):?>
+		
+		<h3>KẾT QUẢ TÌM KIẾM:</h3> 
+		<?php foreach ($listsanpham as $item) : ?>
 			<div class="boxx">
 				<div class="image">
 					<?php $img = UPLOAD_IMAGE . $item['image_food']  ?>
@@ -45,6 +47,29 @@
 				</div>
 			</div>
 		<?php endforeach ?>
+        <?php else : ?>
+            <?php foreach ($listSp as $item) : ?>
+			<div class="boxx">
+				<div class="image">
+					<?php $img = UPLOAD_IMAGE . $item['image_food']  ?>
+					<img src="<?= $img ?>" alt="">
+				</div>
+				<div class="content">
+					<h3><a href="" class="name-pro"><?= $item['name_food'] ?></a></h3>
+					<div class="gia">
+						<?php if ($item['discount_food'] > 0) : ?>
+							<span class="e"><?= number_format($item['discount_food'], 0, ',', '.') ?> vnđ</span>
+							<span class="m"><?= number_format($item['price_food'], 0, ',', '.') ?> vnđ</span>
+						<?php else : ?>
+							<span class="e"><?= number_format($item['price_food'], 0, ',', '.') ?> vnđ</span>
+						<?php endif ?>
+					</div>
+					<a href="spct&id_food=<?= $item['id_food'] ?>" class="btn">Xem chi tiết</a>
+					<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $item['id_food'] ?>   " class="btn" onclick="abc()">Thêm vào giỏ hàng</a>
+				</div>
+			</div>
+		<?php endforeach ?>
+        <?php endif ?>
 	</div>
 </div>
 </div>
