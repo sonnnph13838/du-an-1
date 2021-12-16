@@ -183,7 +183,7 @@
                             </div>
                             <div class="radiogroup">
                                 <div class="wrappers">
-                                    <input class="state" type="radio" name="pttt" id="a" value="0">
+                                    <input class="state" type="radio" name="pttt" id="a" value="0" checked >
                                     <label class="label" for="a">
                                         <div class="indicator"></div>
                                         <span class="text">Thanh toán khi nhận hàng</span>
