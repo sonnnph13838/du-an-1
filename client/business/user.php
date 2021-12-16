@@ -139,25 +139,37 @@ function edit_mk(){
 
 function post_update(){
     if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+
         $id=$_POST['id'];
-        
-        // $taikhoan=$_POST['taikhoan'];
-        $taikhoan=$_POST['taikhoan'];
+        $hoten=$_POST['hoten'];
         $matkhau=$_POST['matkhau'];
         $email=$_POST['email'];       
         $diachi=$_POST['diachi'];
         $sdt=$_POST['sdt'];
-        $sql = "update  user set  name_user ='" . $taikhoan . "'   ,password ='" . $matkhau . "' ,email ='" . $email . "', tel ='" . $sdt . "', address ='" . $diachi . "' 
-       
+        $image=$_FILES['image']['name'];
+        $target_dir = 'public/client-assets/dist/images/';
+        $target_file = $target_dir . basename($_FILES['image']['name']);
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+            // echo "The file ". htmlspecialchars( basename( $_FILES['hinh']['name'])). " has been uploaded.";
+        }
+    
+        
+        if($image != ""){
+            $sql = "update  user set  name_user ='" . $hoten . "' , password ='" . $matkhau . "' ,email ='" . $email . "', tel ='" . $sdt . "', address ='" . $diachi . "',image ='" . $image . "' 
+        
         where id_user =  $id";
-        executeQuery($sql); 
+        }else{
+            $sql = "update  user set  name_user ='" . $hoten . "' , password ='" . $matkhau . "' ,email ='" . $email . "', tel ='" . $sdt . "', address ='" . $diachi . "' 
+        
+        where id_user =  $id";
+        }
+        
+        executeQuery($sql,false); 
         $sql = "select *from user  where id_user = $id";
-        $cntk = executeQuery($sql); 
+        $cntk = executeQuery($sql,false);
+        unset($_SESSION['email']); 
         $_SESSION['email'] = $cntk; 
-        //unset($_SESSION['email']);
-        header('location: '. BASE_URL .'client/user/edit-user');
         
-        
-
+        header('location: '. BASE_URL.'' );
 }
 }
