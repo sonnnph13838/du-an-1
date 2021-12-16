@@ -1,9 +1,12 @@
 <?php
 
 function dashboard_index(){
-    $totalProduct = rand(100, 999);
-    $totalProfit = rand(1000, 500000);
-    $totalCustomer = rand(50, 20000);
+    $sql = "SELECT count(id_food) from food ";
+    $totalProduct = get_rows($sql);
+    $sql = "SELECT sum(total) from bill ";
+    $totalProfit = get_rows($sql);
+    $sql = "SELECT count(id_user) from user ";
+    $totalCustomer =  get_rows($sql);
     admin_render('dashboard/index.php', 
         compact('totalProduct', 'totalProfit', 'totalCustomer')); 
 }

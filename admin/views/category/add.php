@@ -9,7 +9,7 @@
 	<form action="post-cate" method="post">
 		<div class="field email">
 			<div class="input-area">
-				<input type="text" placeholder="Tên loại đồ ăn" name="name">
+				<input type="text" placeholder="Tên loại đồ ăn" name="name" required>
 			</div>
 		</div>
 		<br>

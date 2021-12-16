@@ -9,7 +9,7 @@
                     <div class="col-6 offset-3">
                         <div class="form-group">
                             <label for="">Tên món ăn</label>
-                            <input type="text" name="name" class="form-control" placeholder="" aria-describedby="helpId">
+                            <input type="text" name="name" class="form-control" placeholder="" aria-describedby="helpId" required>
                         </div>
                         <div class="form-group">
                             <label for="">Hình ảnh</label><br>
@@ -18,14 +18,8 @@
 
                         <div class="form-group">
                             <label for="">Giá</label>
-                            <input type="text" name="price" class="form-control" placeholder="" aria-describedby="helpId">
+                            <input type="text" name="price" class="form-control" placeholder="" aria-describedby="helpId" required>
                         </div>
-
-                        <div class="form-group">
-                            <label for="">Giá khuyến mại</label>
-                            <input type="text" name="discount" class="form-control" placeholder="" aria-describedby="helpId">
-                        </div>
-                        <br>
                         <div class="d-flex justify-content-center">
                             <a href="<?= ADMIN_URL . 'option' ?>" class="btn btn-sm btn-danger">Hủy</a>
                             &nbsp;
