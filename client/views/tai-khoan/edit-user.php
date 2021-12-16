@@ -6,7 +6,8 @@
 }
 ?>
 <div class="mgt-dn cnter mg-fterr">
-    <div class="wrapper">
+    <div class="wrapper suatk">
+
         <h3>Sửa tài khoản</h3>
 
 
@@ -14,14 +15,23 @@
         <form action="update-user" method="post" enctype="multipart/form-data">
 
             <input type="hidden" name="id" value="<?=$id_user?>">
-			
-            
-                <div class="input-area">
-                    <?php $img = UPLOAD_IMAGE . $image?>
-                    <img src="<?= $img ?>" width="150">
-                    <input type="file" name = "image">
+
+
+            <div class="input-area">
+
+                
+                <?php $img = UPLOAD_IMAGE . $image?>
+                <div class="img">
+                    <img src="<?= $img ?>" width="200">
                 </div>
-            
+
+                
+            </div>
+            <div class="field email ">
+                <div class="input-area ">
+                <input type="file" name="image" class="img-1">
+                </div>
+            </div>
 
             <div class="field email">
                 <div class="input-area">
