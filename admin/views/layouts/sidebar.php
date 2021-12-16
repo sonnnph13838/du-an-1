@@ -165,8 +165,8 @@
 						</li>
 					</ul>
 				</li>
-        <li class="nav-item">
-					<a href="#" class="nav-link">
+                 <li class="nav-item">
+		 			<a href="#" class="nav-link">
 						<i class="fas fa-comment-alt"></i>
 						<p>
 							Option
@@ -182,6 +182,31 @@
 						</li>
 					</ul>
 				</li>
+
+				<li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="fas fa-hamburger"></i>
+						<p>
+							Banner
+							<i class="fas fa-angle-left right"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="<?= ADMIN_URL . 'banner' ?>" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Danh sách</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?= ADMIN_URL . 'banner/add-banner'?>" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Tạo mới</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->

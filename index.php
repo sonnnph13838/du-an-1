@@ -130,6 +130,7 @@ switch ($url) {
 
     case 'cp-admin':
         require_once './admin/business/dashboard.php';
+        checkAuth();
         dashboard_index();
         break;
     case 'cp-admin/user':
@@ -265,9 +266,30 @@ switch ($url) {
         require_once './admin/business/option.php';
         del_option();
         break;
-    case 'cp-admin/display':
-        require_once './admin/business/display.php';
-        display_index();
+    case 'cp-admin/banner':
+        require_once './admin/business/banner.php';
+        list_banner();
+        break;
+    case 'cp-admin/banner/add-banner':
+        require_once './admin/business/banner.php';
+        add_banner();
+        break;
+    case 'cp-admin/banner/post-banner':
+        require_once './admin/business/banner.php';
+        post_banner();
+        break;
+
+    case 'cp-admin/banner/edit-banner':
+        require_once './admin/business/banner.php';
+        select_banner_id();
+        break;
+    case 'cp-admin/banner/post-edit-banner':
+        require_once './admin/business/banner.php';
+        post_edit_banner();
+        break;
+    case 'cp-admin/banner/remove-banner':
+        require_once './admin/business/banner.php';
+        del_banner();
         break;
     case 'cp-admin/reply';
         require_once './admin/business/feedback.php';

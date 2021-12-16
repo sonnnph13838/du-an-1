@@ -1,10 +1,16 @@
 <?php
 date_default_timezone_set("Asia/Ho_Chi_Minh");
 $date = date('m/d/Y h:i:s a', time());
-if (isset($_session['email']) && (is_array($_session['email']))) {
-    extract($_session['email']);
-}
+
+// if (isset($_session['email']) && (is_array($_session['email']))) {
+//     extract($_session['email']);
+// }else{
+//    header('Location: '.BASE_URL. 'dang-nhap');
+// }
+    
 ?>
+
+
 <style>
     .radiogroups {
         padding: 48px 64px;
@@ -57,6 +63,9 @@ if (isset($_session['email']) && (is_array($_session['email']))) {
     }
 </style>
 
+<?php if(!isset($_SESSION['email']) || empty($_SESSION)):?>
+    <h2 class="mgt-dn" style="text-align: center;">Bạn vui lòng đăng nhập để tiếp tục thanh toán!!</h2>
+<?php else:?>
 
 <div class="mgt-dn lefa mg-fterr">
     <form action="bill" method="post">
@@ -197,4 +206,6 @@ if (isset($_session['email']) && (is_array($_session['email']))) {
         </div>
 
     </form>
+    
 </div>
+<?php endif?>
