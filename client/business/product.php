@@ -57,7 +57,12 @@ function loadone_sanpham()
     $sqlcmt = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user where id_food= " . $id_food;
     $listcmt = executeQuery($sqlcmt, true);
     // dd($listcmt);
-    client_render('ctsp/sp.php', compact('sp', 'listcmt'));
+    
+    //
+    $id_type = $_GET['id_type'];
+    $sql="select * from food where id_type = ".$id_type." AND id_food <> ".$id_food;
+    $listspcl = executeQuery($sql, true);
+    client_render('ctsp/sp.php', compact('sp', 'listcmt', 'listspcl'));
 }
 
 function post_timkiem()

@@ -100,7 +100,7 @@
 					<span class="price"><?= number_format($itemLike['price_food'], 0, ',', '.') ?> vnđ</span>
 					<?php endif ?>
 				</div>
-				<a href="spct&id_food=<?= $itemLike['id_food'] ?>" class="btn">Xem chi tiết</a>
+				<a href="spct&id_food=<?= $itemLike['id_food'] ?>&id_type=<?=$itemLike['id_type']?>" class="btn">Xem chi tiết</a>
 				<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $itemLike['id_food'] ?>   " class="btn"
 					onclick="abc()">Thêm vào giỏ hàng</a>
 			</div>
