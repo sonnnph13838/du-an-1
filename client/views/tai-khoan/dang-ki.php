@@ -34,22 +34,22 @@
     <?php endif?>
 	<div class="forgot-pass">
 		<h3>Đăng kí</h3>
-		<form action="postdk" method="post">
+		<form action="postdk" id="dangky" method="post">
 			<div class="field email">
 				<div class="input-area">
-					<input type="email" placeholder="Email" name="email">
+					<input type="email" id="email" placeholder="Email" name="email">
 					<i class="icon fas fa-envelope"></i>
 				</div>
 			</div>
 			<div class="field password">
 				<div class="input-area">
-					<input type="password" placeholder="Mật khẩu" name="matkhau">
+					<input type="password" id="matkhau" placeholder="Mật khẩu" name="matkhau">
 					<i class="icon fas fa-lock"></i>
 				</div>
 			</div>
 			<div class="field password">
 				<div class="input-area">
-					<input type="password" placeholder="Nhập Lại Mật khẩu" name="matkhau2">
+					<input type="password" id="matkhau2" placeholder="Nhập Lại Mật khẩu" name="matkhau2">
 					<i class="icon fas fa-lock"></i>
 				</div>
 			</div>
@@ -72,3 +72,34 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+      $(document).ready(function () {
+
+        //Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
+        $("#dangky").validate({
+          rules: {
+           
+            email: {
+              required: true,
+              email: true
+            },
+            matkhau: {
+              required: true,
+              minlength: 6,
+              maxlength: 15
+            },
+          },
+          messages: {
+            email: {
+              required: "Vui lòng nhập vào email",
+              email: "Nhập đúng định dạng email đê :D"
+            },
+            matkhau: {
+              required: "Vui lòng nhập mật khẩu!",
+              minlength: "Độ dài tối thiểu 6 kí tự",
+              maxlength: "Độ tài tối đa 15 kí tự"
+            },
+          }
+        });
+      });
+    </script>

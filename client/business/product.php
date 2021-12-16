@@ -56,6 +56,8 @@ function loadone_sanpham()
     $sp = executeQuery($sql, true);
     $sqlcmt = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user where id_food= " . $id_food;
     $listcmt = executeQuery($sqlcmt, true);
+    $slx = "UPDATE food set views_food = views_food + 1 where id_food=" . $id_food;
+    executeQuery($slx);
     // dd($listcmt);
     client_render('ctsp/sp.php', compact('sp', 'listcmt'));
 }
