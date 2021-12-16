@@ -194,8 +194,17 @@ function add_option_cart()
 }
 function order()
 {
-	$listoption = $_SESSION['option'];
-	$listCart = $_SESSION['cart'];
+	if (!isset($_SESSION['cart'])) {
+		$listCart = [];
+	} else {
+		$listCart = $_SESSION['cart'];
+	}
+
+	if (!isset($_SESSION['option'])) {
+		$listoption = [];
+	} else {
+		$listoption = $_SESSION['option'];
+	}
 	client_render('cart/order.php', compact('listCart', 'listoption'));
 }
 function bill()

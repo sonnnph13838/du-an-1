@@ -62,17 +62,18 @@ function loadone_sanpham()
 
 function post_timkiem()
 {
-    if(isset($_POST['tukhoa'])&&($_POST['tukhoa']!="")){
-        $tukhoa=$_POST['tukhoa'];
-    }else{
-        $tukhoa="";
-    }
+    $tukhoa = isset($_GET['tukhoa']) ? $_GET['tukhoa'] : "";
     $sql="select * from food where 1";
     if($tukhoa!=""){
         $sql.=" and name_food like '%".$tukhoa."%'";
-    } 
-    $listsanpham = executeQuery($sql,true);
-    client_render('products/trang_sp.php', compact('listsanpham'));
+    } else{
+        $tukhoa = "";
+    }
+    $listsanpham= executeQuery($sql,true);
+    client_render('products/trang_sp.php', compact('listsanpham','tukhoa'));
+    // } 
+    // $listsanpham = executeQuery($sql,true);
+    // client_render('products/trang_sp.php', compact('listsanpham'));
 }
 
 function page_product(){
