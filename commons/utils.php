@@ -1,5 +1,5 @@
 <?php
-const BASE_URL = "http://localhost:81/da1/";
+const BASE_URL = "http://localhost/du-an-1/";
 const ADMIN_URL = BASE_URL . 'cp-admin/';
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
 const CLIENT_ASSET = BASE_URL . 'public/client-assets/';
