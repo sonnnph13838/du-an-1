@@ -14,7 +14,7 @@
 		if (isset($_GET['msg']) && ($_GET['msg']) != "")
 			echo "<h3>" . $_GET['msg'] . "</h3>"
 		?>
-    <form action="post-login" id="demoForm" method="POST">
+    <form action="post-login" id="dangnhap" method="POST">
       <div class="field email">
         <div class="input-area">
           <input type="email" name="email" placeholder="Email Address">
@@ -41,22 +41,35 @@
     <div class="sign-txt">Bạn chưa có tài khoản? <a href="client-dangki">Đăng kí ngay</a></div>
 </div>
 </div>
-<script>
-$().ready(function() {
-	$("#demoForm").validate({
-		onfocusout: false,
-		onkeyup: false,
-		onclick: false,
+<script type="text/javascript">
+$(document).ready(function() {
+
+	//Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
+	$("#dangnhap").validate({
 		rules: {
-			"email": {
+
+			email: {
 				required: true,
+				email: true
+			},
+			mat_khau: {
+				required: true,
+				minlength: 6,
 				maxlength: 15
 			},
-			"mat_khau": {
-				required: true,
-				minlength: 8
+
+		},
+		messages: {
+			email: {
+				required: "Vui lòng nhập vào email",
+				email: "Nhập đúng định dạng email đê :D"
+			},
+			mat_khau: {
+				required: "Vui lòng nhập mật khẩu!",
+				minlength: "Độ dài tối thiểu 6 kí tự",
+				maxlength: "Độ tài tối đa 15 kí tự"
 			},
 		}
 	});
 });
-  </script>
+</script>
