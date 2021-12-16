@@ -130,6 +130,7 @@ switch ($url) {
 
     case 'cp-admin':
         require_once './admin/business/dashboard.php';
+        checkAuth();
         dashboard_index();
         break;
     case 'cp-admin/user':
