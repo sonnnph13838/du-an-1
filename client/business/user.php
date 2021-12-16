@@ -170,6 +170,6 @@ function post_update(){
         unset($_SESSION['email']); 
         $_SESSION['email'] = $cntk; 
         
-        header('location: '. BASE_URL.'' );
+        header('location: '. BASE_URL.'client/user/edit-user' );
 }
 }
