@@ -1,5 +1,5 @@
 <!--Section: Block Content-->
-<div class="mgt-dn lefa mg-fter">
+<div class="mgt-dn lefa mg-fterr ">
 	<section class="mb-5">
 
 		<div class="row">
@@ -52,6 +52,7 @@
 						<form action="post-comment" method="post">
 							<input type="hidden" name="id_user" value="<?= $_SESSION['email']['id_user'] ?>">
 							<input type="hidden" name="id_food" value="<?= $_GET['id_food'] ?>">
+							<input type="hidden" name="id_type" value="<?= $_GET['id_type'] ?>">
 							<div class="field password">
 								<div class="input-area">
 									<input type="text" placeholder="Nhập bình luận " name="cmt">
@@ -67,6 +68,22 @@
 						<?php endif ?>
 					</div>
 					<!-- end ds bl -->
+					<!-- món ăn cùng loại -->
+					<div>
+					<?php require_once './client/business/category.php';
+					?>
+					<?php foreach ($listspcl as $gv) : ?>
+						<div class="cmt">
+						<td>
+						
+						<?php $img = UPLOAD_IMAGE . $gv['image_food'] ?>
+						<img style="width: 9%; margin-left: 5px; margin-top:15px"src="<?= $img ?>" alt="">
+						<a style="color: black; font-size: 20px" href="spct&id_food=<?= $gv['id_food'] ?>&id_type=<?=$gv['id_type']?>"><?=$gv['name_food']?></a>
+					</td>
+					</div>
+					<?php endforeach ?>
+					</div>
+					<!-- end món ăn cùng loại -->
 				</div>
 
 			</div>
@@ -86,7 +103,8 @@
 				<div class="table-responsive mb-2">
 						</div>
 						<a href="<?= BASE_URL . 'add-to-cart' ?>&id=<?= $gg['id_food'] ?>  " class="btnn" onclick="abc()">Thêm vào giỏ hàng</a>
-			</div>
+						
+			       </div>
 			<?php endforeach ?>
 		</div>
 

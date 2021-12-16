@@ -33,7 +33,7 @@ function post_cmt()
         $sql = "INSERT INTO comment (content, date,id_user,id_food) values ('$cmt', '$date','$id','$id_food')";
         executeQuery($sql);
     }
-    header('location: ' . BASE_URL . 'spct&id_food=' . $_POST['id_food']);
+    header('location: ' . BASE_URL . 'spct&id_food=' . $_POST['id_food'].'&id_type=' . $_POST['id_type']);
 }
 
 
@@ -59,7 +59,10 @@ function loadone_sanpham()
     $slx = "UPDATE food set views_food = views_food + 1 where id_food=" . $id_food;
     executeQuery($slx);
     // dd($listcmt);
-    client_render('ctsp/sp.php', compact('sp', 'listcmt'));
+    $id_type = $_GET['id_type'];
+    $sql="select * from food where id_type = ".$id_type." AND id_food <> ".$id_food;
+    $listspcl = executeQuery($sql, true);
+    client_render('ctsp/sp.php', compact('sp', 'listcmt', 'listspcl'));
 }
 
 function post_timkiem()
