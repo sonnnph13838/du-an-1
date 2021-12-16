@@ -1,6 +1,6 @@
 <?php
 
-const BASE_URL = "http://localhost/du-an-1/";
+const BASE_URL = "http://localhost/DA1/du-an-1/";
 const ADMIN_URL = BASE_URL . 'cp-admin/';
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
 const CLIENT_ASSET = BASE_URL . 'public/client-assets/';
@@ -34,8 +34,8 @@ function update_img($imageValue = "", $image){
                 // $image = $_FILES['image'];
                 if($image['size']>0){
                       $filename = uniqid() . '-' . $image['name'];
-                      move_uploaded_file($image['tmp_name'], '../images/' .$filename);
-                      $imageValue = 'images/' . $filename;
+                      move_uploaded_file($image['tmp_name'],  'public/client-assets/dist/images/' .$filename);
+                      $imageValue =  $filename;
                 }
                 return $imageValue;
 }

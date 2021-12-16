@@ -71,7 +71,7 @@ function post_timkiem()
     if($tukhoa!=""){
         $sql.=" and name_food like '%".$tukhoa."%'";
     } 
-    $listsanpham= executeQuery($sql,true);
+    $listsanpham = executeQuery($sql,true);
     client_render('products/trang_sp.php', compact('listsanpham'));
 }
 
@@ -94,8 +94,7 @@ function list_product(){
         
         $iddm = $_GET['iddm'];
         $sql .= "where id_type = '$iddm' ";
-    }
-    
+    } 
     $sql .= "order by id_food desc limit $sttrang,$sp_tung_trang";
     $sp = executeQuery($sql,true);
     return $sp;

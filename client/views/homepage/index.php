@@ -2,36 +2,47 @@
 
 
 <div id="myCarousel" class="carousel slide mg" data-ride="carousel">
+        <?php 
+		  require_once './client/business/banner.php';
+		  $lst = lst_banner();
+		?>
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	    <?php foreach($lst as $index => $n):?>
+			<li data-target="#myCarousel" data-slide-to="<?= $index ?>" class="<?php if($index == 0){echo 'active';}?>"></li>
+		<?php endforeach?>
+		<!-- <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li> -->
 	</ol>
 
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner">
+		<?php foreach($lst as $index => $bn):?>
+			<div class="item <?php if($index == 0){
+				                echo "active";
+				             }?>">
+			<img src="<?= UPLOAD_IMAGE . $bn['image']?>" alt="Los Angeles"
+				style="width:100%; height:600px">
+			<div class="carousel-caption">
+			</div>
+		</div>
+		<?php endforeach?>
+		
 
-		<div class="item active">
-			<img src="https://kfcvietnam.com.vn/uploads/banner/6623578de98cdfd67dd57ad527cd52bc.jpg" alt="Los Angeles"
-				style="width:100%; height:800px">
+		<!-- <div class="item">
+			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg"
+				alt="Chicago" style="width:100%;height:600px">
 			<div class="carousel-caption">
 			</div>
 		</div>
 
 		<div class="item">
 			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg"
-				alt="Chicago" style="width:100%;height:800px">
+				alt="New York" style="width:100%;height:600px">
 			<div class="carousel-caption">
 			</div>
-		</div>
-
-		<div class="item">
-			<img src="https://global-uploads.webflow.com/5ef5480befd392489dacf544/5f9f5e5943de7e69a1339242_5f44a7398c0cdf460857e744_img-image.jpeg"
-				alt="New York" style="width:100%;height:800px">
-			<div class="carousel-caption">
-			</div>
-		</div>
+		</div> -->
 
 	</div>
 
