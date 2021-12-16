@@ -23,9 +23,18 @@ function postdk()
         $email = $_POST['email'];
         $diachi = $_POST['diachi'];
         $sdt = $_POST['sdt'];
-        $sql = "INSERT INTO `user`(`password`, `email`, `address`, `tel`) VALUES ('$matkhau','$email','$diachi','$sdt')";
-        executeQuery($sql);
-        header('location: ' . BASE_URL . 'dang-ki&msg=Đăng kí thành công.. vui lòng đăng nhập!');
+        // $sqls = "SELECT email from user where email='".$email."'";
+        // $checkuser = executeQuery($sqls,false);
+        // if($checkuser != "") { 
+        //     header('location: ' . BASE_URL . 'dang-ki&msg=Đã tồn tại email');
+        //     die;
+        // }else{
+            $sql = "INSERT INTO `user`(`password`, `email`, `address`, `tel`) VALUES ('$matkhau','$email','$diachi','$sdt')";
+            executeQuery($sql);
+            header('location: ' . BASE_URL . 'dang-ki&msg=Đăng kí thành công.. vui lòng đăng nhập!');
+        // }
+       
+        
     }
 }
 function formdn()

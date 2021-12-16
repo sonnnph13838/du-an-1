@@ -56,6 +56,8 @@ function loadone_sanpham()
     $sp = executeQuery($sql, true);
     $sqlcmt = "SELECT comment.*,user.name_user FROM comment JOIN user ON comment.id_user=user.id_user where id_food= " . $id_food;
     $listcmt = executeQuery($sqlcmt, true);
+    $slx = "UPDATE food set views_food = views_food + 1 where id_food=" . $id_food;
+    executeQuery($slx);
     // dd($listcmt);
     
     //
@@ -67,17 +69,18 @@ function loadone_sanpham()
 
 function post_timkiem()
 {
-    if(isset($_POST['tukhoa'])&&($_POST['tukhoa']!="")){
-        $tukhoa=$_POST['tukhoa'];
-    }else{
-        $tukhoa="";
-    }
+    $tukhoa = isset($_GET['tukhoa']) ? $_GET['tukhoa'] : "";
     $sql="select * from food where 1";
     if($tukhoa!=""){
         $sql.=" and name_food like '%".$tukhoa."%'";
-    } 
+    } else{
+        $tukhoa = "";
+    }
     $listsanpham= executeQuery($sql,true);
-    client_render('products/trang_sp.php', compact('listsanpham'));
+    client_render('products/trang_sp.php', compact('listsanpham','tukhoa'));
+    // } 
+    // $listsanpham = executeQuery($sql,true);
+    // client_render('products/trang_sp.php', compact('listsanpham'));
 }
 
 function page_product(){
@@ -99,8 +102,7 @@ function list_product(){
         
         $iddm = $_GET['iddm'];
         $sql .= "where id_type = '$iddm' ";
-    }
-    
+    } 
     $sql .= "order by id_food desc limit $sttrang,$sp_tung_trang";
     $sp = executeQuery($sql,true);
     return $sp;

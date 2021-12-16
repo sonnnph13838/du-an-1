@@ -5,11 +5,11 @@
                 <h3 class="card-title">Tạo mới món ăn</h3>
             </div>
             <div class="card-body">
-                <form action="<?= ADMIN_URL . 'food/add_food/save' ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= ADMIN_URL . 'food/add_food/save' ?>" id="add_food" method="post" enctype="multipart/form-data">
                     <div class="col-6 offset-3">
                         <div class="form-group">
                             <label for="">Tên món ăn</label>
-                            <input type="text" name="name" class="form-control" placeholder="" aria-describedby="helpId">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="" aria-describedby="helpId" required>
                         </div>
                         <div class="form-group">
                             <label for="">Hình ảnh</label><br>
@@ -18,7 +18,7 @@
 
                         <div class="form-group">
                             <label for="">Giá</label>
-                            <input type="text" name="price" class="form-control" placeholder="" aria-describedby="helpId">
+                            <input type="text" id="price" name="price" class="form-control" placeholder="" aria-describedby="helpId" required>
                         </div>
 
                         <div class="form-group">
@@ -28,13 +28,13 @@
 
                         <div class="form-group">
                             <label for="">Chi tiết món ăn</label>
-                            <input type="text" name="detail" class="form-control" placeholder="" aria-describedby="helpId">
+                            <input type="text" id="detail" name="detail" class="form-control" placeholder="" aria-describedby="helpId" required>
                         </div>
 
                         <div class="form-group">
                             <label for="">Tên danh mục</label><br>
                             <select name="category" id="">
-                                <?php   
+                                <?php
                                 foreach ($list_category as  $u) {
                                     extract($u);
                                     echo  '<option value="' . $u['id_category'] . '">' . $u['name_category']  . '</option>';
@@ -46,7 +46,7 @@
                         <div class="d-flex justify-content-center">
                             <a href="<?= ADMIN_URL . 'food' ?>" class="btn btn-sm btn-danger">Hủy</a>
                             &nbsp;
-                            <button type="submit" name ="luu" class="btn btn-sm btn-primary">Lưu</button>
+                            <button type="submit" name="luu" class="btn btn-sm btn-primary">Lưu</button>
                         </div>
                     </div>
                 </form>

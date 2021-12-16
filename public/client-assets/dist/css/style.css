@@ -541,9 +541,7 @@ form .field .error-txt {
   text-align: left;
   margin-top: 5px;
 }
-form .field .error {
-  display: none;
-}
+
 form .field.shake .error,
 form .field.error .error {
   display: block;
@@ -787,4 +785,7 @@ form input[type="submit"]:hover {
   font-size: 3rem;
   color: #333;
   padding: 1rem;
+}
+.error{
+  color: red;
 }
