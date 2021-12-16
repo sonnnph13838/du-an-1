@@ -786,3 +786,6 @@ form input[type="submit"]:hover {
   color: #333;
   padding: 1rem;
 }
+.error{
+  color: red;
+}
